@@ -1,5 +1,5 @@
 SHELL=/bin/bash
-file = kurs4.tex
+file = diplom.tex
 
 all: 
 	pdflatex $(file)

@@ -27,8 +27,8 @@
 \end{equation}
 
 Здесь $v=(v_1(t,x),...,v_n(t,x))$"=скорость движения частицы жидкости, $p=p(t,x)$"=функция давления,
-$f=f(t,x)$"=функция плотности внешних сил, $\partial>0$"=коэффициент вязкости. $\Delta v- (......)$,
-$\operatorname{div} v- (......)$, $\nabla p- (....)$
+$f=f(t,x)$"=функция плотности внешних сил, $\partial>0$"=коэффициент вязкости. $\Delta v=\frac{\partial^2 v}{\partial^2 x_1}+\frac{\partial^2 v}{\partial^2 x_2}+\frac{\partial^2 v}{\partial^2 x_3}$,
+$\operatorname{div} v= \frac{\partial v}{\partial x_1}+\frac{\partial v}{\partial x_2}+\frac{\partial v}{\partial x_3}$, $\nabla p=\frac{\partial}{\partial x_1}\vec {p_1}+\frac{\partial}{\partial x_2}\vec {p_2}+\frac{\partial}{\partial x_3}\vec {p_3}.$
 Сформулируем определение сильного решения рассматриваемой задачи (\ref{eq:5.1})-(\ref{eq:5.4}). Пусть $f$ и $v_0$"=заданные функции,
 где $f\in (L_2(0,T;L_2(\Omega)))$ и $v_0\in V$.
 
@@ -36,8 +36,6 @@ $\operatorname{div} v- (......)$, $\nabla p- (....)$
     Сильным решением начально-краевой задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется пара функций $v\in L_2(0,T;L_2(\Omega))$ и
     $p\in L_2(0,T;L_2(\Omega))$, удовлетворяющие следующим условиям:
 \end{definition}
-
-(?Нужен ли абзац ниже?)
 
 Здесь $f,v_0$- заданные функции, $f:Q_T\rightarrow R^n, f\in (L_2(Q_T))^n$, где $f\in (L_2(Q_T))^n:={f:=(f_1,f_2,\dots,f_n)}$,
 и $v^0:\Omega\rightarrow R^n,v_0\in V$, где $v\in (L_2(Q_T))^n:={v:=(v_1,v_2,\dots,v_n)}$, такие что:
@@ -61,7 +59,7 @@ $[0,T]$ и принимающая значения в функционально
 x\in\Omega$$ и функцию $f:[0,T]\rightarrow (L_2(\Omega))^n$ по формуле $$[f(t)](x)=f(t,x), t\in[0,T], x\in\Omega.$$
 Умножая равенство (\ref{eq:5.1}) при фиксированных значениях $t\in [0,T]$ на функцию $\varphi\in (D_s(\Omega))^n$ скалярно в $(L_2(\Omega))^n$, получим
 $$\int\limits_\Omega \frac{\partial v}{\partial t}\ \varphi dx+\sum_{i=1}^n\int\limits_\Omega v_i\frac{\partial v}{\partial x_i}\ \varphi dx-$$
-$$-\nu \sum_{i,j=1}^n\int\limits_\Omega\frac{\partial^2 v_j(t,x)}{\partial x^{2}_i} \varphi dx+\sum_{i=1}^n\int\limits_\Omega \frac{\partial p}{\partial x_i}\ \varphi_idx=\int\limits_\Omega f\varphi dx$$
+$$-\nu \sum_{i,j=1}^n\int\limits_\Omega\frac{\partial^2 v_j}{\partial x^{2}_i} \varphi dx+\sum_{i=1}^n\int\limits_\Omega \frac{\partial p}{\partial x_i}\ \varphi_idx=\int\limits_\Omega f\varphi dx$$
 Выполним преобразования слагаемых, связанные с интегрированием по частям,
 $$-\int\limits_\Omega \sum_{i=1}^{n}\frac{\partial^2 v_j}{\partial x^{2}_i}\varphi dx=-\sum_{i=1}^{n}\frac{\partial v_j}{\partial x_i}\varphi \bigg|_\Omega
 =\int\limits_\Omega\sum_{i=1}^{n}\frac{\partial v}{\partial x_i}\frac{\partial \varphi}{\partial x_i}=\int\limits_\Omega v dx .$$
@@ -82,8 +80,8 @@ $\varphi$ в $(H^{1}_{0}(\Omega))^n$. Кроме того, равенство м
 Покажем, что достаточно предполагать, что $v\in L_2(0,T;V)$ для того, чтобы каждый интеграл, входящий в равенство (\ref{eq:5.5}), имеет смысл.
 
 В силу теоремы вложений Соболева вложение $(W^{1}_{0}(\Omega))^n\subset L_4(\Omega))^n$ непрерывно при $n\leqslant4$.
-Поэтому, так как $V\subset W^{1}_{0}(\Omega))^n$, то $v_i(t,x)v(t,x)\in L_2(\Omega))^n$ и $v_i(t,x)v(t,x)\partial_iu(x)\in L_1(\Omega)$
-при каждом фиксированном значении $t$. Следовательно, интеграл $\int\limits_\Omega v_i(t,x)v(t,x)\cdot\partial_iu(x)dx$ определен.
+Поэтому, так как $V\subset W^{1}_{0}(\Omega))^n$, то $v_i(t,x)v(t,x)\in L_2(\Omega))^n$ и $v_i(t,x)v(t,x)\partial_i\varphi \in L_1(\Omega)$
+при каждом фиксированном значении $t$. Следовательно, интеграл $\int\limits_\Omega v_i(t,x)v(t,x)\cdot\partial_i\varphi dx$ определен.
 
 Кроме того, это слагаемое определяет линейный непрерывный функционал на $V$. Обозначим этот функционал через $K(v)$:
 $$ \langle (K,v),\varphi \rangle =\sum_{i=1}^{n}\int\limits_\Omega v_i v \frac{\partial \varphi}{\partial x_i}dx$$
