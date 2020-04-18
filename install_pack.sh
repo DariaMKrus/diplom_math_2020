@@ -15,6 +15,8 @@ if [[ "$distr" == "DISTRIB_ID=Ubuntu" ]]; then
     sudo apt-get install texlive-fonts-recommended
     echo "############ Install libreoffice ############"
     sudo apt install libreoffice
+    echo "############ Install make ############"
+    sudo apt install make
 else
     echo "############           Your distribution is not Ubuntu!         ############"
     echo "############ Find the following packages for your distribution: ############"
@@ -24,4 +26,6 @@ else
     echo "############      4. texlive-lang-cyrillic                      ############"
     echo "############      5. install texlive-fonts-recommended          ############"
     echo "############      6. libreoffice                                ############"
+    echo "############      7. make                                       ############"
+
 fi
