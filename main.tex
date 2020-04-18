@@ -1,90 +1,110 @@
 \section{Эволюционная система уравнений \\Навье-Стокса}
 \subsection {Понятие слабого решения}
-Пусть $\Omega$"=ограниченная область в пространстве $R^n$, где $n=2,3$ с достаточно гладкой границей $\partial\Omega$. Рассмотрим начально"=краевую задачу для системы уравнений Навье"=Стокса
+Пусть $\Omega$"= ограниченная область в пространстве $R^n$, где $n=2,3$, с достаточно гладкой границей $\partial\Omega$. Рассмотрим начально"=краевую задачу для системы уравнений Навье"=Стокса
 
 \begin{equation}\label{eq:5.1}
     \begin{gathered}
-        \frac{\partial v}{\partial t}+\sum_{i=1}^nv_i\frac{\partial v}{\partial x_i}-\nu\Delta v+\nabla p=f
+        \frac{\partial v}{\partial t}+\sum_{i=1}^nv_i\frac{\partial v}{\partial x_i}-\nu\Delta v+\nabla p=f;
     \end{gathered}
 \end{equation}
 
 \begin{equation}\label{eq:5.2}
     \begin{gathered}
-        \operatorname{div} v=0
+        \operatorname{div} v=0;
     \end{gathered}
 \end{equation}
 
 \begin{equation}\label{eq:5.3}
     \begin{gathered}
-        v|_{t=0}=v_0
+        v|_{t=0}=v_0;
     \end{gathered}
 \end{equation}
 
 \begin{equation}\label{eq:5.4}
     \begin{gathered}
-        v|_{(0,T)\times\partial\Omega}=0
+        v|_{(0,T)\times\partial\Omega}=0.
     \end{gathered}
 \end{equation}
 
-Здесь $v=(v_1(t,x),...,v_n(t,x))$"=скорость движения частицы жидкости, $p=p(t,x)$"=функция давления,
-$f=f(t,x)$"=функция плотности внешних сил, $\partial>0$"=коэффициент вязкости. $\Delta v=\frac{\partial^2 v}{\partial^2 x_1}+\frac{\partial^2 v}{\partial^2 x_2}+\frac{\partial^2 v}{\partial^2 x_3}$,
-$\operatorname{div} v= \frac{\partial v}{\partial x_1}+\frac{\partial v}{\partial x_2}+\frac{\partial v}{\partial x_3}$, $\nabla p=\frac{\partial}{\partial x_1}\vec {p_1}+\frac{\partial}{\partial x_2}\vec {p_2}+\frac{\partial}{\partial x_3}\vec {p_3}.$
-Сформулируем определение сильного решения рассматриваемой задачи (\ref{eq:5.1})-(\ref{eq:5.4}). Пусть $f$ и $v_0$"=заданные функции,
-где $f\in (L_2(0,T;L_2(\Omega)))$ и $v_0\in V$.
+Здесь $v=(v_1(t,x),...,v_n(t,x))$"= вектор-функция скорости движения частицы жидкости, $p=p(t,x)$"= функция давления,
+$f=f(t,x)$"=  вектор-функция плотности внешних сил, $\nu>0$"= коэффициент вязкости. $\Delta v=(\Delta v_1,...,\Delta v_n)$, $\Delta v_i= \frac{\partial^2 v_i}{\partial x_1^2}+...+\frac{\partial^2 v_i}{\partial x_n^2}$,
+$\operatorname{div} v= \frac{\partial v}{\partial x_1}+...+\frac{\partial v}{\partial x_n}$, $\nabla p=\frac{\partial p}{\partial x_1}+...+\frac{\partial p}{\partial x_n}.$
+Сформулируем определение сильного решения рассматриваемой задачи (\ref{eq:5.1})-(\ref{eq:5.4}).
+Для этого введем необходимые функциональные пространства:
+
+$L_p(\Omega)$- где $1\leqslant p\leqslant\infty$, множество измеримых функций, суммируемых с $p$-ой степенью, 
+
+$W_p^m(\Omega)$- где $m\geqslant 1, p\geqslant 1$, пространство Соболева, функции, которые со своими производными до порядка $m$ включительно принадлежат пространству $L_p(\Omega)$,
+
+$C_0^{\infty}(\Omega)$- бесконечно дифференцируемых функций на $\Omega$ со значениями $R^n(n=2,3)$ и компактным носителем $\Omega$, 
+
+$\nu$ - множество ${u\in C_0^{\infty}(\Omega), div u=0}$
+
+$H$-....,
+
+$V$-...,
+
+$L_p(a,b;X)$- мы обозначим банаховы пространства непрерывных, слабо непрерывных и суммируемых с $p$-ой степенью функций на $[a, b]$ со значениями в
+банаховом пространстве $X$,
+
+$X^*$-...,
+
+$<f,\varphi>$- обозначим действие функционала $f$ из $V^{-\alpha}$ на элемент $\varphi$ из $V^{\alpha}$,$\alpha\geqslant 0$
+
+ Пусть $f$ и $v_0$"=заданные функции,
+где $f\in L_2(0,T;L_2(\Omega))$ и $v_0\in V$.
 
 \begin{definition}
     Сильным решением начально-краевой задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется пара функций $v\in L_2(0,T;L_2(\Omega))$ и
     $p\in L_2(0,T;L_2(\Omega))$, удовлетворяющие следующим условиям:
 \end{definition}
 
-Здесь $f,v_0$- заданные функции, $f:Q_T\rightarrow R^n, f\in (L_2(Q_T))^n$, где $f\in (L_2(Q_T))^n:={f:=(f_1,f_2,\dots,f_n)}$,
-и $v^0:\Omega\rightarrow R^n,v_0\in V$, где $v\in (L_2(Q_T))^n:={v:=(v_1,v_2,\dots,v_n)}$, такие что:
 \begin{enumerate} 
-    \item обобщенные частные производные функции, содержащиеся в равенствах (\ref{eq:5.1})-(\ref{eq:5.2}), принадлежат пространствам $(L_2(Q_T))^n$ и $L_2(Q_T)$, соответственно;
-    \item при подстановке функций уравнения (\ref{eq:5.1})-(\ref{eq:5.2}) обращаются в равенства в пространствах $(L_2(Q_T))^n$ и $L_2(Q_T)$, соответственно;
-    \item след функции $v$ при $t=0$ должно ровняться $v_0$ из (3) и $v$ на границе должно равняться $0$;
-    \item след функции $v$ определен на границе области $\Gamma$ и равен 0.
+    \item обобщенные частные производные функции, содержащиеся в равенствах (\ref{eq:5.1})-(\ref{eq:5.2}), принадлежат пространству $L_2(0,T;L_2(\Omega))$;
+    \item при подстановке функций уравнения (\ref{eq:5.1})-(\ref{eq:5.2}) обращаются в равенства в пространстве $L_2(0,T;L_2(\Omega))$;
+    \item функция $v$ удовлетворяет начальному условию (\ref{eq:5.3}) и граничному условию (\ref{eq:5.4}).
 \end{enumerate}
 
-Введем понятие сильного решения для этого пусть $v$ и $p$"=сильное решение задач (\ref{eq:5.1})-(\ref{eq:5.4}).
-Умножим равенство (\ref{eq:5.1}) на пробную функцию $\varphi\in V$ скалярно в $L_2(\Omega)$
+Введем понятие слабого решения. Для этого пусть $v$ и $p$"=сильное решение задач (\ref{eq:5.1})-(\ref{eq:5.4}).
+Умножим равенство (\ref{eq:5.1}) на пробную функцию $\varphi (x)\in V$ скалярно в $L_2(\Omega)$
 
-Пусть $(v,p)$-сильное (обобщенное) решение задачи (\ref{eq:5.1})-(\ref{eq:5.2}).
+Пусть $(v,p)$-сильное решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}).
 Чтобы обеспечить понимание определения слабого решения, мы временно предположим, что $v=v(t,x), p=p(t,x)$ являются, фактически, гладкими решениями задачи.
-Сопоставим функции $v$ отображение $v:[0,T]\rightarrow (H^{1}_0(\Omega))^n$, определенное по формуле $$[v(t)](x)=v(t,x), t\in[0,T], x\in\Omega.$$
+Сопоставим функции $v$ отображение $v:[0,T]\rightarrow W^1_2(\Omega)$, определенное по формуле $$[v(t)](x)=v(t,x), t\in[0,T], x\in\Omega.$$
 Другими словами, $v$ рассматривается не как функции переменных $t$ и $x$, а как функция переменной $t$, определенная на отрезке
-$[0,T]$ и принимающая значения в функциональном пространстве $(H^{1}_0(\Omega))^n$.
+$[0,T]$ и принимающая значения в функциональном пространстве $W^1_2(\Omega)$.
 
-Аналогично определим $p:[0,T]\rightarrow (L_2(\Omega))^n$ по формуле $$[p(t)](x)=p(t,x), t\in[0,T],
-x\in\Omega$$ и функцию $f:[0,T]\rightarrow (L_2(\Omega))^n$ по формуле $$[f(t)](x)=f(t,x), t\in[0,T], x\in\Omega.$$
-Умножая равенство (\ref{eq:5.1}) при фиксированных значениях $t\in [0,T]$ на функцию $\varphi\in (D_s(\Omega))^n$ скалярно в $(L_2(\Omega))^n$, получим
+Аналогично определим $p:[0,T]\rightarrow L_2(\Omega)$ по формуле $$[p(t)](x)=p(t,x), t\in[0,T],
+x\in\Omega$$ и функцию $f:[0,T]\rightarrow L_2(\Omega)$ по формуле $$[f(t)](x)=f(t,x), t\in[0,T], x\in\Omega.$$
+Умножая равенство (\ref{eq:5.1}) при фиксированных значениях $t\in [0,T]$ на функцию $\varphi (x)\in C_0^{\infty}(\Omega)$ скалярно в $L_2(\Omega)$, получим
 $$\int\limits_\Omega \frac{\partial v}{\partial t}\ \varphi dx+\sum_{i=1}^n\int\limits_\Omega v_i\frac{\partial v}{\partial x_i}\ \varphi dx-$$
-$$-\nu \sum_{i,j=1}^n\int\limits_\Omega\frac{\partial^2 v_j}{\partial x^{2}_i} \varphi dx+\sum_{i=1}^n\int\limits_\Omega \frac{\partial p}{\partial x_i}\ \varphi_idx=\int\limits_\Omega f\varphi dx$$
+$$-\nu \sum_{i,j=1}^n\int\limits_\Omega\frac{\partial^2 v_j}{\partial x^{2}_i} \varphi_i dx+\sum_{i=1}^n\int\limits_\Omega \frac{\partial p}{\partial x_i}\ \varphi_idx=\int\limits_\Omega f\varphi dx.$$
 Выполним преобразования слагаемых, связанные с интегрированием по частям,
-$$-\int\limits_\Omega \sum_{i=1}^{n}\frac{\partial^2 v_j}{\partial x^{2}_i}\varphi dx=-\sum_{i=1}^{n}\frac{\partial v_j}{\partial x_i}\varphi \bigg|_\Omega
-=\int\limits_\Omega\sum_{i=1}^{n}\frac{\partial v}{\partial x_i}\frac{\partial \varphi}{\partial x_i}=\int\limits_\Omega v dx .$$
+$$-\nu\int\limits_\Omega \sum_{i=1}^{n}\frac{\partial^2 v_j}{\partial x^{2}_i}\varphi_j dx=\nu\int\limits_\Omega\sum_{i,j=1}^{n}\frac{\partial v_j}{\partial x_i}\frac{\partial \varphi_j}{\partial x_i}=\nu\int\limits_\Omega \nabla v:\nabla\varphi dx;$$
 $$\sum_{i=1}^{n}\int\limits_\Omega \frac{\partial p}{\partial x_i}\varphi_i dx
-=\sum_{i=1}^{n}p\varphi \bigg|_{\Omega}-\sum_{i=1}^{n}\int\limits_\Omega p_i\frac{\partial \varphi_i}{\partial x_i}dx=0$$
-$$\sum_{i=1}^{n}\int\limits_\Omega v_i\varphi dx-\sum_{i=1}^{n}\int\limits_\Omega v_i v dx
-=v_i v \varphi \bigg|_{\Omega}-\sum_{i=1}^{n}\int\limits_\Omega v_i v \frac{\partial \varphi}{\partial x_i}dx$$
+=-\sum_{i=1}^{n}\int\limits_\Omega p\frac{\partial \varphi_i}{\partial x_i}dx= \int\limits_\Omega p div\varphi dx=0;$$
+
+$$\sum_{i=1}^{n}\int\limits_\Omega v_i\frac{\partial v_i}{\partial x_i}\varphi dx=-\sum_{i=1}^{n}\int\limits_\Omega  v\frac{\partial}{\partial x_i}(v_i\varphi)dx=-\sum_{i=1}^{n}\int\limits_\Omega v\frac{\partial v_i}{\partial x_i}\varphi dx-\sum_{i=1}^{n}\int\limits_\Omega vv_i\frac{\partial\varphi}{\partial x_i} dx=$$
+$$=-\int\limits_\Omega v\varphi div v dx-\sum_{i=1}^{n}\int\limits_\Omega v_i v\frac{\partial\varphi}{\partial x_i}dx=-\sum_{i=1}^{n}\int\limits_\Omega v_i v\frac{\partial\varphi}{\partial x_i}dx$$
 приходим к равенству
 \begin{equation}\label{eq:5.5}
     \begin{gathered}
         \frac{d}{dt}\int\limits_\Omega v \varphi dx-\sum_{i=1}^{n}\int\limits_\Omega v_i v
         \frac{\partial \varphi }{\partial x_i}dx + v\int\limits_\Omega \nabla v :\nabla\varphi dx
-        =\int\limits_\Omega f(t)\varphi dx
+        =\int\limits_\Omega f\varphi dx,
     \end{gathered}
 \end{equation}
+Здесь символ ":" обозначает покомпонентное матричное произведение, т. е. для $я C=(c_{ij}), D=(d_{ij}), i,j=1,...,m,$ имеем $C:D=\sum_{i,j=1}^{m} c_{i,j}d_{i,j}$
 Заметим, что то же равенство (\ref{eq:5.5}) верно для любой функции $\varphi\in V$, так как каждая часть этого равенства линейно и непрерывно зависит от
-$\varphi$ в $(H^{1}_{0}(\Omega))^n$. Кроме того, равенство может выполняться и при более слабых требованиях на функцию $v(t,x)$.
+$\varphi$ в $W^{1}_{2}(\Omega)$. Кроме того, равенство может выполняться и при более слабых требованиях на функцию $v(t,x)$.
 Покажем, что достаточно предполагать, что $v\in L_2(0,T;V)$ для того, чтобы каждый интеграл, входящий в равенство (\ref{eq:5.5}), имеет смысл.
 
-В силу теоремы вложений Соболева вложение $(W^{1}_{0}(\Omega))^n\subset L_4(\Omega))^n$ непрерывно при $n\leqslant4$.
-Поэтому, так как $V\subset W^{1}_{0}(\Omega))^n$, то $v_i(t,x)v(t,x)\in L_2(\Omega))^n$ и $v_i(t,x)v(t,x)\partial_i\varphi \in L_1(\Omega)$
-при каждом фиксированном значении $t$. Следовательно, интеграл $\int\limits_\Omega v_i(t,x)v(t,x)\cdot\partial_i\varphi dx$ определен.
+В силу теоремы вложений Соболева вложение $W^{1}_{2}(\Omega)\subset L_4(\Omega)$ непрерывно при $n\leqslant4$.
+Поэтому, так как $V\subset W^{1}_{2}(\Omega)$, то $v_i(t,x)v(t,x)\in L_2(\Omega)$ и $v_i(t,x)v(t,x)\partial_i\varphi \in L_1(\Omega)$
+при каждом фиксированном значении $t$. Следовательно, интеграл $\sum_{i=1}^{n}\int\limits_\Omega v_iv\cdot\frac{\partial\varphi}{\partial x_i}dx$ определен.
 
 Кроме того, это слагаемое определяет линейный непрерывный функционал на $V$. Обозначим этот функционал через $K(v)$:
-$$ \langle (K,v),\varphi \rangle =\sum_{i=1}^{n}\int\limits_\Omega v_i v \frac{\partial \varphi}{\partial x_i}dx$$
+$$ \langle K(v),\varphi \rangle =\sum_{i=1}^{n}\int\limits_\Omega v_i v \frac{\partial \varphi}{\partial x_i}dx.$$
 Отметим, что $\int\limits_\Omega v \varphi dx\in L_2(0,T)$ и производная в выражении \linebreak
 $\frac{d}{dt}\int\limits_\Omega v \varphi dx$
 понимается в смысле распределений на интервале $(0,T)$. Поэтому равенство (\ref{eq:5.5}) выполняется в смысле распределений.
@@ -93,61 +113,63 @@ $\frac{d}{dt}\int\limits_\Omega v \varphi dx$
 
 Подводя итог рассуждениям, приходим к следующему определению слабого решения.
 \begin{definition}
-    Пусть $F\in (L_2(Q_T))^n$ и $v_0\in H$. Слабым (вариационным) решением задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется функция $F\in (L_2(0,T;V))$ такая,что равенство
+    Пусть $f\in L_2(Q_T)$ и $v_0\in H$. Слабым решением задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется функция $v\in L_2(0,T;V)$ такая,что равенство
     \begin{equation}\label{eq:5.6}
         \begin{gathered}
             \frac{d}{dt}\int\limits_\Omega v \varphi dx-\sum_{i=1}^{n}\int\limits_\Omega v_i v
-            \frac{\partial \varphi }{\partial x_i}dx + v\int\limits_\Omega v \varphi dx=
+            \frac{\partial \varphi }{\partial x_i}dx + v\int\limits_\Omega \nabla v :\nabla\varphi dx=
             \int\limits_\Omega f \varphi dx
         \end{gathered}
     \end{equation}
-    выполняется для почти всех значений $t \in (0, T)$ и
+    выполняется для почти всех значений $t \in (0, T)$ и выполнено для этой функции $v$ начальное условие
     \begin{equation}\label{eq:5.7}
         \begin{gathered}
-            v(0) = v_0
+            v(0) = v_0.
         \end{gathered}
     \end{equation}
 \end{definition}
 
 Выше показано, что равенство (\ref{eq:5.6}) корректно для $v \in L_2(0, T; V)$ и если $(v, p)$  сильное решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}),
 то $v$ является слабым решением. Поэтому задачу о поиске сильных решений заменим задачей об исследовании слабых решений.
-Заметим, однако, что для функции $v \in L_2(0, T; V)$ условие (\ref{eq:5.7}) не имеет смысла, так как не определено значение функции $v(t)$ в точке
-$t \in (0, T)$. Покажем далее, что функция $v(t)$, удовлетворяющая равенству (\ref{eq:5.6}), является непрерывной на $[0, T]$ со значениями в $V^\ast$ и слабо
+
+Заметим, однако, что для функции $v \in L_2(0, T; V)$ условие (\ref{eq:5.7}) не имеет смысла, так как не определено значение функции $v(t)$ в каждой точке
+$t \in (0, T)$. Покажем, что функция $v(t)$, удовлетворяющая равенству (\ref{eq:5.6}), является непрерывной на $[0, T]$ со значениями в $V^\ast$ и слабо
 непрерывной со значениями в $H$. Поэтому равенство (\ref{eq:5.7}) имеет смысл и определение слабого решения корректно.
 
-Преобразуем равенство (\ref{eq:5.6}). Скалярное произведение $(v(t), \varphi)_{(L_2(\Omega))^n}$ определяет линейный непрерывный функционал на $H$, а следовательно,
+Преобразуем равенство (\ref{eq:5.6}). Скалярное произведение $(v(t), \varphi)_{L_2(\Omega)}$ определяет линейный непрерывный функционал на $H$, а следовательно,
 элемент из $H^\ast$. Учитывая отождествление $H \equiv H^\ast$ и цепочку вложений $V \subset H \subset H^\ast \subset V^\ast$,
 элемент $v(t)$ можно рассматривать как функционал на $V$, действие которого на функцию $\varphi \in V$ определяется равенством 
-$\langle v(t), \varphi \rangle = (v(t), u)_{(L_2(\Omega))^n}$.Тогда можно считать, что функция $v(t)$ на $[0, T]$ принимает значения в $V^\ast$ и
+$\langle v(t), \varphi \rangle = (v(t), \varphi)_{L_2(\Omega)}$.Тогда можно считать, что функция $v(t)$ на $[0, T]$ принимает значения в $V^\ast$ и
 $$\frac{d}{dt}\int\limits_\Omega v \varphi dx=\frac{d}{dt}\langle v(t), \ \varphi \rangle$$
 
 С учетом введенных обозначений равенство (\ref{eq:5.6}) можно записать в виде
-$$\frac{d}{dt} \langle v(t), \ \varphi \rangle - \langle v\int\limits_\Omega(v(t) \varphi)dx \rangle -
-\langle (K,v(t)), \ \varphi \rangle = \langle \int\limits_\Omega(f(t) \varphi)dx \rangle $$
-где $\Delta: V \rightarrow V^\ast$, или в виде
+$$\frac{d}{dt} \langle v(t), \ \varphi \rangle - \nu\langle  \Delta v(t) \varphi \rangle -
+\langle K(v(t)), \ \varphi \rangle = \langle f(t), \varphi \rangle $$
+где $\Delta: V \rightarrow V^\ast$, обозначает оператор Лапласа, действующий по правилу $\langle \Delta v(t), \ \varphi \rangle=-\int\limits_\Omega \nabla v :\nabla\varphi dx.$
+Или можно (\ref{eq:5.6}) переписать в виде:
 \begin{equation}\label{eq:5.8}
     \begin{gathered}
-        \frac{d}{dt} \langle v(t), \ \varphi \rangle = \langle \Delta v(t)+K(v(t))+f(t), \ \varphi \rangle
+        \frac{d}{dt} \langle v(t), \ \varphi \rangle = \langle \nu\Delta v(t)+K(v(t))+f(t), \ \varphi \rangle.
     \end{gathered}
 \end{equation}
 
-Исследуем свойства выражений, входящих в правую часть равенства.
+Исследуем свойства операторов, входящих в правую часть равенства.
 \begin{lemma} ~\\
     \begin{enumerate} 
-        \item В случае произвольного n отображение \linebreak $\Delta: L_2(0, T; V) \rightarrow L_2(0, T; V^\ast)$ линейно и непрерывно, причем
+        \item Оператор \linebreak $\Delta: L_2(0, T; V) \rightarrow L_2(0, T; V^\ast)$ линейный и непрерывный, причем
         \begin{equation}\label{eq:5.9}
             \begin{gathered}
-                \parallel \Delta u \parallel_{L_2(0, T; V^\ast)} = \parallel \Delta u \parallel_{L_2(0, T; V)}, \ \forall u \in L_2(0, T; V^\ast)
+                \parallel \Delta v \parallel_{L_2(0, T; V^\ast)} = \parallel v \parallel_{L_2(0, T; V)}, \ \forall v \in L_2(0, T; V^\ast).
             \end{gathered}
         \end{equation}
-        \item Пусть $n \le 4$. Тогда отображение $K: L_2(0, T; V) \rightarrow L_1(0, T; V^\ast)$ непрерывно и справедлива оценка
+        \item Оператор $K: L_2(0, T; V) \rightarrow L_1(0, T; V^\ast)$ непрерывнен и справедлива оценка
         \begin{equation}\label{eq:5.10}
             \begin{gathered}
-                \parallel \Delta u \parallel_{L_2(0, T; V^\ast)} = \parallel \Delta u \parallel_{L_2(0, T; V)}\, \ \forall u \in L_2(0, T; V^\ast)
+                \parallel K(v) \parallel_{L_1(0, T; V^\ast)} \leqslant C_1\parallel v \parallel^2_{L_2(0,T;V)}, \ \forall v \in L_2(0, T; V^\ast),
             \end{gathered}
         \end{equation}
     \end{enumerate}
-    для некоторой константы $C_0$.
+    для некоторой константы $C_1$.
 \end{lemma}
 
 \begin{proof} ~\\
