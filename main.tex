@@ -1,6 +1,7 @@
 \section{Эволюционная система уравнений \\Навье-Стокса}
 \subsection {Понятие слабого решения}
-Пусть $\Omega$"= ограниченная область в пространстве $R^n$, где $n=2,3$, с достаточно гладкой границей $\partial\Omega$. Рассмотрим начально"=краевую задачу для системы уравнений Навье"=Стокса
+Пусть $\Omega$ --- ограниченная область в пространстве $R^n$, где $n=2, \ 3$, с достаточно гладкой границей $\partial\Omega$.
+Рассмотрим начально"=краевую задачу для системы уравнений Навье"=Стокса
 
 \begin{equation}\label{eq:5.1}
     \begin{gathered}
@@ -22,70 +23,77 @@
 
 \begin{equation}\label{eq:5.4}
     \begin{gathered}
-        v|_{(0,T)\times\partial\Omega}=0.
+        v|_{(0, \ T)\times\partial\Omega}=0.
     \end{gathered}
 \end{equation}
 
-Здесь $v=(v_1(t,x),...,v_n(t,x))$"= вектор-функция скорости движения частицы жидкости, $p=p(t,x)$"= функция давления,
-$f=f(t,x)$"=  вектор-функция плотности внешних сил, $\nu>0$"= коэффициент вязкости. $\Delta v=(\Delta v_1,...,\Delta v_n)$, $\Delta v_i= \frac{\partial^2 v_i}{\partial x_1^2}+...+\frac{\partial^2 v_i}{\partial x_n^2}$,
-$\operatorname{div} v= \frac{\partial v}{\partial x_1}+...+\frac{\partial v}{\partial x_n}$, $\nabla p=\frac{\partial p}{\partial x_1}+...+\frac{\partial p}{\partial x_n}.$
+Здесь $v=(v_1(t, \ x),...,v_n(t, \ x))$ - вектор"=функция скорости движения частицы жидкости, $p=p(t, \ x)$ - функция давления,
+$f=f(t, \ x)$ - вектор"=функция плотности внешних сил, $\nu>0$ - коэффициент вязкости.
+$\Delta v=(\Delta v_1,...,\Delta v_n)$, \ $\Delta v_i= \frac{\partial^2 v_i}{\partial x_1^2}+...+\frac{\partial^2 v_i}{\partial x_n^2}$,
+$\operatorname{div} v= \frac{\partial v}{\partial x_1}+...+\frac{\partial v}{\partial x_n}$,
+$\nabla p=\frac{\partial p}{\partial x_1}+...+\frac{\partial p}{\partial x_n}$.
 Сформулируем определение сильного решения рассматриваемой задачи (\ref{eq:5.1})-(\ref{eq:5.4}).
 Для этого введем необходимые функциональные пространства:
 
-$L_p(\Omega)$- где $1\leqslant p\leqslant\infty$, множество измеримых функций, суммируемых с $p$-ой степенью, 
+$L_p(\Omega)$ - где $1\leqslant p\leqslant\infty$, множество измеримых функций, суммируемых с $p$-ой степенью,
 
-$W_p^m(\Omega)$- где $m\geqslant 1, p\geqslant 1$, пространство Соболева, функции, которые со своими производными до порядка $m$ включительно принадлежат пространству $L_p(\Omega)$,
+$W_p^m(\Omega)$ - где $m\geqslant 1, \ p\geqslant 1$, пространство Соболева,
+функции, которые со своими производными до порядка $m$ включительно принадлежат пространству $L_p(\Omega)$,
 
-$C_0^{\infty}(\Omega)$- бесконечно дифференцируемых функций на $\Omega$ со значениями $R^n(n=2,3)$ и компактным носителем $\Omega$, 
+$C_0^{\infty}(\Omega)$ - бесконечно дифференцируемых функций на $\Omega$ со значениями $R^n(n=2, \ 3)$ и компактным носителем $\Omega$,
 
-$\nu$ - множество ${u\in C_0^{\infty}(\Omega), div u=0}$
+$\nu$ - множество ${u\in C_0^{\infty}(\Omega), div \ u=0}$
 
 $H$-....,
 
 $V$-...,
 
-$L_p(a,b;X)$- мы обозначим банаховы пространства непрерывных, слабо непрерывных и суммируемых с $p$-ой степенью функций на $[a, b]$ со значениями в
+$L_p(a, \ b;X)$ - мы обозначим банаховы пространства непрерывных, слабо непрерывных и суммируемых с $p$-ой степенью функций на $[a, \ b]$ со значениями в
 банаховом пространстве $X$,
 
 $X^*$-...,
 
-$<f,\varphi>$- обозначим действие функционала $f$ из $V^{-\alpha}$ на элемент $\varphi$ из $V^{\alpha}$,$\alpha\geqslant 0$
+$<f,\varphi>$ - обозначим действие функционала $f$ из $V^{-\alpha}$ на элемент $\varphi$ из $V^{\alpha}$, $\alpha\geqslant 0$
 
- Пусть $f$ и $v_0$"=заданные функции,
-где $f\in L_2(0,T;L_2(\Omega))$ и $v_0\in V$.
+Пусть $f$ и $v_0$"=заданные функции,
+где $f\in L_2(0, \ T; \ L_2(\Omega))$ и $v_0\in V$.
 
 \begin{definition}
-    Сильным решением начально-краевой задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется пара функций $v\in L_2(0,T;L_2(\Omega))$ и
-    $p\in L_2(0,T;L_2(\Omega))$, удовлетворяющие следующим условиям:
+    Сильным решением начально"=краевой задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется пара функций $v\in L_2(0, \ T; \ L_2(\Omega))$ и
+    $p\in L_2(0, \ T; \ L_2(\Omega))$, удовлетворяющие следующим условиям:
 \end{definition}
 
 \begin{enumerate} 
-    \item обобщенные частные производные функции, содержащиеся в равенствах (\ref{eq:5.1})-(\ref{eq:5.2}), принадлежат пространству $L_2(0,T;L_2(\Omega))$;
-    \item при подстановке функций уравнения (\ref{eq:5.1})-(\ref{eq:5.2}) обращаются в равенства в пространстве $L_2(0,T;L_2(\Omega))$;
+    \item обобщенные частные производные функции, содержащиеся в равенствах (\ref{eq:5.1})-(\ref{eq:5.2}), принадлежат пространству $L_2(0, \ T; \ L_2(\Omega))$;
+    \item при подстановке функций уравнения (\ref{eq:5.1})-(\ref{eq:5.2}) обращаются в равенства в пространстве $L_2(0, \ T; \ L_2(\Omega))$;
     \item функция $v$ удовлетворяет начальному условию (\ref{eq:5.3}) и граничному условию (\ref{eq:5.4}).
 \end{enumerate}
 
-Введем понятие слабого решения. Для этого пусть $v$ и $p$"=сильное решение задач (\ref{eq:5.1})-(\ref{eq:5.4}).
+Введем понятие слабого решения. Для этого пусть $v$ и $p$-сильное решение задач (\ref{eq:5.1})-(\ref{eq:5.4}).
 Умножим равенство (\ref{eq:5.1}) на пробную функцию $\varphi (x)\in V$ скалярно в $L_2(\Omega)$
 
-Пусть $(v,p)$-сильное решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}).
-Чтобы обеспечить понимание определения слабого решения, мы временно предположим, что $v=v(t,x), p=p(t,x)$ являются, фактически, гладкими решениями задачи.
-Сопоставим функции $v$ отображение $v:[0,T]\rightarrow W^1_2(\Omega)$, определенное по формуле $$[v(t)](x)=v(t,x), t\in[0,T], x\in\Omega.$$
+Пусть $(v, \ p)$-сильное решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}).
+Чтобы обеспечить понимание определения слабого решения, мы временно предположим, что $v=v(t, \ x), p=p(t, \ x)$ являются, фактически, гладкими решениями задачи.
+Сопоставим функции $v$ отображение $v:[0, \ T]\rightarrow W^1_2(\Omega)$, определенное по формуле $$[v(t)](x)=v(t, \ x), t\in[0, \ T], x\in\Omega.$$
 Другими словами, $v$ рассматривается не как функции переменных $t$ и $x$, а как функция переменной $t$, определенная на отрезке
-$[0,T]$ и принимающая значения в функциональном пространстве $W^1_2(\Omega)$.
+$[0, \ T]$ и принимающая значения в функциональном пространстве $W^1_2(\Omega)$.
 
-Аналогично определим $p:[0,T]\rightarrow L_2(\Omega)$ по формуле $$[p(t)](x)=p(t,x), t\in[0,T],
-x\in\Omega$$ и функцию $f:[0,T]\rightarrow L_2(\Omega)$ по формуле $$[f(t)](x)=f(t,x), t\in[0,T], x\in\Omega.$$
-Умножая равенство (\ref{eq:5.1}) при фиксированных значениях $t\in [0,T]$ на функцию $\varphi (x)\in C_0^{\infty}(\Omega)$ скалярно в $L_2(\Omega)$, получим
+Аналогично определим $p:[0, \ T]\rightarrow L_2(\Omega)$ по формуле $$[p(t)](x)=p(t, \ x), t\in[0, \ T], x\in\Omega$$
+и функцию $f:[0, \ T]\rightarrow L_2(\Omega)$ по формуле $$[f(t)](x)=f(t, \ x), t\in[0, \ T], x\in\Omega.$$
+Умножая равенство (\ref{eq:5.1}) при фиксированных значениях $t\in [0, \ T]$ на функцию $\varphi (x)\in C_0^{\infty}(\Omega)$ скалярно в $L_2(\Omega)$, получим
 $$\int\limits_\Omega \frac{\partial v}{\partial t}\ \varphi dx+\sum_{i=1}^n\int\limits_\Omega v_i\frac{\partial v}{\partial x_i}\ \varphi dx-$$
-$$-\nu \sum_{i,j=1}^n\int\limits_\Omega\frac{\partial^2 v_j}{\partial x^{2}_i} \varphi_i dx+\sum_{i=1}^n\int\limits_\Omega \frac{\partial p}{\partial x_i}\ \varphi_idx=\int\limits_\Omega f\varphi dx.$$
+$$-\nu \sum_{i, / j=1}^n\int\limits_\Omega\frac{\partial^2 v_j}{\partial x^{2}_i} \varphi_j dx+
+\sum_{i=1}^n\int\limits_\Omega \frac{\partial p}{\partial x_i}\ \varphi_idx=\int\limits_\Omega f\varphi dx.$$
 Выполним преобразования слагаемых, связанные с интегрированием по частям,
-$$-\nu\int\limits_\Omega \sum_{i=1}^{n}\frac{\partial^2 v_j}{\partial x^{2}_i}\varphi_j dx=\nu\int\limits_\Omega\sum_{i,j=1}^{n}\frac{\partial v_j}{\partial x_i}\frac{\partial \varphi_j}{\partial x_i}=\nu\int\limits_\Omega \nabla v:\nabla\varphi dx;$$
+$$-\nu\int\limits_\Omega \sum_{i=1}^{n}\frac{\partial^2 v_j}{\partial x^{2}_i}\varphi_j dx=
+\nu\int\limits_\Omega\sum_{i, / j=1}^{n}\frac{\partial v_j}{\partial x_i}\frac{\partial \varphi_j}{\partial x_i}=\nu\int\limits_\Omega \nabla v:\nabla\varphi dx;$$
 $$\sum_{i=1}^{n}\int\limits_\Omega \frac{\partial p}{\partial x_i}\varphi_i dx
 =-\sum_{i=1}^{n}\int\limits_\Omega p\frac{\partial \varphi_i}{\partial x_i}dx= \int\limits_\Omega p div\varphi dx=0;$$
 
-$$\sum_{i=1}^{n}\int\limits_\Omega v_i\frac{\partial v_i}{\partial x_i}\varphi dx=-\sum_{i=1}^{n}\int\limits_\Omega  v\frac{\partial}{\partial x_i}(v_i\varphi)dx=-\sum_{i=1}^{n}\int\limits_\Omega v\frac{\partial v_i}{\partial x_i}\varphi dx-\sum_{i=1}^{n}\int\limits_\Omega vv_i\frac{\partial\varphi}{\partial x_i} dx=$$
-$$=-\int\limits_\Omega v\varphi div v dx-\sum_{i=1}^{n}\int\limits_\Omega v_i v\frac{\partial\varphi}{\partial x_i}dx=-\sum_{i=1}^{n}\int\limits_\Omega v_i v\frac{\partial\varphi}{\partial x_i}dx$$
+$$\sum_{i=1}^{n}\int\limits_\Omega v_i\frac{\partial v}{\partial x_i}\varphi dx=-\sum_{i=1}^{n}\int\limits_\Omega v\frac{\partial}{\partial x_i}(v_i\varphi)dx=
+-\sum_{i=1}^{n}\int\limits_\Omega v\frac{\partial v_i}{\partial x_i}\varphi dx-\sum_{i=1}^{n}\int\limits_\Omega vv_i\frac{\partial\varphi}{\partial x_i} dx=$$
+$$=-\int\limits_\Omega v\varphi div v dx-\sum_{i=1}^{n}\int\limits_\Omega v_i v\frac{\partial\varphi}{\partial x_i}dx=
+-\sum_{i=1}^{n}\int\limits_\Omega v_i v\frac{\partial\varphi}{\partial x_i}dx$$
 приходим к равенству
 \begin{equation}\label{eq:5.5}
     \begin{gathered}
@@ -94,26 +102,26 @@ $$=-\int\limits_\Omega v\varphi div v dx-\sum_{i=1}^{n}\int\limits_\Omega v_i v\
         =\int\limits_\Omega f\varphi dx,
     \end{gathered}
 \end{equation}
-Здесь символ ":" обозначает покомпонентное матричное произведение, т. е. для $я C=(c_{ij}), D=(d_{ij}), i,j=1,...,m,$ имеем $C:D=\sum_{i,j=1}^{m} c_{i,j}d_{i,j}$
-Заметим, что то же равенство (\ref{eq:5.5}) верно для любой функции $\varphi\in V$, так как каждая часть этого равенства линейно и непрерывно зависит от
-$\varphi$ в $W^{1}_{2}(\Omega)$. Кроме того, равенство может выполняться и при более слабых требованиях на функцию $v(t,x)$.
-Покажем, что достаточно предполагать, что $v\in L_2(0,T;V)$ для того, чтобы каждый интеграл, входящий в равенство (\ref{eq:5.5}), имеет смысл.
+Здесь символ <<:>> обозначает покомпонентное матричное произведение, т. е. для $я C=(c_{ij}), D=(d_{ij}), i, / j=1,...,m,$ имеем $C:D=\sum_{i, / j=1}^{m} c_{i, / j}d_{i, / j}$
+Заметим, что тоже равенство (\ref{eq:5.5}) верно для любой функции $\varphi\in V$, так как каждая часть этого равенства линейно и непрерывно зависит от
+$\varphi$ в $W^{1}_{2}(\Omega)$. Кроме того, равенство может выполняться и при более слабых требованиях на функцию $v(t, \ x)$.
+Покажем, что достаточно предполагать, что $v\in L_2(0, \ T;V)$ для того, чтобы каждый интеграл, входящий в равенство (\ref{eq:5.5}), имеет смысл.
 
-В силу теоремы вложений Соболева вложение $W^{1}_{2}(\Omega)\subset L_4(\Omega)$ непрерывно при $n\leqslant4$.
-Поэтому, так как $V\subset W^{1}_{2}(\Omega)$, то $v_i(t,x)v(t,x)\in L_2(\Omega)$ и $v_i(t,x)v(t,x)\partial_i\varphi \in L_1(\Omega)$
+В силу теоремы вложений Соболева\footnote{Тут будет теорема вложений Соболева :)} вложение $W^{1}_{2}(\Omega)\subset L_4(\Omega)$ непрерывно при $n \leqslant 4$.
+Поэтому, так как $V\subset W^{1}_{2}(\Omega)$, то $v_i(t, \ x)v(t, \ x)\in L_2(\Omega)$ и $v_i(t, \ x)v(t, \ x)\partial_i\varphi \in L_1(\Omega)$
 при каждом фиксированном значении $t$. Следовательно, интеграл $\sum_{i=1}^{n}\int\limits_\Omega v_iv\cdot\frac{\partial\varphi}{\partial x_i}dx$ определен.
 
 Кроме того, это слагаемое определяет линейный непрерывный функционал на $V$. Обозначим этот функционал через $K(v)$:
-$$ \langle K(v),\varphi \rangle =\sum_{i=1}^{n}\int\limits_\Omega v_i v \frac{\partial \varphi}{\partial x_i}dx.$$
-Отметим, что $\int\limits_\Omega v \varphi dx\in L_2(0,T)$ и производная в выражении \linebreak
+$$\langle K(v), \ \varphi \rangle = \sum_{i=1}^{n}\int\limits_\Omega v_i v \frac{\partial \varphi}{\partial x_i}dx.$$
+Отметим, что $\int\limits_\Omega v \varphi dx\in L_2(0, \ T)$ и производная в выражении \linebreak
 $\frac{d}{dt}\int\limits_\Omega v \varphi dx$
-понимается в смысле распределений на интервале $(0,T)$. Поэтому равенство (\ref{eq:5.5}) выполняется в смысле распределений.
-Все слагаемые равенства, исключая первое, принадлежат пространству $L_1(0,T)$, поэтому $\frac{d}{dt}\int\limits_\Omega v \varphi dx\in L_1(0,T)$
-и равенство (\ref{eq:5.5}) выполняется для почти всех значений $t\in (0,T)$.
+понимается в смысле распределений на интервале $(0, \ T)$. Поэтому равенство (\ref{eq:5.5}) выполняется в смысле распределений.
+Все слагаемые равенства, исключая первое, принадлежат пространству $L_1(0, \ T)$, поэтому $\frac{d}{dt}\int\limits_\Omega v \varphi dx\in L_1(0, \ T)$
+и равенство (\ref{eq:5.5}) выполняется для почти всех значений $t\in (0, \ T)$.
 
 Подводя итог рассуждениям, приходим к следующему определению слабого решения.
 \begin{definition}
-    Пусть $f\in L_2(Q_T)$ и $v_0\in H$. Слабым решением задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется функция $v\in L_2(0,T;V)$ такая,что равенство
+    Пусть $f\in L_2(Q_T)$ и $v_0\in H$. Слабым решением задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется функция $v\in L_2(0, \ T;V)$ такая, что равенство
     \begin{equation}\label{eq:5.6}
         \begin{gathered}
             \frac{d}{dt}\int\limits_\Omega v \varphi dx-\sum_{i=1}^{n}\int\limits_\Omega v_i v
@@ -121,7 +129,7 @@ $\frac{d}{dt}\int\limits_\Omega v \varphi dx$
             \int\limits_\Omega f \varphi dx
         \end{gathered}
     \end{equation}
-    выполняется для почти всех значений $t \in (0, T)$ и выполнено для этой функции $v$ начальное условие
+    выполняется для почти всех значений $t \in (0, \ T)$ и выполнено для этой функции $v$ начальное условие
     \begin{equation}\label{eq:5.7}
         \begin{gathered}
             v(0) = v_0.
@@ -129,23 +137,24 @@ $\frac{d}{dt}\int\limits_\Omega v \varphi dx$
     \end{equation}
 \end{definition}
 
-Выше показано, что равенство (\ref{eq:5.6}) корректно для $v \in L_2(0, T; V)$ и если $(v, p)$  сильное решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}),
+Выше показано, что равенство (\ref{eq:5.6}) корректно для $v \in L_2(0, \ T; \ V)$ и если $(v, \ p)$ сильное решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}),
 то $v$ является слабым решением. Поэтому задачу о поиске сильных решений заменим задачей об исследовании слабых решений.
 
-Заметим, однако, что для функции $v \in L_2(0, T; V)$ условие (\ref{eq:5.7}) не имеет смысла, так как не определено значение функции $v(t)$ в каждой точке
-$t \in (0, T)$. Покажем, что функция $v(t)$, удовлетворяющая равенству (\ref{eq:5.6}), является непрерывной на $[0, T]$ со значениями в $V^\ast$ и слабо
+Заметим, однако, что для функции $v \in L_2(0, \ T; \ V)$ условие (\ref{eq:5.7}) не имеет смысла, так как не определено значение функции $v(t)$ в каждой точке
+$t \in (0, \ T)$. Покажем, что функция $v(t)$, удовлетворяющая равенству (\ref{eq:5.6}), является непрерывной на $[0, \ T]$ со значениями в $V^\ast$ и слабо
 непрерывной со значениями в $H$. Поэтому равенство (\ref{eq:5.7}) имеет смысл и определение слабого решения корректно.
 
-Преобразуем равенство (\ref{eq:5.6}). Скалярное произведение $(v(t), \varphi)_{L_2(\Omega)}$ определяет линейный непрерывный функционал на $H$, а следовательно,
+Преобразуем равенство (\ref{eq:5.6}). Скалярное произведение $(v(t), \ \varphi)_{L_2(\Omega)}$ определяет линейный непрерывный функционал на $H$, а следовательно,
 элемент из $H^\ast$. Учитывая отождествление $H \equiv H^\ast$ и цепочку вложений $V \subset H \subset H^\ast \subset V^\ast$,
 элемент $v(t)$ можно рассматривать как функционал на $V$, действие которого на функцию $\varphi \in V$ определяется равенством 
-$\langle v(t), \varphi \rangle = (v(t), \varphi)_{L_2(\Omega)}$.Тогда можно считать, что функция $v(t)$ на $[0, T]$ принимает значения в $V^\ast$ и
+$\langle v(t), \ \varphi \rangle = (v(t), \ \varphi)_{L_2(\Omega)}$.Тогда можно считать, что функция $v(t)$ на $[0, \ T]$ принимает значения в $V^\ast$ и
 $$\frac{d}{dt}\int\limits_\Omega v \varphi dx=\frac{d}{dt}\langle v(t), \ \varphi \rangle$$
 
 С учетом введенных обозначений равенство (\ref{eq:5.6}) можно записать в виде
-$$\frac{d}{dt} \langle v(t), \ \varphi \rangle - \nu\langle  \Delta v(t) \varphi \rangle -
-\langle K(v(t)), \ \varphi \rangle = \langle f(t), \varphi \rangle $$
-где $\Delta: V \rightarrow V^\ast$, обозначает оператор Лапласа, действующий по правилу $\langle \Delta v(t), \ \varphi \rangle=-\int\limits_\Omega \nabla v :\nabla\varphi dx.$
+$$\frac{d}{dt} \langle v(t), \ \varphi \rangle - \nu\langle \Delta v(t) \varphi \rangle -
+\langle K(v(t)), \ \varphi \rangle = \langle f(t), \ \varphi \rangle $$
+где $\Delta: V \rightarrow V^\ast$, обозначает оператор Лапласа, действующий по правилу
+$\langle \Delta v(t), \ \varphi \rangle=-\int\limits_\Omega \nabla v:\nabla\varphi dx.$
 Или можно (\ref{eq:5.6}) переписать в виде:
 \begin{equation}\label{eq:5.8}
     \begin{gathered}
@@ -155,17 +164,17 @@ $$\frac{d}{dt} \langle v(t), \ \varphi \rangle - \nu\langle  \Delta v(t) \varphi
 
 Исследуем свойства операторов, входящих в правую часть равенства.
 \begin{lemma} ~\\
-    \begin{enumerate} 
-        \item Оператор \linebreak $\Delta: L_2(0, T; V) \rightarrow L_2(0, T; V^\ast)$ линейный и непрерывный, причем
+    \begin{enumerate}
+        \item Оператор \linebreak $\Delta: L_2(0, \ T; \ V) \rightarrow L_2(0, \ T; \ V^\ast)$ линейный и непрерывный, причем
         \begin{equation}\label{eq:5.9}
             \begin{gathered}
-                \parallel \Delta v \parallel_{L_2(0, T; V^\ast)} = \parallel v \parallel_{L_2(0, T; V)}, \ \forall v \in L_2(0, T; V^\ast).
+                \parallel \Delta v \parallel_{L_2(0, \ T; \ V^\ast)} = \parallel v \parallel_{L_2(0, \ T; \ V)}, \ \forall v \in L_2(0, \ T; \ V^\ast).
             \end{gathered}
         \end{equation}
-        \item Оператор $K: L_2(0, T; V) \rightarrow L_1(0, T; V^\ast)$ непрерывнен и справедлива оценка
+        \item Оператор $K: L_2(0, \ T; \ V) \rightarrow L_1(0, \ T; \ V^\ast)$ непрерывнен и справедлива оценка
         \begin{equation}\label{eq:5.10}
             \begin{gathered}
-                \parallel K(v) \parallel_{L_1(0, T; V^\ast)} \leqslant C_1\parallel v \parallel^2_{L_2(0,T;V)}, \ \forall v \in L_2(0, T; V^\ast),
+                \parallel K(v) \parallel_{L_1(0, \ T; \ V^\ast)} \leqslant C_1\parallel v \parallel^2_{L_2(0, \ T;V)}, \ \forall v \in L_2(0, \ T; \ V^\ast),
             \end{gathered}
         \end{equation}
     \end{enumerate}
@@ -175,67 +184,69 @@ $$\frac{d}{dt} \langle v(t), \ \varphi \rangle - \nu\langle  \Delta v(t) \varphi
 \begin{proof} ~\\
     \begin{enumerate} 
         \item В главе 2 показано, что отображение $\Delta: V \rightarrow V^\ast$ линейно, непрерывно и определяет изометрию пространств.
-        Следовательно, \linebreak $\parallel \Delta u \parallel_{V^\ast} = \parallel u \parallel_V$ для всех $u \in V$.Отсюда для $u \in L_2(0, T; V)$ имеем
-        \linebreak $\parallel \Delta u \parallel_{V^\ast} = \parallel u(t) \parallel_V$ для почти всех $t \in [0, T]$. Так как $\parallel u(t) \parallel_V \in L_2(0, T)$,
-        то $\parallel \Delta u(t)\parallel_V^\ast \in L_2(0, T)$. Следовательно, $\Delta u \in L_2(0, T; V^\ast)$ и справедливо
-        равенство (\ref{eq:5.9}). Таким образом, линейный оператор $\Delta$ определяет изометрию пространств $L_2(0, T; V)$ и $L_2(0, T; V^\ast)$.
+        Следовательно, \linebreak $\parallel \Delta u \parallel_{V^\ast} = \parallel u \parallel_V$ для всех $u \in V$.Отсюда для $u \in L_2(0, \ T; \ V)$ имеем
+        \linebreak $\parallel \Delta u \parallel_{V^\ast} = \parallel u(t) \parallel_V$ для почти всех $t \in [0, \ T]$.
+        Так как $\parallel u(t) \parallel_V \in L_2(0, \ T)$,
+        то $\parallel \Delta u(t)\parallel_V^\ast \in L_2(0, \ T)$. Следовательно, $\Delta u \in L_2(0, \ T; \ V^\ast)$ и справедливо
+        равенство (\ref{eq:5.9}). Таким образом, линейный оператор $\Delta$ определяет изометрию пространств $L_2(0, \ T; \ V)$ и $L_2(0, \ T; V^\ast)$.
         \item По определению оператора $K$
         $$\langle K(t), u \rangle = \int\limits_\Omega u_i(x )u_j(x) \cdot \partial_i u_j(x) dx$$
-        для $u, v \in V$. Повторяя рассуждения доказательства леммы 3.1 или используя оценки (3.10), получим
-        $$\parallel K(v(t)) \parallel_{V^\ast} \le c_0 \parallel v(t) \parallel^2_V, \ \forall v \in V, \ t \in [0, T],$$
+        для $u, \ v \in V$. Повторяя рассуждения доказательства леммы 3.1 или используя оценки (3.10), получим
+        $$\parallel K(v(t)) \parallel_{V^\ast} \le c_0 \parallel v(t) \parallel^2_V, \ \forall v \in V, \ t \in [0, \ T],$$
         с некоторой константой $c_0$.
-        Отсюда для $v \in L_2(0, T; V)$ имеем $K(v) \in L_1(0, T; V^\ast)$ и
-        $$\parallel K(v)\parallel_{L_1(0,T;V^*)}\le\int_0^T\parallel K(v(t))\parallel_{V^*}dt\le c_0\int_0^T\parallel v(t)\parallel_V^2dt=$$
-        $$=c_0\parallel v(t)\parallel_{L_2(0,T;V)}^2$$
-        Повторяя рассуждения доказательства леммы 3.1, получим, что для $v, u \in L_2(0, T; V)$ справедлива оценка
-        $$\int_0^T \parallel K(v)-K(u)\parallel_{V^*}dt\le\int_0^T (\sum_{i,j=1}^n\int\limits_\Omega (v_iv_j-u_iu_j)^2dx)^\frac{1}{2}\le$$
-        $$\le\int_0^T(\sum_{i,j=1}^n\int\limits_\Omega (v_i(v_j-u_j)+(v_i-u_i)u_j)dx)^\frac{1}{2}\le$$
-        $$\le\sqrt{2}\sum_{i,j=1}^n\int_0^T(\int\limits_\Omega v_i^2(v_j-u_j)^2dx)^\frac{1}{2}+(\int\limits_\Omega(v_i-u_i)^2u_j^2dx)^\frac{1}{2}dt\le$$
-        $$\le\sqrt{2}\sum_{i,j=1}^n\int_0^T(\parallel v_i(t)\parallel_{L_4(\Omega)}\parallel v_j(t)-u_j(t)\parallel_{L_4(\Omega)}+$$
-        $$+\parallel v_i(t)- u_i(t)\parallel_{L_4(\Omega)}\parallel u_j(t)\parallel_{L_4(\Omega)})dt\le$$
-        $$\le C_2(\parallel v \parallel_{L_2(0,T;L_4(\Omega))}+\parallel u \parallel_{L_2(0,T;L_4(\Omega))})\parallel v-u\parallel_{L_2(0,T;L_4(\Omega))}$$
-        Кроме того, вложение $V \subset (L_4(\Omega))^n$, а следовательно, и вложение $L_2(0, T; V) \subset L_2(0, T; (L_4(\subset))^n)$
+        Отсюда для $v \in L_2(0, \ T; \ V)$ имеем $K(v) \in L_1(0, \ T; \ V^\ast)$ и
+        $$\parallel K(v)\parallel_{L_1(0, \ T; \ V^*)}\le\int_0^T\parallel K(v(t))\parallel_{V^*}dt\le c_0\int_0^T\parallel v(t)\parallel_V^2dt=$$
+        $$=c_0\parallel v(t)\parallel_{L_2(0, \ T; \ V)}^2$$
+        Повторяя рассуждения доказательства леммы 3.1, получим, что для $v, \ u \in L_2(0, \ T; \ V)$ справедлива оценка
+        $$\int_0^T \parallel K(v)-K(u)\parallel_{V^*}dt\le\int_0^T (\sum_{i, \ j=1}^n\int\limits_\Omega (v_iv_j-u_iu_j)^2dx)^\frac{1}{2}\le$$
+        $$\le\int_0^T(\sum_{i, / j=1}^n\int\limits_\Omega (v_i(v_j-u_j)+(v_i-u_i)u_j)dx)^\frac{1}{2}\le$$
+        $$\le\sqrt{2}\sum_{i, / j=1}^n\int_0^T(\int\limits_\Omega v_i^2(v_j-u_j)^2dx)^\frac{1}{2}+(\int\limits_\Omega(v_i-u_i)^2u_j^2dx)^\frac{1}{2}dt\le$$
+        $$\le\sqrt{2}\sum_{i, / j=1}^n\int_0^T(\parallel v_i(t)\parallel_{L_4(\Omega)}\parallel v_j(t)-u_j(t)\parallel_{L_4(\Omega)}+$$
+        $$+\parallel v_i(t)-u_i(t)\parallel_{L_4(\Omega)}\parallel u_j(t)\parallel_{L_4(\Omega)})dt\le$$
+        $$\le C_2(\parallel v \parallel_{L_2(0, \ T; \ L_4(\Omega))}+
+        \parallel u \parallel_{L_2(0, \ T; \ L_4(\Omega))})\parallel v-u\parallel_{L_2(0, \ T; \ L_4(\Omega))}$$
+        Кроме того, вложение $V \subset (L_4(\Omega))^n$, а следовательно, и вложение $L_2(0, \ T; \ V) \subset L_2(0, \ T; \ (L_4(\subset))^n)$
         непрерывны. Поэтому достаточно доказать непрерывность отображений
-        $$\phi_{ij}: L_2(0, T; (L_4(\Omega))^n) \rightarrow L_1(0, T; L_2(\Omega)), \varphi_{ij}(v) = v_i v_j$$
-        для $i, j = 1, \ 2, \ \dots, \ n$.
-        Для любых $u, \ v \in L_2(0, T; (L_4(\Omega))^n)$ с помощью неравенства Шварца получаем оценку
-        $$\parallel\phi_{ij}(u)-\phi_{ij}(v)\parallel_{L_1(0,T;L_2(\Omega))}=\int_0^T(\int\limits_\Omega(v_iv_j-u_iu_j)^2dx)^\frac{1}{2}\le$$
+        $$\phi_{ij}: L_2(0, \ T; \ (L_4(\Omega))^n) \rightarrow L_1(0, \ T; \ L_2(\Omega)), \varphi_{ij}(v) = v_i v_j$$
+        для $i, / j = 1, \ 2, \ \dots, \ n$.
+        Для любых $u, \ v \in L_2(0, \ T; \ (L_4(\Omega))^n)$ с помощью неравенства Шварца получаем оценку
+        $$\parallel\phi_{ij}(u)-\phi_{ij}(v)\parallel_{L_1(0, \ T; \ L_2(\Omega))}=\int_0^T(\int\limits_\Omega(v_iv_j-u_iu_j)^2dx)^\frac{1}{2}\le$$
         $$\le\int_0^T(\int\limits_\Omega v_i^2(v_j-u_j)^2dx)^\frac{1}{2}+(\int\limits_\Omega (v_i-u_i)^2u_j^2dx)^\frac{1}{2}dt\le$$
         $$\int_0^T(\parallel v_i(t)\parallel_{L_4(\Omega)}\parallel v_j(t)-u_j(t)\parallel_{L_4(\Omega)}+$$
         $$+\parallel v_i(t)-u_i(t)\parallel_{L_4(\Omega)}\parallel u_j(t)\parallel_{L_4(\Omega)})dt\le$$
-        $$\le\parallel v_i\parallel_{L_2(0,T;L_4(\Omega))}\parallel v_j-u_j\parallel_{L_2(0,T;L_4(\Omega))}+$$
-        $$+\parallel v_i-u_i\parallel_{L_2(0,T;L_4(\Omega))}\parallel u_j\parallel_{L_2(0,T;L_4(\Omega))}$$
+        $$\le\parallel v_i\parallel_{L_2(0, \ T; \ L_4(\Omega))}\parallel v_j-u_j\parallel_{L_2(0, \ T; \ L_4(\Omega))}+$$
+        $$+\parallel v_i-u_i\parallel_{L_2(0, \ T; \ L_4(\Omega))}\parallel u_j\parallel_{L_2(0, \ T; \ L_4(\Omega))}$$
         Отсюда, если
-        $\parallel v - u \parallel L_2(0, T; (L_4(\Omega))^n) \rightarrow 0$,
-        то $\parallel \phi_{ij}(u) - \phi_{ij}(v) \parallel L_1(0, T; L_2(\Omega)) \rightarrow 0$.
+        $\parallel v - u \parallel L_2(0, \ T; \ (L_4(\Omega))^n) \rightarrow 0$,
+        то $\parallel \phi_{ij}(u) - \phi_{ij}(v) \parallel L_1(0, \ T; \ L_2(\Omega)) \rightarrow 0$.
         Поэтому каждое из отображений $\phi_{ij}$, а следовательно, и отображение $K$ непрерывны.
     \end{enumerate}
 \end{proof}
 
-По утверждению леммы $\Delta v \in L_2(0, T; V^\ast), K(v) \in L_1(0, T; VV^\ast)$, поэтому $\Delta v(t) + K(v(t)) + f(t) \in L_1(0, T; VV^\ast)$.
+По утверждению леммы $\Delta v \in L_2(0, \ T; \ V^\ast), K(v) \in L_1(0, \ T; \ VV^\ast)$, поэтому $\Delta v(t) + K(v(t)) + f(t) \in L_1(0, \ T; \ VV^\ast)$.
 Тогда из равенства (\ref{eq:5.8}) и теоремы 4.6 следует
 \begin{enumerate}
     \item что функция $v(t)$ имеет суммируемую производную $v_\prime(t)$;
     \item в силу равенства (4.3)
-    $$\frac{d}{dt} \langle v(t),u \rangle = \langle v'(t),u \rangle $$
+    $$\frac{d}{dt} \langle v(t), \ u \rangle = \langle v'(t), \ u \rangle $$
     \item равенство (5.8) можно записать в виде
     $$v^\prime(t)=\Delta v(t)+K(v(t))+f(t)$$
 \end{enumerate}
 
-Подводя итог рассуждений, отметим, что так как $v^\prime(t) \in L_1(0, T; V^\ast)$, то $v \in W_{2,1} c X_0 = V, \ X_1 = V^\ast$. Поэтому в силу леммы 4.5 функция
-$v(t)$ непрерывна на отрезке $[0, T]$ со значениями в $V^\ast$. Кроме того, по лемме 4.6 эта функция слабо непрерывна со значениями в $H$. Поэтому
+Подводя итог рассуждений, отметим, что так как $v^\prime(t) \in L_1(0, \ T; \ V^\ast)$, то $v \in W_{2, \ 1} c X_0 = V, \ X_1 = V^\ast$. Поэтому в силу леммы 4.5 функция
+$v(t)$ непрерывна на отрезке $[0, \ T]$ со значениями в $V^\ast$. Кроме того, по лемме 4.6 эта функция слабо непрерывна со значениями в $H$. Поэтому
 начальное условие (\ref{eq:5.7}) имеет смысл.
 
 Переформулируем понятие слабого решения
 \begin{definition}
-    Пусть $n \le 4, \ f \in L_2(0, T; (L_2(\Omega))^n)$ и $v^0 \in H$. Слабым (вариационным) решением задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется функция
-    $v \in L_2(0, T; V)$ такая, что $v^0 \in L_1(0, T; V^\ast)$, равенство
+    Пусть $n \le 4, \ f \in L_2(0, \ T; \ (L_2(\Omega))^n)$ и $v^0 \in H$. Слабым (вариационным) решением задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется функция
+    $v \in L_2(0, \ T; \ V)$ такая, что $v^0 \in L_1(0, \ T; \ V^\ast)$, равенство
     \begin{equation}\label{eq:5.11}
         \begin{gathered}
             v^\prime(t) - \Delta v(t) - K(v(t)) = f(t)
         \end{gathered}
     \end{equation}
-    выполняется для почти всех значений $t \in (0, T)$ и
+    выполняется для почти всех значений $t \in (0, \ T)$ и
     \begin{equation}\label{eq:5.12}
         \begin{gathered}
             v(0) = v^0
@@ -246,18 +257,18 @@ $v(t)$ непрерывна на отрезке $[0, T]$ со значениям
 
 \subsection {О единственности слабого и полного слабого решений в случае $n = 2$}
 В этом разделе мы рассмотрим вопрос о единственности слабого и полного слабого решений краевой задачи (\ref{eq:5.1})-(\ref{eq:5.4}) для эволюционной
-системы уравнений Навье-Стокса. Будем показано, что в случае $\Omega \subset R^2$ слабое и полное слабое решение краевой задачи единственно.
+системы уравнений Навье"=Стокса. Будем показано, что в случае $\Omega \subset R^2$ слабое и полное слабое решение краевой задачи единственно.
 Однако для размерности $n > 2$ аналогичное утверждение неверно. Примером, показывающим, что слабое решение задачи неединственно, служит результат
 о бифуркации решений, содержащийся, например, в [22, гл.II, \S 4,п.4.4].
 
 Сформулируем и докажем утверждение о единственности слабого решения в случае $n = 2$, следуя [22, гл.III, \S 3, теорема 3.2].
 
 \begin{theorem}
-    Пусть $\Omega$ ограниченная область в $R^2$ с локально липшицевой границей. Тогда слабое решение $v$ и полное слабое решение $(v, p)$
-    (при условии $(p) \Omega = 0$) задачи (\ref{eq:5.1})-(\ref{eq:5.4}) единственно. Кроме того, функция v непрерывна на отрезке $[0, T]$ со значениями в $H$ и
+    Пусть $\Omega$ ограниченная область в $R^2$ с локально липшицевой границей. Тогда слабое решение $v$ и полное слабое решение $(v, \ p)$
+    (при условии $(p) \Omega = 0$) задачи (\ref{eq:5.1})-(\ref{eq:5.4}) единственно. Кроме того, функция $v$ непрерывна на отрезке $[0, \ T]$ со значениями в $H$ и
     \begin{equation}\label{eq:5.35}
         \begin{gathered}
-            v(t) \rightarrow v_0 \  \textrm{в} \ H \ \textrm{при} \ t \rightarrow \infty.
+            v(t) \rightarrow v_0 \ \textrm{в} \ H \ \textrm{при} \ t \rightarrow \infty.
         \end{gathered}
     \end{equation}
 \end{theorem}
@@ -265,18 +276,21 @@ $v(t)$ непрерывна на отрезке $[0, T]$ со значениям
     Достаточно установить единственность слабого решения $v$, так как компонента $p$ полного слабого решения определяется компонентой $v$
     из равенства (5.34) единственным образом.
 
-    Пусть v -- решение задачи (5.31), (5.32). Покажем, что $v \in W$, т.е. $v^\prime \in L_2(0, T; V^\ast)$.
+    Пусть v -- решение задачи (5.31), (5.32). Покажем, что $v \in W$, т.е. $v^\prime \in L_2(0, \ T; \ V^\ast)$.
     Воспользуемся оценкой
     $$\parallel K_\varepsilon (v) \parallel_{(H^{-1}(\Omega))^n} \le c_0 \parallel v \parallel^2_{(L_4(\Omega))^n},$$
-    полученной при выводе неравенства (3.10), в случае $n = 2$ и $\varepsilon = 0$. Применяя неравенство О.А.Ладыженской (1.7), получим для любого $t \in [0, T]$
-    $$\sup\limits_{v\in V}\langle K(v),\frac{u}{\parallel v\parallel}\rangle\le c_02^{1/2}(\int\limits_\Omega v(t)^2dt)^{1/2}\cdot\int\limits_\Omega\sum_{i=1}^{n=3}\frac{\partial v^2}{\partial x_i}dt$$
-    Отсюда, возводя обе части неравенства в квадрат и интегрируя по $t$ на отрезке $[0, T]$, приходим к оценке
-    $$\int_0^T \sup(\langle K(v),\frac{u}{\parallel v\parallel}\rangle)^2dt \le 2c_0\int_0^T(\int\limits_\Omega v(t)^2)\cdot\int\limits_\Omega\sum_{i=1}^{n=3}\frac{\partial v^2}{\partial x_i}dt\le$$
-    $$\le 2c_0 \max\limits_{t\in[0,T]}\int\limits_\Omega v(t)^2dt\cdot\int_0^T\int\limits_\Omega\sum_{i=1}^{n=3}\frac{\partial v^2}{\partial x_i}dt$$
+    полученной при выводе неравенства (3.10), в случае $n = 2$ и $\varepsilon = 0$. Применяя неравенство О.А. Ладыженской (1.7), получим для любого $t \in [0, \ T]$
+    $$\sup\limits_{v\in V}\langle K(v), \ \frac{u}{\parallel v\parallel}
+    \rangle\le c_02^{1/2}(\int\limits_\Omega v(t)^2dt)^{1/2}\cdot\int\limits_\Omega\sum_{i=1}^{n=3}\frac{\partial v^2}{\partial x_i}dt$$
+    Отсюда, возводя обе части неравенства в квадрат и интегрируя по $t$ на отрезке $[0, \ T]$, приходим к оценке
+    $$\int_0^T \sup(\langle K(v), \ \frac{u}{\parallel v\parallel}\rangle)^2dt \le 2c_0\int_0^T(\int\limits_\Omega v(t)^2)
+    \cdot\int\limits_\Omega\sum_{i=1}^{n=3}\frac{\partial v^2}{\partial x_i}dt\le$$
+    $$\le 2c_0 \max\limits_{t\in[0, \ T]}\int\limits_\Omega v(t)^2dt\cdot\int_0^T\int\limits_\Omega\sum_{i=1}^{n=3}\frac{\partial v^2}{\partial x_i}dt$$
     Следовательно,
-    $$(\int_0^T \sup(\langle K(v),\frac{u}{\parallel v\parallel}\rangle)^2dt)^{1/2}\le c_0 2^{1/2}\max\limits_{t\in[0,T]}\int\limits_\Omega v(t)^2dt\cdot\int_0^T v(t)^2dt$$
-    Из представления $v^\prime = \Delta v(t) + K(v(t)) + f(t)$ очевидно, что $v^\prime \in L_2(0, T; V^\ast)$ и $v \in W$.
-    Воспользовавшись вложением $W \subset C([0, T], H)$, получаем $v \in C([0, T], H)$ и заключение (\ref{eq:5.35}) теоремы.
+    $$(\int_0^T \sup(\langle K(v), \ \frac{u}{\parallel v\parallel}\rangle)^2dt)^{1/2}\le c_0 2^{1/2}\max\limits_{t\in[0, \ T]}
+    \int\limits_\Omega v(t)^2dt\cdot\int_0^T v(t)^2dt$$
+    Из представления $v^\prime = \Delta v(t) + K(v(t)) + f(t)$ очевидно, что $v^\prime \in L_2(0, \ T; \ V^\ast)$ и $v \in W$.
+    Воспользовавшись вложением $W \subset C([0, \ T], \ H)$, получаем $v \in C([0, \ T], \ H)$ и заключение (\ref{eq:5.35}) теоремы.
 
     Покажем теперь единственность слабого решения. Предположим, что $u$ и $v$ -- слабые решения задачи (5.31), (5.32).
     Подставим эти решения в уравнение (5.31) и рассмотрим разность полученных равенств. Для разности $w = v - u$ получим равенство
@@ -284,46 +298,58 @@ $v(t)$ непрерывна на отрезке $[0, T]$ со значениям
     Применим функционалы, стоящие в равенстве, к функции $w(t)$
     \begin{equation}\label{eq:5.36}
         \begin{gathered}
-            \frac{1}{2}\frac{d}{dt}\int\limits_\Omega w(t,x)w(t,x)dt+v(w(t,x),w(t,x))= \\
-            =\int\limits_\Omega\frac{\partial v_i}{\partial t}\cdot v(t,x)\frac{\partial w(t,x)}{\partial x_i}dx-\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t,x)\cdot\frac{\partial w(t,x)}{\partial x_i}dx
+            \frac{1}{2}\frac{d}{dt}\int\limits_\Omega w(t, \ x)w(t, \ x)dt+v(w(t, \ x),w(t, \ x))= \\
+            =\int\limits_\Omega\frac{\partial v_i}{\partial t}\cdot v(t, \ x)\frac{\partial w(t, \ x)}{\partial x_i}dx-\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t, \ x)\cdot\frac{\partial w(t, \ x)}{\partial x_i}dx
         \end{gathered}
     \end{equation}
     Оценим правую часть полученного равенства.
-    $$\int\limits_\Omega\frac{\partial v_i}{\partial t}v(t,x)\frac{\partial w(t,x)}{\partial x_i}dx-\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t,x)\frac{\partial w(t,x)}{\partial x_i}dx=$$
-    $$=\int\limits_\Omega\frac{\partial v_i}{\partial t}v(t,x)\frac{\partial w(t,x)}{\partial x_i}dx-\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t,x)\frac{\partial w(t,x)}{\partial x_i}dx+$$
-    $$+\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t,x)\frac{\partial w(t,x)}{\partial x_i}dx-\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t,x)\frac{\partial w(t,x)}{\partial x_i}dx=$$
-    $$=\int\limits_\Omega\frac{\partial w_i(t,x)}{\partial t}\cdot v(t,x)\frac{\partial w(t,x)}{\partial x_i}-\int\limits_\Omega\frac{\partial u_i}{\partial t}w(t,x)\cdot\frac{\partial w_i(t,x)}{\partial x_i}dx$$
+    $$\int\limits_\Omega\frac{\partial v_i}{\partial t}v(t, \ x)\frac{\partial w(t, \ x)}
+    {\partial x_i}dx-\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t, \ x)\frac{\partial w(t, \ x)}{\partial x_i}dx=$$
+    $$=\int\limits_\Omega\frac{\partial v_i}{\partial t}v(t, \ x)\frac{\partial w(t, \ x)}
+    {\partial x_i}dx-\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t, \ x)\frac{\partial w(t, \ x)}{\partial x_i}dx+$$
+    $$+\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t, \ x)\frac{\partial w(t, \ x)}
+    {\partial x_i}dx-\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t, \ x)\frac{\partial w(t, \ x)}{\partial x_i}dx=$$
+    $$=\int\limits_\Omega\frac{\partial w_i(t, \ x)}{\partial t}\cdot v(t, \ x)\frac{\partial w(t, \ x)}
+    {\partial x_i}-\int\limits_\Omega\frac{\partial u_i}{\partial t}w(t, \ x)\cdot\frac{\partial w_i(t, \ x)}{\partial x_i}dx$$
     Используем интегрирование по частям для вычисления первого интеграла
-    $$\int\limits_\Omega\frac{\partial w_i(t,x)}{\partial t}v(t,x)\cdot w(t,x)=-\int\limits_\Omega\frac{\partial w_i(t,x)}{\partial t}\cdot\frac{\partial v(t,x)}{\partial x_i}w(t,x)dx$$
-    так как $\partial_iw_i(t,x) = \textrm{div } w(t,x)=0$. Используем интегрирование по частям для вычисления второго из интегралов
-    $$\int\limits_\Omega\frac{\partial u_i}{\partial t}w(t,x)\frac{\partial w(t,x)}{\partial x_i}dx=\sum_{i=0}^{n=2}\int\limits_\Omega\frac{\partial u_i}{\partial t}\cdot\frac{1}{2}\cdot\frac{\partial \mid w\mid^2(t,x)}{\partial x_i}dx=$$
-    $$= -\frac{1}{2}\int\limits_\Omega\sum_{i=1}^{n=2}\frac{\partial^2 u_i(t,x)}{\partial t\partial x_i}\cdot\mid w\mid^2(t,x)dx=0$$
-    так как $\sum\limits_{i=1}^{2}\partial_iu_i(t,x)= \textrm{div } u(t,x)=0$
+    $$\int\limits_\Omega\frac{\partial w_i(t, \ x)}{\partial t}v(t, \ x)\cdot w(t, \ x)=
+    -\int\limits_\Omega\frac{\partial w_i(t, \ x)}{\partial t}\cdot\frac{\partial v(t, \ x)}{\partial x_i}w(t, \ x)dx$$
+    так как $\partial_iw_i(t, \ x) = \textrm{div } w(t, \ x)=0$. Используем интегрирование по частям для вычисления второго из интегралов
+    $$\int\limits_\Omega\frac{\partial u_i}{\partial t}w(t, \ x)\frac{\partial w(t, \ x)}{\partial x_i}dx=
+    \sum_{i=0}^{n=2}\int\limits_\Omega\frac{\partial u_i}{\partial t}\cdot\frac{1}{2}\cdot\frac{\partial \mid w\mid^2(t, \ x)}{\partial x_i}dx=$$
+    $$=-\frac{1}{2}\int\limits_\Omega\sum_{i=1}^{n=2}\frac{\partial^2 u_i(t, \ x)}{\partial t\partial x_i}\cdot\mid w\mid^2(t, \ x)dx=0$$
+    так как $\sum\limits_{i=1}^{2}\partial_iu_i(t, \ x)= \textrm{div } u(t, \ x)=0$
     Отсюда и из равенства (\ref{eq:5.36}) получим
-    $$\frac{1}{2}\frac{d}{dt}\int\limits_\Omega w(t,x)w(t,x)dx+v(w(t,x)w(t,x))=$$
-    $$= -\int\limits_\Omega\frac{\partial w_i(t,x)}{\partial t}\cdot\frac{\partial v(t,x)}{\partial x_i}w(t,x)dx$$
+    $$\frac{1}{2}\frac{d}{dt}\int\limits_\Omega w(t, \ x)w(t, \ x)dx+v(w(t, \ x)w(t, \ x))=$$
+    $$=-\int\limits_\Omega\frac{\partial w_i(t, \ x)}{\partial t}\cdot\frac{\partial v(t, \ x)}{\partial x_i}w(t, \ x)dx$$
     или
     \begin{equation}\label{eq:5.37}
         \begin{gathered}
-            \frac{1}{2}\frac{d}{dt}\parallel w(t)\parallel_H^2+v\parallel w(t)\parallel_H^2=\bigg|\int\limits_\Omega w_i(t,x)\cdot\partial_iv(t,x)w(t,x)dx\bigg|
+            \frac{1}{2}\frac{d}{dt}\parallel w(t)\parallel_H^2+v\parallel w(t)\parallel_H^2=
+            \bigg|\int\limits_\Omega w_i(t, \ x)\cdot\partial_iv(t, \ x)w(t, \ x)dx\bigg|
         \end{gathered}
     \end{equation}
     Оценим правую часть неравенства, используя неравенства Шварца,
-    $$\bigg|\int\limits_\Omega w_i(t,x)\cdot\partial_iv(t,x)w(t,x)dx\bigg|=\bigg|\int\limits_\Omega w_i(t,x)\cdot\partial_j(t,x)w_j(t,x)dx\bigg|\le$$
-    $$\left(\int\limits_\Omega \mid w_i(t,x)\mid^2|w_j(t,x)\mid^2dx \right)^{1/2}\cdot\left(\int\limits_\Omega\mid\partial_iv_j(t,x) \mid^2dx \right)^{1/2}\le$$
-    $$\left(\int\limits_\Omega \mid w_i(t,x)\mid^4dx\right)^{1/4}\left( \int\limits_\Omega \mid w_j(t,x)\mid^4dx\right)^{1/4}\cdot\left(\int\limits_\Omega\mid\partial_iv_j(t,x) \mid^2dx \right)^{1/2}$$
+    $$\bigg|\int\limits_\Omega w_i(t, \ x)\cdot\partial_iv(t, \ x)w(t, \ x)dx\bigg|=
+    \bigg|\int\limits_\Omega w_i(t, \ x)\cdot\partial_j(t, \ x)w_j(t, \ x)dx\bigg|\le$$
+    $$\left(\int\limits_\Omega \mid w_i(t, \ x)\mid^2|w_j(t, \ x)\mid^2dx \right)^{1/2}
+    \cdot\left(\int\limits_\Omega\mid\partial_iv_j(t, \ x) \mid^2dx \right)^{1/2}\le$$
+    $$\left(\int\limits_\Omega \mid w_i(t, \ x)\mid^4dx\right)^{1/4}\left(\int\limits_\Omega \mid w_j(t, \ x)\mid^4dx\right)^{1/4}
+    \cdot\left(\int\limits_\Omega\mid\partial_iv_j(t, \ x) \mid^2dx \right)^{1/2}$$
     или
-    $$\bigg|\int\limits_\Omega w_i(t,x)\cdot\partial_iv(t,x)w(t,x)dx\bigg|\le$$
+    $$\bigg|\int\limits_\Omega w_i(t, \ x)\cdot\partial_iv(t, \ x)w(t, \ x)dx\bigg|\le$$
     $$\le\parallel w_i(t)\parallel_{L_4(\Omega)}\cdot\parallel w_j(t)\parallel_{L_4(\Omega)}\cdot\parallel\partial_iv_j(t)\parallel_{L_2(\Omega)}$$
     Учитывая, что запись, содержащая повторяющиеся индексы, предполагает суммирование по этим индексам, получаем
-    $$\bigg|\int\limits_\Omega w_i(t,x)\cdot\partial_iv(t,x)w(t,x)dx\bigg|\le\parallel w(t)\parallel_{(L_4(\Omega))^n}^2\cdot\parallel v(t)\parallel_V$$
+    $$\bigg|\int\limits_\Omega w_i(t, \ x)\cdot\partial_iv(t, \ x)w(t, \ x)dx\bigg|\le\parallel w(t)\parallel_{(L_4(\Omega))^n}^2\cdot\parallel v(t)\parallel_V$$
     Применим неравенство О.А.Ладыженской и далее неравенство Коши \linebreak
     $a\cdot b=\varepsilon a^2+\frac{b^2}{4\varepsilon}c\varepsilon=\frac{v}{2^{1/2}}$, получим
-    $$\bigg|\int\limits_\Omega w_i(t,x)\cdot\partial_iv(t,x)w(t,x)dx\bigg|\le 2^{1/2}\parallel w(t)\parallel_{(L_2(\Omega))^n}\cdot\parallel w(t)\parallel_V\cdot\parallel v(t)\parallel_V\le$$
+    $$\bigg|\int\limits_\Omega w_i(t, \ x)\cdot\partial_iv(t, \ x)w(t, \ x)dx\bigg|\le 2^{1/2}
+    \parallel w(t)\parallel_{(L_2(\Omega))^n}\cdot\parallel w(t)\parallel_V\cdot\parallel v(t)\parallel_V\le$$
     $$\le v\parallel w(t)\parallel_V^2+\frac{1}{2^{3/2}v}\parallel v(t)\parallel_{(L_2(\Omega))^n}^2\cdot\parallel w(t)\parallel_V$$
     Подставляя полученное соотношение в неравенство (\ref{eq:5.37}), получаем
     $$\frac{1}{2}\frac{d}{dt}\parallel w(t)\parallel_H^2\le\frac{1}{2^{3/2}v}\parallel w(t)\parallel_H^2\cdot\parallel v(t)\parallel_V$$
     Тогда из неравенство Гронуолла"=Беллмана [1, теорема 2б глава IV, с.188] следует
     $$\parallel w(t)\parallel_H^2\le\parallel w(0)\parallel_H^2\exp\left(\int_0^t\frac{1}{2^{1/2}v}\cdot\parallel v(s)\parallel_Vds\right)$$
-    Поскольку $w(0) = v(0)- u(0) = 0$, то из полученного выше неравенства приходим к выводу, что $w(t)=0$ для всех $t\in[0,T]$. Следовательно, $v=u$ и слабое и полное слабое решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}) единственно.
+    Поскольку $w(0) = v(0)- u(0) = 0$, то из полученного выше неравенства приходим к выводу,
+    что $w(t)=0$ для всех $t\in[0, \ T]$. Следовательно, $v=u$ и слабое и полное слабое решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}) единственно.
 \end{proof}
