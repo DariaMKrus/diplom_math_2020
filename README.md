@@ -1,2 +1,3 @@
-# kurs4_math
-Coursework at the Faculty of Mathematics 4 courses
+# diplom_math_2020
+
+Thesis work of applied mathematics 2020.
