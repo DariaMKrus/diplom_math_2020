@@ -90,8 +90,8 @@ $$-\nu\int\limits_\Omega \sum_{i=1}^{n}\frac{\partial^2 v_j}{\partial x^{2}_i}\v
 $$\sum_{i=1}^{n}\int\limits_\Omega \frac{\partial p}{\partial x_i}\varphi_i dx
 =-\sum_{i=1}^{n}\int\limits_\Omega p\frac{\partial \varphi_i}{\partial x_i}dx= \int\limits_\Omega p div\varphi dx=0;$$
 
-$$\sum_{i=1}^{n}\int\limits_\Omega v_i\frac{\partial v}{\partial x_i}\varphi dx=-\sum_{i=1}^{n}\int\limits_\Omega v\frac{\partial}{\partial x_i}(v_i\varphi)dx=
--\sum_{i=1}^{n}\int\limits_\Omega v\frac{\partial v_i}{\partial x_i}\varphi dx-\sum_{i=1}^{n}\int\limits_\Omega vv_i\frac{\partial\varphi}{\partial x_i} dx=$$
+$$\sum_{i=1}^{n}\int\limits_\Omega v_i\frac{\partial v}{\partial x_i}\varphi dx=-\sum_{i=1}^{n}\int\limits_\Omega v\frac{\partial}{\partial x_i}(v_i\varphi)dx=$$
+$$=-\sum_{i=1}^{n}\int\limits_\Omega v\frac{\partial v_i}{\partial x_i}\varphi dx-\sum_{i=1}^{n}\int\limits_\Omega vv_i\frac{\partial\varphi}{\partial x_i} dx=$$
 $$=-\int\limits_\Omega v\varphi div v dx-\sum_{i=1}^{n}\int\limits_\Omega v_i v\frac{\partial\varphi}{\partial x_i}dx=
 -\sum_{i=1}^{n}\int\limits_\Omega v_i v\frac{\partial\varphi}{\partial x_i}dx$$
 приходим к равенству
@@ -343,8 +343,8 @@ $v(t)$ непрерывна на отрезке $[0, \ T]$ со значения
     $$\bigg|\int\limits_\Omega w_i(t, \ x)\cdot\partial_iv(t, \ x)w(t, \ x)dx\bigg|\le\parallel w(t)\parallel_{(L_4(\Omega))^n}^2\cdot\parallel v(t)\parallel_V$$
     Применим неравенство О.А. Ладыженской и далее неравенство Коши \linebreak
     $a\cdot b=\varepsilon a^2+\frac{b^2}{4\varepsilon}c\varepsilon=\frac{v}{2^{1/2}}$, получим
-    $$\bigg|\int\limits_\Omega w_i(t, \ x)\cdot\partial_iv(t, \ x)w(t, \ x)dx\bigg|\le 2^{1/2}
-    \parallel w(t)\parallel_{(L_2(\Omega))^n}\cdot\parallel w(t)\parallel_V\cdot\parallel v(t)\parallel_V\le$$
+    $$\bigg|\int\limits_\Omega w_i(t, \ x)\cdot\partial_iv(t, \ x)w(t, \ x)dx\bigg|\le$$
+    $$\le 2^{1/2}\parallel w(t)\parallel_{(L_2(\Omega))^n}\cdot\parallel w(t)\parallel_V\cdot\parallel v(t)\parallel_V\le$$
     $$\le v\parallel w(t)\parallel_V^2+\frac{1}{2^{3/2}v}\parallel v(t)\parallel_{(L_2(\Omega))^n}^2\cdot\parallel w(t)\parallel_V$$
     Подставляя полученное соотношение в неравенство (\ref{eq:5.37}), получаем
     $$\frac{1}{2}\frac{d}{dt}\parallel w(t)\parallel_H^2\le\frac{1}{2^{3/2}v}\parallel w(t)\parallel_H^2\cdot\parallel v(t)\parallel_V$$
