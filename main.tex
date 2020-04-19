@@ -198,6 +198,27 @@ $\langle \Delta v(t), \ \varphi \rangle=-\int\limits_\Omega \nabla v:\nabla\varp
         $$\parallel K(v)\parallel_{L_1(0, T; V^*)}\le\int_0^T\parallel K(v(t))\parallel_{V^*}dt\le c_0\int_0^T\parallel v(t)\parallel_V^2dt=$$
         $$=c_0\parallel v(t)\parallel_{L_2(0, T; V)}^2$$
         Повторяя рассуждения доказательства леммы 3.1, получим, что для $v, \ u \in L_2(0, T; V)$ справедлива оценка
+        $$\parallel K(v) \parallel_{V^*} \le \left(\int\limits_\Omega \sum_{i, j=1}^n \left(\frac{v_i v_j}{1+|v|^2}\right)^2 dx \right)^{1/2}
+        \le \left(\int\limits_\Omega \sum_{i, j=1}^n (v_i v_j)^2 dx \right)^{1/2} \le$$
+        $$ \le \left(\int\limits_\Omega \sum_{i=1}^n v_i^4(x)dx \right)^{1/4} \left(\int\limits_\Omega \sum_{j=1}^n v_j^4(x)dx \right)^{1/4} =
+        \parallel v \parallel^2_{(L_4(\Omega))^n}.$$
+        По теореме вложения Соболева $V \subset (L_4(\Omega))^n$ непрерывно для $n \le 4$, поэтому
+        $$\parallel v \parallel^2_{L_4(\Omega)^n} \le c \parallel v \parallel^2_V \textrm{ и } \parallel K(v) \parallel_{V^*}
+        \le c^2 \parallel v \parallel^2_V$$ для некоторой константы $c$.
+        Из определения отображения $К(v)$ ясно, что для докозательства непрерывности $K(v)$ достаточно доказать непрерывность отображения
+        $$\phi_{ij}: (L_4(\Omega))^n \rightarrow L_2(\Omega), \ \phi_{ij}(v) = \frac{v_i v_j}{1+|v|^2}, \ i,j = 1, 2, \dots n.$$
+        Непрерывность каждого из этих отображений следует из теоремы М.А. Красносельского о непрерывности оператора суперпозиции и очевидной оценки
+        $$|\phi_{ij}| \le |v_i v_j| \le \frac{1}{2}(|v_i|^2+|v_j|^2) \textrm{ для } v \in R^n.$$
+        Таким образом, непрерывность отображения $K(v)$ установлена.
+        \item Заметим, что для функции $\phi_{ij}$ удовлетворяют оценке
+        % $$|\phi_{ij}| \le frac{1}$$
+        Тогда из теоремы М.А. Красносельского о непрерывности оператора суперпозиции следует непрерывность отображения
+        $$\phi_{ij}: (L_2(\Omega))^n \rightarrow L_2(\Omega), \ \phi_{ij}(v) = \frac{v_i v_j}{1+|v|^2}, \ i,j = 1, 2, \dots n$$
+        а следовательно, и отображения $K(v): (L_2(\Omega))^n \rightarrow V^*$
+
+        Вложение $V\subset (L_2(\Omega))^n$ вполне непрерывно в силу теоремы Релиха"=Кондрашова, поэтому отображение $K(v):V\rightarrow V^*$
+        вполне непрерывно как суперпозиция вполне непрерывного оператора вложения $V\subset (L_2(\Omega))$ и непрерывного отображения
+        $K(v):(L_2(\Omega))^n\rightarrow V^*$
         $$\int_0^T \parallel K(v)-K(u)\parallel_{V^*}dt\le\int_0^T (\sum_{i, j=1}^n\int\limits_\Omega (v_iv_j-u_iu_j)^2dx)^\frac{1}{2}\le$$
         $$\le\int_0^T(\sum_{i, / j=1}^n\int\limits_\Omega (v_i(v_j-u_j)+(v_i-u_i)u_j)dx)^\frac{1}{2}\le$$
         $$\le\sqrt{2}\sum_{i, / j=1}^n\int_0^T(\int\limits_\Omega v_i^2(v_j-u_j)^2dx)^\frac{1}{2}+(\int\limits_\Omega(v_i-u_i)^2u_j^2dx)^\frac{1}{2}dt\le$$
