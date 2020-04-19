@@ -165,16 +165,17 @@ $\langle \Delta v(t), \ \varphi \rangle=-\int\limits_\Omega \nabla v:\nabla\varp
 Исследуем свойства операторов, входящих в правую часть равенства.
 \begin{lemma} ~\\
     \begin{enumerate}
-        \item Оператор \linebreak $\Delta: L_2(0, T; V) \rightarrow L_2(0, T; V^\ast)$ линейный и непрерывный, причем
+        \item Оператор $\Delta: L_2(0, T; V) \rightarrow L_2(0, T; V^\ast)$ линейный и\linebreak
+        непрерывный, причем
         \begin{equation}\label{eq:5.9}
             \begin{gathered}
-                \parallel \Delta v \parallel_{L_2(0, T; V^\ast)} = \parallel v \parallel_{L_2(0, T; V)}, \ \forall v \in L_2(0, T; V^\ast).
+                \| \Delta v \|_{L_2(0, T; V^\ast)} = \| v \|_{L_2(0, T; V)}, \ \forall v \in L_2(0, T; V^\ast).
             \end{gathered}
         \end{equation}
         \item Оператор $K: L_2(0, T; V) \rightarrow L_1(0, T; V^\ast)$ непрерывен и справедлива оценка
         \begin{equation}\label{eq:5.10}
             \begin{gathered}
-                \parallel K(v) \parallel_{L_1(0, T; V^\ast)} \leqslant C_1\parallel v \parallel^2_{L_2(0, T;V)}, \ \forall v \in L_2(0, T; V^\ast),
+                \| K(v) \|_{L_1(0, T; V^\ast)} \leqslant C_1\| v \|^2_{L_2(0, T;V)}, \ \forall v \in L_2(0, T; V^\ast),
             \end{gathered}
         \end{equation}
     \end{enumerate}
@@ -184,37 +185,47 @@ $\langle \Delta v(t), \ \varphi \rangle=-\int\limits_\Omega \nabla v:\nabla\varp
 \begin{proof} ~\\
     \begin{enumerate} 
         \item Покажем, что отображение $\Delta: V \rightarrow V^\ast$ линейно, непрерывно и определяет изометрию пространств.
-Рассмотрим прострейшую операторную задачу 
-$$
-\begin{cases}
--\Delta v(x)=f(x), & x\in\Omega,\\
-v|_{\Gamma}=0.
-\end{cases}
-$$
-Пусть $f\in(L_2(\Omega))^n$ заданная функция и $v\in (H_0^2(\Omega))^n$ --- решение модельной задачи. Умножим первое равенство на функцию $u\in (H_0^1(\Omega))^n$ 
-скалярно в $L_2(\Omega))^n$, получим (!) $$(-\Delta v,u)_{L_2(\Omega))^n}=(f,u)_{L_2(\Omega))^n}$$
-Для $v\in (H_0^2(\Omega))^n$ имеем $\Delta v= Div (\nabla v)$ и с помощью формулы стокса выражение $$(-\Delta v,u)_{L_2(\Omega))^n}=(-Div (\nabla v),u)_{L_2(\Omega))^n}$$ преобразуется к виду
-$$(-Div (\nabla v),u)_{L_2(\Omega))^n}=(\nabla v,\nabla u)_{L_2(\Omega)^{n^2}}=((v,u))$$
-Поэтому равенство (!) принимает следующий вид (!!) $$((v,u))=(f,u)_{L_2(\Omega))^n}, \forall v\in (H_0^1(\Omega))$$
-Выражение $(f,u)_{L_2(\Omega))^n}$ определяет линейный неприрывный функционал $\tilde f$ на $(L_2(\Omega))^n$, а следовательно, и на $(H_0^1(\Omega))^n.$
-Действие этого функционала на функцию $u\in (H_0^1(\Omega))^n$ определяется равенством $$\langle\tilde f,u \rangle = (f,u)_{L_2(\Omega))^n}.$$
-Поэтому равенство (!!) можно записать в виде $$((v,u))=\langle\tilde f,u \rangle, \forall v\in (H_0^1(\Omega))^n.$$
+        Рассмотрим прострейшую операторную задачу 
+        $$
+        \begin{cases}
+            -\Delta v(x)=f(x), & x\in\Omega,\\
+            v|_{\Gamma}=0.
+        \end{cases}
+        $$
+        Пусть $f\in(L_2(\Omega))^n$ заданная функция и $v\in (H_0^2(\Omega))^n$ --- решение модельной задачи. Умножим первое равенство на функцию $u\in (H_0^1(\Omega))^n$ 
+        скалярно в $L_2(\Omega))^n$, получим
+        \begin{equation}\label{eq:-Deltavu}
+            \begin{gathered}
+                (-\Delta v,u)_{L_2(\Omega))^n}=(f,u)_{L_2(\Omega))^n}
+            \end{gathered}
+        \end{equation}
+        Для $v\in (H_0^2(\Omega))^n$ имеем $\Delta v= Div (\nabla v)$ и с помощью формулы стокса выражение $$(-\Delta v,u)_{L_2(\Omega))^n}=(-Div (\nabla v),u)_{L_2(\Omega))^n}$$ преобразуется к виду
+        $$(-Div (\nabla v),u)_{L_2(\Omega))^n}=(\nabla v,\nabla u)_{L_2(\Omega)^{n^2}}=((v,u))$$
+        Поэтому равенство (\ref{eq:-Deltavu}) принимает следующий вид
+        \begin{equation}\label{eq:vu=fu}
+            \begin{gathered}
+                ((v,u))=(f,u)_{L_2(\Omega))^n}, \forall v\in (H_0^1(\Omega))
+            \end{gathered}
+        \end{equation}
+        Выражение $(f,u)_{L_2(\Omega))^n}$ определяет линейный неприрывный функционал $\tilde f$ на $(L_2(\Omega))^n$, а следовательно, и на $(H_0^1(\Omega))^n.$
+        Действие этого функционала на функцию $u\in (H_0^1(\Omega))^n$ определяется равенством $$\langle\tilde f,u \rangle = (f,u)_{L_2(\Omega))^n}.$$
+        Поэтому равенство (\ref{eq:vu=fu}) можно записать в виде $$((v,u))=\langle\tilde f,u \rangle, \forall v\in (H_0^1(\Omega))^n.$$
 
-        Следовательно, \linebreak $\parallel \Delta v \parallel_{V^\ast} = \parallel v \parallel_V$ для всех $v \in V$.Отсюда для $v \in L_2(0, \ T; \ V)$ имеем
-        \linebreak $\parallel \Delta v \parallel_{V^\ast} = \parallel v(t) \parallel_V$ для почти всех $t \in [0, \ T]$.
-        Так как $\parallel v(t) \parallel_V \in L_2(0, \ T)$,
-        то $\parallel \Delta v(t)\parallel_{V^*} \in L_2(0, \ T)$. Следовательно, $\Delta v \in L_2(0, \ T; \ V^\ast)$ и справедливо
+        Следовательно, \linebreak $\| \Delta v \|_{V^\ast} = \| v \|_V$ для всех $v \in V$.Отсюда для $v \in L_2(0, \ T; \ V)$ имеем
+        \linebreak $\| \Delta v \|_{V^\ast} = \| v(t) \|_V$ для почти всех $t \in [0, \ T]$.
+        Так как $\| v(t) \|_V \in L_2(0, \ T)$,
+        то $\| \Delta v(t)\|_{V^*} \in L_2(0, \ T)$. Следовательно, $\Delta v \in L_2(0, \ T; \ V^\ast)$ и справедливо
         равенство (\ref{eq:5.9}). Таким образом, линейный оператор $\Delta$ определяет изометрию пространств $L_2(0, \ T; \ V)$ и $L_2(0, \ T; V^\ast)$.
         \item По определению оператора $K$
         $$\langle K(v), \varphi \rangle = \sum_{i,j=1}^{n}\int\limits_\Omega v_iv_j \cdot \frac{\partial \varphi }{\partial x_i}dx$$
         для $v, \varphi \in V$. Повторим рассуждения из леммы 3.1:
-        $$\parallel K(v) \parallel_{V^*} \le \left(\int\limits_\Omega \sum_{i, j=1}^n \left(\frac{v_i v_j}{1+|v|^2}\right)^2 dx \right)^{1/2}
+        $$\| K(v) \|_{V^*} \le \left(\int\limits_\Omega \sum_{i, j=1}^n \left(\frac{v_i v_j}{1+|v|^2}\right)^2 dx \right)^{1/2}
         \le \left(\int\limits_\Omega \sum_{i, j=1}^n (v_i v_j)^2 dx \right)^{1/2} \le$$
         $$ \le \left(\int\limits_\Omega \sum_{i=1}^n v_i^4(x)dx \right)^{1/4} \left(\int\limits_\Omega \sum_{j=1}^n v_j^4(x)dx \right)^{1/4} =
-        \parallel v \parallel^2_{(L_4(\Omega))^n}.$$
+        \| v \|^2_{(L_4(\Omega))^n}.$$
         По теореме вложения Соболева $V \subset (L_4(\Omega))^n$ непрерывно для $n \le 4$, поэтому
-        $$\parallel v \parallel^2_{L_4(\Omega)^n} \le c \parallel v \parallel^2_V \textrm{ и } \parallel K(v) \parallel_{V^*}
-        \le c^2 \parallel v \parallel^2_V$$ для некоторой константы $c$.
+        $$\| v \|^2_{L_4(\Omega)^n} \le c \| v \|^2_V \textrm{ и } \| K(v) \|_{V^*}
+        \le c^2 \| v \|^2_V$$ для некоторой константы $c$.
         Из определения отображения $К(v)$ ясно, что для докозательства непрерывности $K(v)$ достаточно доказать непрерывность отображения
         $$\phi_{ij}: (L_4(\Omega))^n \rightarrow L_2(\Omega), \ \phi_{ij}(v) = \frac{v_i v_j}{1+|v|^2}, \ i,j = 1, 2, \dots n.$$
         Непрерывность каждого из этих отображений следует из теоремы М.А. Красносельского о непрерывности оператора суперпозиции и очевидной оценки
@@ -229,33 +240,33 @@ $$(-Div (\nabla v),u)_{L_2(\Omega))^n}=(\nabla v,\nabla u)_{L_2(\Omega)^{n^2}}=(
         Вложение $V\subset (L_2(\Omega))^n$ вполне непрерывно в силу теоремы Релиха"=Кондрашова, поэтому отображение $K(v):V\rightarrow V^*$
         вполне непрерывно как суперпозиция вполне непрерывного оператора вложения $V\subset (L_2(\Omega))$ и непрерывного отображения
         $K(v):(L_2(\Omega))^n\rightarrow V^*$
-        $$\parallel K(v(t)) \parallel_{V^\ast} \le C_2 \parallel v(t) \parallel^2_V, \ \forall v \in V, \ t \in [0, \ T],$$
+        $$\| K(v(t)) \|_{V^\ast} \le C_2 \| v(t) \|^2_V, \ \forall v \in V, \ t \in [0, \ T],$$
         с некоторой константой $C_2$.
         Отсюда для $v \in L_2(0, \ T; \ V)$ имеем $K(v) \in L_1(0, \ T; \ V^\ast)$ и
-        $$\parallel K(v)\parallel_{L_1(0, \ T; \ V^*)}\le\int_0^T\parallel K(v)\parallel_{V^*}dt\le C_2\int_0^T\parallel v\parallel_V^2dt=$$
-        $$=C_2\parallel v\parallel_{L_2(0, \ T; \ V)}^2.$$
+        $$\| K(v)\|_{L_1(0, \ T; \ V^*)}\le\int_0^T\| K(v)\|_{V^*}dt\le C_2\int_0^T\| v\|_V^2dt=$$
+        $$=C_2\| v\|_{L_2(0, \ T; \ V)}^2.$$
         Повторяя рассуждения проведенные ранее, получим, что для $v, \ u \in L_2(0, \ T; \ V)$ справедлива оценка
-        $$\int_0^T \parallel K(v)-K(u)\parallel_{V^*}dt\le\int_0^T (\sum_{i, \ j=1}^n\int\limits_\Omega (v_iv_j-u_iu_j)^2dx)^\frac{1}{2}\le$$
+        $$\int_0^T \| K(v)-K(u)\|_{V^*}dt\le\int_0^T (\sum_{i, \ j=1}^n\int\limits_\Omega (v_iv_j-u_iu_j)^2dx)^\frac{1}{2}\le$$
         $$\le\int_0^T(\sum_{i, / j=1}^n\int\limits_\Omega (v_i(v_j-u_j)+(v_i-u_i)u_j)dx)^\frac{1}{2}\le$$
         $$\le\sqrt{2}\sum_{i, / j=1}^n\int_0^T(\int\limits_\Omega v_i^2(v_j-u_j)^2dx)^\frac{1}{2}+(\int\limits_\Omega(v_i-u_i)^2u_j^2dx)^\frac{1}{2}dt\le$$
-        $$\le\sqrt{2}\sum_{i, / j=1}^n\int_0^T(\parallel v_i(t)\parallel_{L_4(\Omega)}\parallel v_j(t)-u_j(t)\parallel_{L_4(\Omega)}+$$
-        $$+\parallel v_i(t)-u_i(t)\parallel_{L_4(\Omega)}\parallel u_j(t)\parallel_{L_4(\Omega)})dt\le$$
-        $$\le C_2(\parallel v \parallel_{L_2(0, T; L_4(\Omega))}+
-        \parallel u \parallel_{L_2(0, T; L_4(\Omega))})\parallel v-u\parallel_{L_2(0, T; L_4(\Omega))}$$
+        $$\le\sqrt{2}\sum_{i, / j=1}^n\int_0^T(\| v_i(t)\|_{L_4(\Omega)}\| v_j(t)-u_j(t)\|_{L_4(\Omega)}+$$
+        $$+\| v_i(t)-u_i(t)\|_{L_4(\Omega)}\| u_j(t)\|_{L_4(\Omega)})dt\le$$
+        $$\le C_2(\| v \|_{L_2(0, T; L_4(\Omega))}+
+        \| u \|_{L_2(0, T; L_4(\Omega))})\| v-u\|_{L_2(0, T; L_4(\Omega))}$$
         Кроме того, вложение $V \subset (L_4(\Omega))^n$, а следовательно, и вложение $L_2(0, T; V) \subset L_2(0, T; (L_4(\subset))^n)$
         непрерывны. Поэтому достаточно доказать непрерывность отображений
         $$\phi_{ij}: L_2(0, T; (L_4(\Omega))^n) \rightarrow L_1(0, T; L_2(\Omega)), \varphi_{ij}(v) = v_i v_j$$
         для $i, / j = 1, 2, \dots, n$.
         Для любых $u, \ v \in L_2(0, T; (L_4(\Omega))^n)$ с помощью неравенства Шварца получаем оценку
-        $$\parallel\phi_{ij}(u)-\phi_{ij}(v)\parallel_{L_1(0, T; L_2(\Omega))}=\int_0^T(\int\limits_\Omega(v_iv_j-u_iu_j)^2dx)^\frac{1}{2}\le$$
+        $$\|\phi_{ij}(u)-\phi_{ij}(v)\|_{L_1(0, T; L_2(\Omega))}=\int_0^T(\int\limits_\Omega(v_iv_j-u_iu_j)^2dx)^\frac{1}{2}\le$$
         $$\le\int_0^T(\int\limits_\Omega v_i^2(v_j-u_j)^2dx)^\frac{1}{2}+(\int\limits_\Omega (v_i-u_i)^2u_j^2dx)^\frac{1}{2}dt\le$$
-        $$\int_0^T(\parallel v_i(t)\parallel_{L_4(\Omega)}\parallel v_j(t)-u_j(t)\parallel_{L_4(\Omega)}+$$
-        $$+\parallel v_i(t)-u_i(t)\parallel_{L_4(\Omega)}\parallel u_j(t)\parallel_{L_4(\Omega)})dt\le$$
-        $$\le\parallel v_i\parallel_{L_2(0, T; L_4(\Omega))}\parallel v_j-u_j\parallel_{L_2(0, T; L_4(\Omega))}+$$
-        $$+\parallel v_i-u_i\parallel_{L_2(0, T; L_4(\Omega))}\parallel u_j\parallel_{L_2(0, T; L_4(\Omega))}$$
+        $$\int_0^T(\| v_i(t)\|_{L_4(\Omega)}\| v_j(t)-u_j(t)\|_{L_4(\Omega)}+$$
+        $$+\| v_i(t)-u_i(t)\|_{L_4(\Omega)}\| u_j(t)\|_{L_4(\Omega)})dt\le$$
+        $$\le\| v_i\|_{L_2(0, T; L_4(\Omega))}\| v_j-u_j\|_{L_2(0, T; L_4(\Omega))}+$$
+        $$+\| v_i-u_i\|_{L_2(0, T; L_4(\Omega))}\| u_j\|_{L_2(0, T; L_4(\Omega))}$$
         Отсюда, если
-        $\parallel v - u \parallel L_2(0, T; (L_4(\Omega))^n) \rightarrow 0$,
-        то $\parallel \phi_{ij}(u) - \phi_{ij}(v) \parallel L_1(0, T; L_2(\Omega)) \rightarrow 0$.
+        $$\| v - u \| L_2(0, T; (L_4(\Omega))^n) \rightarrow 0,$$
+        то $\| \phi_{ij}(u) - \phi_{ij}(v) \| L_1(0, T; L_2(\Omega)) \rightarrow 0$.
         Поэтому каждое из отображений $\phi_{ij}$, а следовательно, и отображение $K$ непрерывны.
     \end{enumerate}
 \end{proof}
@@ -315,16 +326,16 @@ $v(t)$ непрерывна на отрезке $[0, T]$ со значениям
 
     Пусть v -- решение задачи (5.31), (5.32). Покажем, что $v \in W$, т.е. $v^\prime \in L_2(0, T; V^\ast)$.
     Воспользуемся оценкой
-    $$\parallel K_\varepsilon (v) \parallel_{(H^{-1}(\Omega))^n} \le c_0 \parallel v \parallel^2_{(L_4(\Omega))^n},$$
+    $$\| K_\varepsilon (v) \|_{(H^{-1}(\Omega))^n} \le c_0 \| v \|^2_{(L_4(\Omega))^n},$$
     полученной при выводе неравенства (3.10), в случае $n = 2$ и $\varepsilon = 0$. Применяя неравенство О.А. Ладыженской (1.7), получим для любого $t \in [0, T]$
-    $$\sup\limits_{v\in V}\langle K(v), \ \frac{u}{\parallel v\parallel}
+    $$\sup\limits_{v\in V}\langle K(v), \ \frac{u}{\| v\|}
     \rangle\le c_02^{1/2}(\int\limits_\Omega v(t)^2dt)^{1/2}\cdot\int\limits_\Omega\sum_{i=1}^{n=3}\frac{\partial v^2}{\partial x_i}dt$$
     Отсюда, возводя обе части неравенства в квадрат и интегрируя по $t$ на отрезке $[0, T]$, приходим к оценке
-    $$\int_0^T \sup(\langle K(v), \ \frac{u}{\parallel v\parallel}\rangle)^2dt \le 2c_0\int_0^T(\int\limits_\Omega v(t)^2)
+    $$\int_0^T \sup(\langle K(v), \ \frac{u}{\| v\|}\rangle)^2dt \le 2c_0\int_0^T(\int\limits_\Omega v(t)^2)
     \cdot\int\limits_\Omega\sum_{i=1}^{n=3}\frac{\partial v^2}{\partial x_i}dt\le$$
     $$\le 2c_0 \max\limits_{t\in[0, T]}\int\limits_\Omega v(t)^2dt\cdot\int_0^T\int\limits_\Omega\sum_{i=1}^{n=3}\frac{\partial v^2}{\partial x_i}dt$$
     Следовательно,
-    $$(\int_0^T \sup(\langle K(v), \ \frac{u}{\parallel v\parallel}\rangle)^2dt)^{1/2}\le c_0 2^{1/2}\max\limits_{t\in[0, T]}
+    $$(\int_0^T \sup(\langle K(v), \ \frac{u}{\| v\|}\rangle)^2dt)^{1/2}\le c_0 2^{1/2}\max\limits_{t\in[0, T]}
     \int\limits_\Omega v(t)^2dt\cdot\int_0^T v(t)^2dt$$
     Из представления $v^\prime = \Delta v(t) + K(v(t)) + f(t)$ очевидно, что $v^\prime \in L_2(0, T; V^\ast)$ и $v \in W$.
     Воспользовавшись вложением $W \subset C([0, T], H)$, получаем $v \in C([0, T], H)$ и заключение (\ref{eq:5.35}) теоремы.
@@ -362,7 +373,7 @@ $v(t)$ непрерывна на отрезке $[0, T]$ со значениям
     или
     \begin{equation}\label{eq:5.37}
         \begin{gathered}
-            \frac{1}{2}\frac{d}{dt}\parallel w(t)\parallel_H^2+v\parallel w(t)\parallel_H^2=
+            \frac{1}{2}\frac{d}{dt}\| w(t)\|_H^2+v\| w(t)\|_H^2=
             \bigg|\int\limits_\Omega w_i(t, x)\cdot\partial_iv(t, x)w(t, x)dx\bigg|
         \end{gathered}
     \end{equation}
@@ -375,18 +386,18 @@ $v(t)$ непрерывна на отрезке $[0, T]$ со значениям
     \cdot\left(\int\limits_\Omega\mid\partial_iv_j(t, x) \mid^2dx \right)^{1/2}$$
     или
     $$\bigg|\int\limits_\Omega w_i(t, x)\cdot\partial_iv(t, x)w(t, x)dx\bigg|\le$$
-    $$\le\parallel w_i(t)\parallel_{L_4(\Omega)}\cdot\parallel w_j(t)\parallel_{L_4(\Omega)}\cdot\parallel\partial_iv_j(t)\parallel_{L_2(\Omega)}$$
+    $$\le\| w_i(t)\|_{L_4(\Omega)}\cdot\| w_j(t)\|_{L_4(\Omega)}\cdot\|\partial_iv_j(t)\|_{L_2(\Omega)}$$
     Учитывая, что запись, содержащая повторяющиеся индексы, предполагает суммирование по этим индексам, получаем
-    $$\bigg|\int\limits_\Omega w_i(t, x)\cdot\partial_iv(t, x)w(t, x)dx\bigg|\le\parallel w(t)\parallel_{(L_4(\Omega))^n}^2\cdot\parallel v(t)\parallel_V$$
+    $$\bigg|\int\limits_\Omega w_i(t, x)\cdot\partial_iv(t, x)w(t, x)dx\bigg|\le\| w(t)\|_{(L_4(\Omega))^n}^2\cdot\| v(t)\|_V$$
     Применим неравенство О.А. Ладыженской и далее неравенство Коши \linebreak
     $a\cdot b=\varepsilon a^2+\frac{b^2}{4\varepsilon}c\varepsilon=\frac{v}{2^{1/2}}$, получим
     $$\bigg|\int\limits_\Omega w_i(t, x)\cdot\partial_iv(t, x)w(t, x)dx\bigg|\le$$
-    $$\le 2^{1/2}\parallel w(t)\parallel_{(L_2(\Omega))^n}\cdot\parallel w(t)\parallel_V\cdot\parallel v(t)\parallel_V\le$$
-    $$\le v\parallel w(t)\parallel_V^2+\frac{1}{2^{3/2}v}\parallel v(t)\parallel_{(L_2(\Omega))^n}^2\cdot\parallel w(t)\parallel_V$$
+    $$\le 2^{1/2}\| w(t)\|_{(L_2(\Omega))^n}\cdot\| w(t)\|_V\cdot\| v(t)\|_V\le$$
+    $$\le v\| w(t)\|_V^2+\frac{1}{2^{3/2}v}\| v(t)\|_{(L_2(\Omega))^n}^2\cdot\| w(t)\|_V$$
     Подставляя полученное соотношение в неравенство (\ref{eq:5.37}), получаем
-    $$\frac{1}{2}\frac{d}{dt}\parallel w(t)\parallel_H^2\le\frac{1}{2^{3/2}v}\parallel w(t)\parallel_H^2\cdot\parallel v(t)\parallel_V$$
+    $$\frac{1}{2}\frac{d}{dt}\| w(t)\|_H^2\le\frac{1}{2^{3/2}v}\| w(t)\|_H^2\cdot\| v(t)\|_V$$
     Тогда из неравенство Гронуолла"=Беллмана [1, теорема 2б глава IV, с.188] следует
-    $$\parallel w(t)\parallel_H^2\le\parallel w(0)\parallel_H^2\exp\left(\int_0^t\frac{1}{2^{1/2}v}\cdot\parallel v(s)\parallel_Vds\right)$$
+    $$\| w(t)\|_H^2\le\| w(0)\|_H^2\exp\left(\int_0^t\frac{1}{2^{1/2}v}\cdot\| v(s)\|_Vds\right)$$
     Поскольку $w(0) = v(0)- u(0) = 0$, то из полученного выше неравенства приходим к выводу,
     что $w(t)=0$ для всех $t\in[0, T]$. Следовательно, $v=u$ и слабое и полное слабое решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}) единственно.
 \end{proof}
