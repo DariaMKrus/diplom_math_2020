@@ -3,6 +3,8 @@
 distr=`awk 'NR==1 {print $1}' /etc/*-release`
 if [[ "$distr" == "DISTRIB_ID=Ubuntu" ]]; then
     echo "############ Ubuntu detected ############"
+    echo "############ Install texlive-latex-extra ############"
+    sudo apt-get install texlive-latex-extra
     echo "############ Install texlive-bibtex-extra ############"
     sudo apt install texlive-bibtex-extra
     echo "############ Install biber ############"
@@ -20,12 +22,13 @@ if [[ "$distr" == "DISTRIB_ID=Ubuntu" ]]; then
 else
     echo "############           Your distribution is not Ubuntu!         ############"
     echo "############ Find the following packages for your distribution: ############"
-    echo "############      1. texlive-bibtex-extra or bibtex             ############"
-    echo "############      2. biber                                      ############"
-    echo "############      3. cm-super                                   ############"
-    echo "############      4. texlive-lang-cyrillic                      ############"
-    echo "############      5. install texlive-fonts-recommended          ############"
-    echo "############      6. libreoffice                                ############"
-    echo "############      7. make                                       ############"
+    echo "############      1. texlive-latex-extra or bibtex              ############"
+    echo "############      2. texlive-bibtex-extra or bibtex             ############"
+    echo "############      3. biber                                      ############"
+    echo "############      4. cm-super                                   ############"
+    echo "############      5. texlive-lang-cyrillic                      ############"
+    echo "############      6. install texlive-fonts-recommended          ############"
+    echo "############      7. libreoffice                                ############"
+    echo "############      8. make                                       ############"
 
 fi
