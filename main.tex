@@ -50,11 +50,11 @@ $\|v\|_{W_p^m(\Omega)}=\left(\sum\limits_{|\alpha|\leqslant m} \int\limits_\Omeg
 $C_0^{\infty}(\Omega)$ --- пространство бесконечно дифференцируемых функций на $\Omega$ со значениями в $R^n$ и с компактным носителем,
 содержащимся в $\Omega$.
 
-$\nu$ --- множество функций $v\in C_0^{\infty}(\Omega)$, таких что $\operatorname{div}v=0$;
+$\Large \nu$ --- множество функций $v\in C_0^{\infty}(\Omega)$, таких что $\operatorname{div}v=0$;
 
-$H$ --- замыкание $\nu$ по норме пространства $L_2(\Omega)$;
+$H$ --- замыкание $\Large \nu$ по норме пространства $L_2(\Omega)$;
 
-$V$ --- замыкание $\nu$ по норме пространства $W_1^1(\Omega)$;
+$V$ --- замыкание $\Large \nu$ по норме пространства $W_1^1(\Omega)$;
 
 $L_p(a,b;X)$ --- где $1\le p< \infty$ пространство суммируемых с $p$-ой степенью функций на $[a, b]$ со значениями в
 банаховом пространстве $X$. Норма пространства $L_p(a, b;X)$ задается 
@@ -148,7 +148,7 @@ $\frac{d}{dt}\int\limits_\Omega v \varphi dx$
     \begin{equation}\label{eq:5.6}
         \begin{gathered}
             \frac{d}{dt}\int\limits_\Omega v \varphi dx-\sum_{i=1}^{n}\int\limits_\Omega v_i v
-            \frac{\partial \varphi }{\partial x_i}dx + v\int\limits_\Omega \nabla v :\nabla\varphi dx=
+            \frac{\partial \varphi }{\partial x_i}dx + \nu\int\limits_\Omega \nabla v :\nabla\varphi dx=
             \int\limits_\Omega f \varphi dx
         \end{gathered}
     \end{equation}
@@ -253,13 +253,13 @@ $\langle \Delta v(t),\varphi \rangle=-\int\limits_\Omega \nabla v:\nabla\varphi 
 По утверждению леммы $\nu\Delta v \in L_2(0, T; V^\ast), K(v) \in L_1(0, T; V^\ast)$, поэтому $\nu\Delta v(t) + K(v(t)) + f(t) \in L_1(0, T; V^\ast)$.
 Тогда из равенства (\ref{eq:5.8}) и теоремы \footnote{Th Пусть $X$ --- банахово пространство с сопряженным $X^*$ и функции $u,g$  принадлежат пространству
 $L_1(a,b,X).$ Тогда следующие три условия эквивалентны:\\
-(а) функция $u(t)$ почти всюду равна первообразной от $g(t)$ и для п.в. $t\in[a,b]$ $$u(t)=\xi+\int\limits_a^b g(s)ds, \xi\in X$$;\\
-(b) для каждой пробной функции $\eta\in\mathcal{D}(a,b)$ $$\int\limits_a^b u(t)\eta'(t)dt= -\int\limits_a^b g(t)\eta(t)dt$$;\\
+(а) функция $u(t)$ почти всюду равна первообразной от $g(t)$ и для п.в. $t\in[a,b]$ $$u(t)=\xi+\int\limits_a^b g(s)ds, \xi\in X;$$\\
+(b) для каждой пробной функции $\eta\in\mathcal{D}(a,b)$ $$\int\limits_a^b u(t)\eta'(t)dt= -\int\limits_a^b g(t)\eta(t)dt;$$\\
 (c) для кажого $\phi\in X^*$ $$\frac{d}{dt}\langle \phi, u(t) \rangle = \langle \phi, g(t) \rangle$$ в смысле скалярных распределений на $(a,b).$
-Если условия (а)-(с) выполнены, то и в частности, почти всюду равна некоторой непрерывной функции.} следует:
+Если условия (а)-(с) выполнены, то $u$, в частности, почти всюду равна некоторой непрерывной функции.} следует:
 \begin{enumerate}
-    \item что функция $v(t)$ имеет суммируемую производную $v^\prime(t)$;
-    \item в силу равенства $\frac{d}{dt}\langle \phi, u(t) \rangle = \langle \phi, g(t) \rangle$
+    \item что функция $v(t)$ имеет суммируемую производную $v^\prime(t);$
+    \item в силу равенства $\frac{d}{dt}\langle \phi, u(t) \rangle = \langle \phi, g(t) \rangle;$
     $$\frac{d}{dt} \langle v(t), \varphi \rangle = \langle v'(t), \varphi \rangle;$$
     \item равенство $\frac{d}{dt}\langle v(t), \varphi \rangle=\langle \Delta v(t)+K(v(t))+f(t),\varphi\rangle$ можно записать в виде
     $$v^\prime(t)=\nu\Delta v(t)+K(v(t))+f(t).$$
@@ -267,29 +267,37 @@ $L_1(a,b,X).$ Тогда следующие три условия эквивал
 
 Подводя итог рассуждений, отметим, что так как $v^\prime(t) \in L_1(0, T; V^\ast)$, в силу леммы 
 \begin{lemma}
-Для $p_0\ge 1, p_1\ge 1$
+Для $p_0\ge 1, p_1\ge 1$ имеет место вложение $W_{p_0,p_1}={v\in L_{p_0}(a,b,X_0), v_1\in L_{p_0}(a,b,X_0)}\subset C([a,b],X_1)$
+и это вложение непрерывно.
 \end{lemma}
-поэтому функция $v(t)$ непрерывна на отрезке 
-$[0, T]$ со значениями в $V^\ast$. Кроме того, эта функция слабо непрерывна со значениями в $H$. Поэтому начальное условие 
-(\ref{eq:5.7}) имеет смысл.
+поэтому функция $v(t)$ непрерывна на отрезке $[0, T]$ со значениями в $V^\ast$. 
+Кроме того, в виду леммы
+\begin{lemma}
+Пусть $X$ и $Y$ --- банаховы пространства, такие, что $X$ --- рефлективно и вложение $X\subset Y$ непрерывно.
+Если функция $v\in L_{\infty}(a,b;X)$ слабо непрерывна как функция со значениями в $Y$,то и слабо непрерывна и как функция со значениями в $X$.
+\end{lemma}
+ , если функция $v\in L_{\infty} (0,T;H)$, то эта функция слабо непрерывна со значениями в $H$. Поэтому начальное условие (\ref{eq:5.7}) имеет смысл.
 
 Переформулируем понятие слабого решения
 \begin{definition}
-    Пусть $n \le 4, \ f \in L_2(0, T; L_2(\Omega))$ и $v^0 \in H$. Слабым решением задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется функция
-    $v \in L_2(0, T; V)$ такая, что $v\prime\in L_1(0, T; V^\ast)$, равенство
+    Пусть $n \le 4, \ f \in L_2(0, T; L_2(\Omega))$ и $v \in H$. Слабым решением задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется функция
+    $v \in L_2(0, T; V)\cap L_{\infty}(0,T;H)\subset v\prime\in L_1(0, T; V^\ast)$, удовлетворяющая равенству при почти всех значений $t \in (0, T)$
     \begin{equation}\label{eq:5.11}
         \begin{gathered}
             v^\prime(t) - \nu\Delta v(t) - K(v(t)) = f(t)
         \end{gathered}
     \end{equation}
-    выполняется для почти всех значений $t \in (0, T)$ и
+      и начальному условию
     \begin{equation}\label{eq:5.12}
         \begin{gathered}
-            v(0) = v_0
+            v(0) = v_0.
         \end{gathered}
     \end{equation}
 \end{definition}
-
+\begin{theorem}
+Пусть $n=2,3$. Для каждой функции $f\in L_2(0,T;V^\ast)$ и $v_0\in H$ начально-краевая задача (\ref{eq:5.1})-(\ref{eq:5.4})
+имеет хотя бы одно слабое решение $v.$
+\end{theorem}
 
 \subsection {О единственности слабого решения в случае $n = 2$}
 В этом разделе мы рассмотрим вопрос о единственности слабого решения начально-краевой задачи (\ref{eq:5.1})-(\ref{eq:5.4}) для эволюционной
@@ -304,14 +312,15 @@ $[0, T]$ со значениями в $V^\ast$. Кроме того, эта фу
     задачи (\ref{eq:5.1})-(\ref{eq:5.4}) единственно.
 \end{theorem}
 \begin{proof}
-    Покажем единственность слабого решения. Предположим, что $u$ и $v$ -- слабые решения задачи $v\prime(t)-\Delta v(t)- K(v(t))+grad p= f(t)$, $v(0)=v^0$.
-    Подставим эти решения в уравнение $v(0)=v^0$ и рассмотрим разность полученных равенств. Для разности $w = v - u$ получим равенство
+    Покажем единственность слабого решения. Предположим, что $u$ и $v$ -- слабые решения начально-краевой задачи (\ref{eq:5.1})-(\ref{eq:5.4}).
+    Значит, для этих функций выполнено операторное равентво (\ref{eq:5.11}). Рассмотрим разность полученных равенств. 
+    Для разности $w = v - u$ получим равенство
     $$w^\prime - \nu\Delta w(t) - K(v(t)) + K(u(t)) = 0$$
     Применим функционалы, стоящие в равенстве, к функции $w(t)$
     \begin{equation}\label{eq:5.36}
         \begin{gathered}
-            \frac{1}{2}\frac{d}{dt}\int\limits_\Omega w(t, x)w(t, x)dt+v(w(t, x),w(t, x))= \\
-            =\int\limits_\Omega\frac{\partial v_i}{\partial t}\cdot v(t, x)\frac{\partial w(t, x)}{\partial x_i}dx-\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t, x)\cdot\frac{\partial w(t, x)}{\partial x_i}dx
+            \frac{1}{2}\frac{d}{dt}\int\limits_\Omega w(t, x)w(t, x)dt+\nu\int\limits_{\Omega} \nabla w(t,x):\nabla w(t,x)dx= \\
+            =\sum_{i=1}^{2}\int\limits_\Omega v_i(t,x) v(t, x)\frac{\partial w(t, x)}{\partial x_i}dx-\sum_{i=1}^{2}\int\limits_\Omega u_i(t,x)u(t, x)\frac{\partial w(t, x)}{\partial x_i}dx.
         \end{gathered}
     \end{equation}
     Оценим правую часть полученного равенства.
