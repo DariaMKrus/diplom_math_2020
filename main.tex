@@ -29,14 +29,14 @@
 Здесь $v=(v_1(t, x),\ldots,v_n(t, x))$ --- вектор"=функция скорости движения частицы жидкости, $p=p(t, x)$ --- функция давления,
 $f=f(t, x)$ --- вектор"=функция плотности внешних сил, $\nu>0$ --- коэффициент вязкости.
 $\Delta v=(\Delta v_1,\ldots,\Delta v_n)$, \ $\Delta v_i= \frac{\partial^2 v_i}{\partial x_1^2}+\ldots+\frac{\partial^2 v_i}{\partial x_n^2}$;
-$\operatorname{div} v= \frac{\partial v}{\partial x_1}+\ldots+\frac{\partial v}{\partial x_n}$;
+$\operatorname{div} v= \frac{\partial v_1}{\partial x_1}+\ldots+\frac{\partial v_n}{\partial x_n}$;
 $\nabla p=(\frac{\partial p}{\partial x_1},\ldots,\frac{\partial p}{\partial x_n})$.
 
 Сформулируем определение сильного решения рассматриваемой задачи (\ref{eq:5.1})-(\ref{eq:5.4}).
 Для этого введем необходимые функциональные пространства:
 
 $L_p(\Omega)$ --- множество измеримых функций, суммируемых с $p$-ой степенью, где $1\le p< \infty$,
-и нормой является $\|v\|_{L_p(\Omega)}=(\int\limits_\Omega |v(x)|^pdx)^{1/p}$.
+и нормой $\|v\|_{L_p(\Omega)}=(\int\limits_\Omega |v(x)|^pdx)^{1/p}$.
 
 Пространство $L_{\infty}(\Omega)$ состоит из измеримых существенно ограниченных функций $v:\Omega\rightarrow R^n$. 
 Функция $v:\Omega\rightarrow R^n$ называется существенной ограниченной, если существует число $C_1<\infty$, что $\|v(x)\|\le C_1$ при почти всех $x\in\Omega$.
@@ -44,17 +44,17 @@ $L_p(\Omega)$ --- множество измеримых функций, сумм
 $\|v\|_{L_{\infty}(\Omega)}=ess \ \underset{x\in\Omega}{sup} \|v(x)\|$.
 
 $W_p^m(\Omega)$ --- где $m\geqslant 1, \ p\geqslant 1$, пространство Соболева, состоящее из
-функции, которые со своими обобщенными частными производными до порядка $m$ включительно принадлежат пространству $L_p(\Omega)$,\\
-$\|v\|_{W_p^m(\Omega)}=\left(\sum\limits_{|\alpha|\leqslant m} \int\limits_\Omega |D^{\alpha}v(x)|^pdx\right)^{1/p}$.
+функции, которые со своими обобщенными частными производными до порядка $m$ включительно принадлежат пространству $L_p(\Omega)$.\\
+Норма в $W_p^m(\Omega)$ задается $\|v\|_{W_p^m(\Omega)}=\left(\sum\limits_{|\alpha|\leqslant m} \int\limits_\Omega |D^{\alpha}v(x)|^pdx\right)^{1/p}$.
 
 $C_0^{\infty}(\Omega)$ --- пространство бесконечно дифференцируемых функций на $\Omega$ со значениями в $R^n$ и с компактным носителем,
 содержащимся в $\Omega$.
 
-$\Large \nu$ --- множество функций $v\in C_0^{\infty}(\Omega)$, таких что $\operatorname{div}v=0$;
+$\mathcal{V}$ --- множество функций $v\in C_0^{\infty}(\Omega)$, таких что $\operatorname{div}v=0$;
 
-$H$ --- замыкание $\Large \nu$ по норме пространства $L_2(\Omega)$;
+$H$ --- замыкание $\mathcal{V}$ по норме пространства $L_2(\Omega)$;
 
-$V$ --- замыкание $\Large \nu$ по норме пространства $W_1^1(\Omega)$;
+$V$ --- замыкание $\mathcal{V}$ по норме пространства $W_1^1(\Omega)$;
 
 $L_p(a,b;X)$ --- где $1\le p< \infty$ пространство суммируемых с $p$-ой степенью функций на $[a, b]$ со значениями в
 банаховом пространстве $X$. Норма пространства $L_p(a, b;X)$ задается 
@@ -218,7 +218,8 @@ $\langle \Delta v(t),\varphi \rangle=-\int\limits_\Omega \nabla v:\nabla\varphi 
         $$\le\underset{\varphi\in V}{sup} \frac{\| v \|_{V} \| \varphi \|_{V}}{\| \varphi \|_{V}}=\| v \|_{V}$$
         То есть $\| \Delta v \|_{V^*}\le\| v \|_{V}.$ С другой стороны, положим $\varphi=v:$\\
         $|\langle \Delta v,v \rangle|=|\int\limits_{\Omega}\nabla v:\nabla v dx|=\|v\|_V^2.$\\
-        Применим неравенство Коши-Буняковского $\|v\|_V^2=|\langle \Delta v,v\rangle|\le\|\Delta v\|_{V^*}\| v\|_{V}.$\\
+        Применим неравенство Коши-Буняковского
+        $$\|v\|_V^2=|\langle \Delta v,v\rangle|\le\|\Delta v\|_{V^*}\| v\|_{V}.$$
         Сократив на $\|v\|_V$, получим $\|\Delta v\|_{V^*}\ge\|v\|_V.$
         Следовательно получаем $\|\Delta v\|_{V^*}=\|v\|_V.$
         Заметим, что линейный ограниченный оператор является непрерывным.\\
@@ -238,7 +239,8 @@ $\langle \Delta v(t),\varphi \rangle=-\int\limits_\Omega \nabla v:\nabla\varphi 
         По теореме вложения Соболева вложение $V\in L_4(\Omega)^n$ непрерывно для $n\le 4$, поэтому, $\|v\|_{L_4(\Omega)^n}\le C_3\|v\|_V$ и, следовательно,
         $\|K(v)\|_{V^*}\le C_3^2\|v\|^2_V.$ Отсюда для $v\in L_2(0,T;V)$ имеем $K(v)\in L_1(0,T;V^*)$ и 
         $$\|K(v)_{L_1(0,T;V^*)}\|\le\int\limits_0^T\|K(v(t))\|_{V^*} dt\le C_3^2\int\limits_0^T\|v(t)\|_V^2 dt=C_3^2\|v(t)\|_{L_2(0,T;V)}^2.$$
-        Докажем непрерывность оператора $K$. Для любых функций $v,u\in L_2(0,T;V)$ справедлива оценка
+        Докажем непрерывность оператора $K$. Для любых функций\linebreak
+        $v,u\in L_2(0,T;V)$ справедлива оценка
         $$\int\limits_0^T\|K(v)-K(u)\|_{V^*} dt\le\int\limits_0^T(\sum_{i,j=1}^{n}\int\limits_\Omega (v_iv_j-u_iu_j)^2dx)^{1/2} dt\le$$
         $$\le\int\limits_0^T(\sum_{i,j=1}^{n}\int\limits_\Omega (v_i(v_j-u_j)+(v_i-u_i)u_j)^2dx)^{1/2}dt\le$$
         $$\le\sqrt2\sum_{i,j=1}^{n}\int\limits_0^T (\int\limits_{\Omega}v^2_i(v_j-u_j)^2dx)^{1/2}+
@@ -267,7 +269,8 @@ $L_1(a,b,X).$ Тогда следующие три условия эквивал
 
 Подводя итог рассуждений, отметим, что так как $v^\prime(t) \in L_1(0, T; V^\ast)$, в силу леммы 
 \begin{lemma}
-Для $p_0\ge 1, p_1\ge 1$ имеет место вложение $W_{p_0,p_1}={v\in L_{p_0}(a,b,X_0), v_1\in L_{p_0}(a,b,X_0)}\subset C([a,b],X_1)$
+Для $p_0\ge 1, \ p_1\ge 1$ имеет место вложение\linebreak
+$W_{p_0,p_1}={v\in L_{p_0}(a,b,X_0), \ v_1\in L_{p_0}(a,b,X_0)}\subset C([a,b],X_1)$
 и это вложение непрерывно.
 \end{lemma}
 поэтому функция $v(t)$ непрерывна на отрезке $[0, T]$ со значениями в $V^\ast$. 
@@ -324,53 +327,53 @@ $L_1(a,b,X).$ Тогда следующие три условия эквивал
         \end{gathered}
     \end{equation}
     Оценим правую часть полученного равенства.
-    $$\int\limits_\Omega\frac{\partial v_i}{\partial t}v(t, x)\frac{\partial w(t, x)}
-    {\partial x_i}dx-\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t, x)\frac{\partial w(t, x)}{\partial x_i}dx=$$
-    $$=\int\limits_\Omega\frac{\partial v_i}{\partial t}v(t, x)\frac{\partial w(t, x)}
-    {\partial x_i}dx-\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t, x)\frac{\partial w(t, x)}{\partial x_i}dx+$$
-    $$+\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t, x)\frac{\partial w(t, x)}
-    {\partial x_i}dx-\int\limits_\Omega\frac{\partial u_i}{\partial t}v(t, x)\frac{\partial w(t, x)}{\partial x_i}dx=$$
-    $$=\int\limits_\Omega\frac{\partial w_i(t, x)}{\partial t}\cdot v(t, x)\frac{\partial w(t, x)}
-    {\partial x_i}-\int\limits_\Omega\frac{\partial u_i}{\partial t}w(t, x)\cdot\frac{\partial w_i(t, x)}{\partial x_i}dx$$
+    $$\sum_{i=1}^{2}\int\limits_\Omega v_i(t,x) v(t, x)\frac{\partial w(t, x)}
+    {\partial x_i}dx-\sum_{i=1}^{2}\int\limits_\Omega u_i(t,x)u(t, x)\frac{\partial w(t, x)}{\partial x_i}dx=$$
+    $$=\sum_{i=1}^{2}\bigg[\int\limits_\Omega v_i(t,x)v(t, x)\frac{\partial w(t, x)}
+    {\partial x_i}dx-\int\limits_\Omega u_i(t,x)v(t, x)\frac{\partial w(t, x)}{\partial x_i}dx+$$
+    $$+\int\limits_\Omega u_i(t,x) v(t, x)\frac{\partial w(t, x)}
+    {\partial x_i}dx-\int\limits_\Omega u_i(t,x) u(t, x)\frac{\partial w(t, x)}{\partial x_i}dx\bigg]=$$
+    $$=\sum_{i=1}^{2}\bigg[\int\limits_\Omega w_i(t, x) v(t, x)\frac{\partial w(t, x)}
+    {\partial x_i}-\int\limits_\Omega u_i(t,x) w(t, x)\frac{\partial w(t, x)}{\partial x_i}dx\bigg].$$
     Используем интегрирование по частям для вычисления первого интеграла
-    $$\int\limits_\Omega\frac{\partial w_i(t, x)}{\partial t}v(t, x)\cdot w(t, x)=
-    -\int\limits_\Omega\frac{\partial w_i(t, x)}{\partial t}\cdot\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx$$
-    так как $\partial_iw_i(t, x) = \textrm{div } w(t, x)=0$. Используем интегрирование по частям для вычисления второго из интегралов
-    $$\int\limits_\Omega\frac{\partial \varphi_i}{\partial t}w(t, x)\frac{\partial w(t, x)}{\partial x_i}dx=
-    \sum_{i=0}^{n=2}\int\limits_\Omega\frac{\partial \varphi _i}{\partial t}\cdot\frac{1}{2}\cdot\frac{\partial \mid w\mid^2(t, x)}{\partial x_i}dx=$$
-    $$=-\frac{1}{2}\int\limits_\Omega\sum_{i=1}^{n=2}\frac{\partial^2 \varphi_i(t, x)}{\partial t\partial x_i}\cdot\mid w\mid^2(t, x)dx=0$$
-    так как $\sum\limits_{i=1}^{2}\partial_i\varphi_i(t, x)= \textrm{div} \varphi(t, x)=0$
+    $$\sum_{i=1}^{2}\int\limits_\Omega w_i(t, x)v(t, x)\frac{\partial w(t, x)}{\partial x_i}dx=
+    -\sum_{i=1}^{2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx,$$
+    так как $\sum\limits_{i=1}^{2}\frac{\partial w_i(t, x)}{\partial x_i} = \textrm{div } w(t, x)=0$. Используем интегрирование по частям для вычисления второго из интегралов
+    $$\sum_{i=1}^{n=2}\int\limits_\Omega u_i(t,x)w(t, x)\frac{\partial w(t, x)}{\partial x_i}dx=
+    \sum_{i=1}^{n=2}\int\limits_\Omega u_i(t,x)\cdot\frac{1}{2}\cdot\frac{\partial \mid w\mid^2(t, x)}{\partial x_i}dx=$$
+    $$=-\frac{1}{2}\int\limits_\Omega\sum_{i=1}^{n=2}\frac{\partial u_i(t, x)}{\partial x_i}\cdot\mid w\mid^2(t, x)dx=0,$$
+    так как $\sum\limits_{i=1}^{2}\frac{\partial u_i(t, x)}{\partial x_i} = \textrm{div} u(t, x)=0.$
     Отсюда и из равенства (\ref{eq:5.36}) получим
-    $$\frac{1}{2}\frac{d}{dt}\int\limits_\Omega w(t, x)w(t, x)dx+v(w(t, x)w(t, x))=$$
-    $$=-\int\limits_\Omega\frac{\partial w_i(t, x)}{\partial t}\cdot\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx$$
+    $$\frac{1}{2}\frac{d}{dt}\int\limits_\Omega w(t, x)w(t, x)dx+\nu\int\limits_{\Omega}\nabla w(t,x):\nabla w(t,x)dx=$$
+    $$=-\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx$$
     или
     \begin{equation}\label{eq:5.37}
         \begin{gathered}
-            \frac{1}{2}\frac{d}{dt}\| w(t)\|_H^2+v\| w(t)\|_H^2=
-            \bigg|\int\limits_\Omega w_i(t, x)\cdot\partial_iv(t, x)w(t, x)dx\bigg|
+            \frac{1}{2}\frac{d}{dt}\| w(t)\|_H^2+\nu\| w(t)\|_V^2\le
+            \bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v_i(t, x)}{\partial x_i}w(t, x)dx\bigg|.
         \end{gathered}
     \end{equation}
-    Оценим правую часть неравенства, используя неравенства Шварца,
-    $$\bigg|\int\limits_\Omega w_i(t, x)\cdot\partial_iv(t, x)w(t, x)dx\bigg|=
-    \bigg|\int\limits_\Omega w_i(t, x)\cdot\partial_j(t, x)w_j(t, x)dx\bigg|\le$$
-    $$\left(\int\limits_\Omega \mid w_i(t, x)\mid^2|w_j(t, x)\mid^2dx \right)^{1/2}
-    \cdot\left(\int\limits_\Omega\mid\partial_iv_j(t, x) \mid^2dx \right)^{1/2}\le$$
-    $$\left(\int\limits_\Omega \mid w_i(t, x)\mid^4dx\right)^{1/4}\left(\int\limits_\Omega \mid w_j(t, x)\mid^4dx\right)^{1/4}
-    \cdot\left(\int\limits_\Omega\mid\partial_iv_j(t, x) \mid^2dx \right)^{1/2}$$
+    Оценим правую часть неравенства, используя неравенства Шварца:
+    $$\bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v_i(t, x)}{\partial x_i}w(t, x)dx\bigg|=
+    \bigg|\sum_{i,j=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v_i(t, x)}{\partial x_i}w_j(t, x)dx\bigg|\le$$
+    $$\le\left(\sum_{i,j=1}^{n=2}\int\limits_\Omega \mid w_i(t, x)\mid^2|w_j(t, x)\mid^2dx \right)^{1/2}
+    \cdot\left(\sum_{i,j=1}^{n=2}\int\limits_\Omega\bigg|\frac{\partial v_i(t, x)}{\partial x_i}\bigg|^2dx \right)^{1/2}\le$$
+    $$\left(\sum_{i=1}^{n=2}\int\limits_\Omega \mid w_i(t, x)\mid^4dx\right)^{1/4}\left(\sum_{j=1}^{n=2}\int\limits_\Omega \mid w_j(t, x)\mid^4dx\right)^{1/4}\cdot$$
+    $$\cdot\left(\sum_{i,j=1}^{n=2}\int\limits_\Omega\bigg|\frac{\partial v_j(t, x)}{\partial x_i} \bigg|^2dx \right)^{1/2}$$
     или
-    $$\bigg|\int\limits_\Omega w_i(t, x)\cdot\partial_iv(t, x)w(t, x)dx\bigg|\le$$
-    $$\le\| w_i(t)\|_{L_4(\Omega)}\cdot\| w_j(t)\|_{L_4(\Omega)}\cdot\|\partial_iv_j(t)\|_{L_2(\Omega)}$$
-    Учитывая, что запись, содержащая повторяющиеся индексы, предполагает суммирование по этим индексам, получаем
-    $$\bigg|\int\limits_\Omega w_i(t, x)\cdot\partial_iv(t, x)w(t, x)dx\bigg|\le\| w(t)\|_{(L_4(\Omega))^n}^2\cdot\| v(t)\|_V$$
+    $$\bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx\bigg|\le$$
+    $$\le\sum_{iбо=1}^{n=2}\| w_i(t)\|_{L_4(\Omega)}\| w_j(t)\|_{L_4(\Omega)}\|\frac{\partial v_j(t)}{\partial x_i}\|_{L_2(\Omega)}.$$
+    Учитывая, суммирование по повторяющимся индексам, получаем
+    $$\bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx\bigg|\le\| w(t)\|_{L_4(\Omega)}^2\| v(t)\|_V.$$
     Применим неравенство О.А. Ладыженской и далее неравенство Коши \linebreak
-    $a\cdot b=\varepsilon a^2+\frac{b^2}{4\varepsilon}c\varepsilon=\frac{v}{2^{1/2}}$, получим
-    $$\bigg|\int\limits_\Omega w_i(t, x)\cdot\partial_iv(t, x)w(t, x)dx\bigg|\le$$
-    $$\le 2^{1/2}\| w(t)\|_{(L_2(\Omega))^n}\cdot\| w(t)\|_V\cdot\| v(t)\|_V\le$$
-    $$\le v\| w(t)\|_V^2+\frac{1}{2^{3/2}v}\| v(t)\|_{(L_2(\Omega))^n}^2\cdot\| w(t)\|_V$$
+    $a\cdot b=\varepsilon a^2+\frac{b^2}{4\varepsilon}c \ \varepsilon=\frac{\nu}{2^{1/2}}$, получим
+    $$\bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx\bigg|\le$$
+    $$\le 2^{1/2}\| w(t)\|_{L_2(\Omega)}\| w(t)\|_V\| v(t)\|_V\le$$
+    $$\le \nu\| w(t)\|_V^2+\frac{1}{2^{3/2}\nu}\| w(t)\|_{L_2(\Omega)}^2\| v(t)\|_V.$$
     Подставляя полученное соотношение в неравенство (\ref{eq:5.37}), получаем
-    $$\frac{1}{2}\frac{d}{dt}\| w(t)\|_H^2\le\frac{1}{2^{3/2}v}\| w(t)\|_H^2\cdot\| v(t)\|_V$$
+    $$\frac{1}{2}\frac{d}{dt}\| w(t)\|_H^2\le\frac{1}{2^{3/2}\nu}\| w(t)\|_H^2\| v(t)\|_V.$$
     Тогда из неравенство Гронуолла"=Беллмана [1, теорема 2б глава IV, с.188] следует
-    $$\| w(t)\|_H^2\le\| w(0)\|_H^2\exp\left(\int_0^t\frac{1}{2^{1/2}v}\cdot\| v(s)\|_Vds\right)$$
+    $$\| w(t)\|_H^2\le\| w(0)\|_H^2\exp\left(\int_0^t\frac{1}{2^{1/2}\nu}\cdot\| v(s)\|_Vds\right).$$
     Поскольку $w(0) = v(0)- u(0) = 0$, то из полученного выше неравенства приходим к выводу,
     что $w(t)=0$ для всех $t\in[0, T]$. Следовательно, $v=u$ и слабое и полное слабое решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}) единственно.
 \end{proof}
