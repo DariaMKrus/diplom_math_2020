@@ -1,15 +1,20 @@
 SHELL=/bin/bash
+
+THEME = Изучение единственности слабых решений системы Навье-Стокса
+STUDENT = Д.А. Мукасеева
+DEGREE = к.ф.-м.н.
+DIRECTOR = А.В. Звягин
+SED = "s/{{theme}}/${THEME}/; s/{{student}}/${STUDENT}/; s/{{degree}}/${DEGREE}/; s/{{director}}/${DIRECTOR}/"
 file = diplom.tex
 
-all: 
-	# titlepage
+all: titlepage
 	pdflatex diplom.tex
 	biber diplom
 	pdflatex $(file)
 	pdflatex $(file)
 
 pdflatex:
-	@pdflatex diplom.tex
+	@pdflatex $(file)
 
 titlepage:
 	@sed -e ${SED} titlepage.fodt > tp-output.fodt
