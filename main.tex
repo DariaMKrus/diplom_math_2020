@@ -98,11 +98,13 @@ $$\int\limits_\Omega \frac{\partial v}{\partial t}\ \varphi dx+\sum_{i=1}^n\int\
 $$-\nu \sum_{i, j=1}^n\int\limits_\Omega\frac{\partial^2 v_j}{\partial x^{2}_i} \varphi_j dx+
 \sum_{i=1}^n\int\limits_\Omega \frac{\partial p}{\partial x_i}\ \varphi_idx=\int\limits_\Omega f\varphi dx.$$
 Выполним преобразования слагаемых, связанные с интегрированием по частям
-\footnote{Метод интегрирования по частям.\\}
-% ________________________________________________________-
-% Теорема Грина (теорема об интегрировании по частям функций нескольких переменных)
-% СПРОСИ У АНДРЕЯ
-% ______________________________________________________}
+\footnote{Метод интегрирования по частям.\\
+Теорема Грина (теорема об интегрировании по частям функций нескольких переменных)\\
+ Пусть $\Omega$ --- область с липшецевой границей и пусть $f(x)=f(x_1,...,x_n)$ и $g(x)=g(x_1,...,x_n)\in W_2^1(\Omega).$
+ Тогда выполнено соотношение:
+ $$\int\limits_\Omega\frac{\partial f}{\partial x_i} gdx=\int\limits_{\partial\Omega} fgv_i \ ds-\int\limits_\Omega f \frac{\partial g}{\partial x_i} dx,$$
+ где $v_i$ --- $i-$ая координата единичного вектора внешней нормали.
+}
 $$-\nu\int\limits_\Omega \sum_{i,j=1}^{n}\frac{\partial^2 v_j}{\partial x^{2}_i}\varphi_j dx=
 \nu\int\limits_\Omega\sum_{i, j=1}^{n}\frac{\partial v_j}{\partial x_i}\frac{\partial \varphi_j}{\partial x_i}=\nu\int\limits_\Omega \nabla v:\nabla\varphi dx.$$
 Здесь символ <<:>> обозначает покомпонентное матричное произведение, т. е. для $ C=(c_{ij}), D=(d_{ij}), i, j=1,\ldots,m,$ имеем $C:D=\sum\limits_{i,j=1}^{m} c_{ij}d_{ij}$
@@ -124,6 +126,7 @@ $$=-\int\limits_\Omega v \ \varphi \ div \ v \ dx-\sum_{i=1}^{n}\int\limits_\Ome
 
 Заметим, что равенство (\ref{eq:5.5}) может выполняться и при более слабых требованиях на функцию $v(t, x)$.
 Покажем, что достаточно предполагать, что $v\in L_2(0, T;V)$ для того, чтобы каждый интеграл, входящий в равенство (\ref{eq:5.5}), имел смысл.
+\clearpage
 
 В силу теоремы вложений Соболева\footnote{ Пусть $p_1\ge p$ и $\ae(W_{p_1}^{m_1}(\Omega))>\ae(W_{p}^{m}(\Omega)),$ то пространство $W_{p}^{m}(\Omega)$ компактно
 вложено в пространоство $W_{p_1}^{m_1}(\Omega)$, где $\ae(W_{p}^{m}(\Omega))=\frac{n}{p}-m.$} 
