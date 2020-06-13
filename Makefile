@@ -7,9 +7,10 @@ DIRECTOR = А.В. Звягин
 SED = "s/{{theme}}/${THEME}/; s/{{student}}/${STUDENT}/; s/{{degree}}/${DEGREE}/; s/{{director}}/${DIRECTOR}/"
 file = diplom.tex
 
-all: titlepage
-	pdflatex diplom.tex
-	biber diplom
+all:
+	# titlepage
+	# pdflatex diplom.tex
+	# biber diplom
 	pdflatex $(file)
 	pdflatex $(file)
 
