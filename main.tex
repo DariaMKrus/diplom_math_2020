@@ -1,5 +1,24 @@
-\section{Эволюционная система уравнений \\Навье-Стокса}
-\subsection {Понятие слабого решения}
+\section{Введение}
+В данной бакалаврской работе изучается система уравнений Навье-Стокса. Данная система уравнений датируется 1822г., когда 
+Навье \footnote{Клод"=Луи Навье французский инженер и физик} впервые записал уравнение в частных производных для потока 
+вязкой жидкости. Стокс \footnote{Джордж Стокс --- ирландский математик и физик} внес свой вклад в 1842 и 1843гг. Эйлер 
+записал уравнения в частных производных для жидкости с нулевой вязкостью --- совершено невзкой в 1757г. Это уравнение 
+тоже полезно, но большинство реаьных жидкостей, включая воду и воздух, является вязкими, поэтому Навье и Стокс 
+моделировали уравнение Эйлера таким образом, чтобы учесть это свойство. Они вывели примерно одинаковые уравннения независимо
+друг от друга, поэтому оно называется в честь них обоих. Навье сделал в процессе вывода несколько математических ошибок, но
+получил верный ответ, а у Стокса с математикой все было в порядке, и именно поэтому мы знаем, что ответ Навье верен, несмотря 
+на ошибку.
+
+Несмотря на довольно долгие математические изучения данной системы уравнений (начиная с 1822г.), вопрос существования и 
+гладкости решений для системы Навье-Стокса остался открытым до сих пор. В анализе решений данной системы заключается суть 
+одной из семи "проблем тысячилетия", за решение которых Математический институт Клэя назначил огромную премию. Одним из 
+главных и глобальных толчков при изучении данной системы было доказательство Жаном Лере в 1934г существования и в ряде 
+случаев единственности слабых решений для данной системы. Данная бакалаврская работа посвящена как раз рассмотрению и
+изучению понятия слабого решения для системы уравнений Навье-Стокса, а так же изучению единственности слабых решений 
+в двумерном случае.
+\clearpage
+
+\section {Понятие слабого решения}
 Пусть $\Omega$ --- ограниченная область в пространстве $R^n$, где $n=2, 3$, с достаточно гладкой границей $\partial\Omega$.
 Рассмотрим начально"=краевую задачу для системы уравнений Навье"=Стокса
 
@@ -41,7 +60,7 @@ $L_p(\Omega)$ --- множество измеримых функций, сумм
 Пространство $L_{\infty}(\Omega)$ состоит из измеримых существенно ограниченных функций $v:\Omega\rightarrow R^n$. 
 Функция $v:\Omega\rightarrow R^n$ называется существенной ограниченной, если существует число $C_1<\infty$, что $|v(x)|\le C_1$ при почти всех $x\in\Omega$.
 Норма в $L_{\infty}(\Omega)$ задается
-$\|v\|_{L_{\infty}(\Omega)}=ess \ \underset{x\in\Omega}{sup} \|v(x)\|$.
+$\|v\|_{L_{\infty}(\Omega)}=ess \ \underset{x\in\Omega}{sup} |v(x)|$.
 
 $W_p^m(\Omega)$ --- где $m\geqslant 1, \ p\geqslant 1$, пространство Соболева, состоящее из
 функции, которые со своими обобщенными частными производными до порядка $m$ включительно принадлежат пространству $L_p(\Omega)$.\\
@@ -98,8 +117,7 @@ $$\int\limits_\Omega \frac{\partial v}{\partial t}\ \varphi dx+\sum_{i=1}^n\int\
 $$-\nu \sum_{i, j=1}^n\int\limits_\Omega\frac{\partial^2 v_j}{\partial x^{2}_i} \varphi_j dx+
 \sum_{i=1}^n\int\limits_\Omega \frac{\partial p}{\partial x_i}\ \varphi_idx=\int\limits_\Omega f\varphi dx.$$
 Выполним преобразования слагаемых, связанные с интегрированием по частям
-\footnote{Метод интегрирования по частям.\\
-Теорема Грина (теорема об интегрировании по частям функций нескольких переменных)\\
+\footnote{Теорема Грина (теорема об интегрировании по частям функций нескольких переменных)\\
  Пусть $\Omega$ --- область с липшецевой границей и пусть $f(x)=f(x_1,...,x_n)$ и $g(x)=g(x_1,...,x_n)\in W_2^1(\Omega).$
  Тогда выполнено соотношение:
  $$\int\limits_\Omega\frac{\partial f}{\partial x_i} gdx=\int\limits_{\partial\Omega} fgv_i \ ds-\int\limits_\Omega f \frac{\partial g}{\partial x_i} dx,$$
@@ -107,7 +125,7 @@ $$-\nu \sum_{i, j=1}^n\int\limits_\Omega\frac{\partial^2 v_j}{\partial x^{2}_i} 
 }
 $$-\nu\int\limits_\Omega \sum_{i,j=1}^{n}\frac{\partial^2 v_j}{\partial x^{2}_i}\varphi_j dx=
 \nu\int\limits_\Omega\sum_{i, j=1}^{n}\frac{\partial v_j}{\partial x_i}\frac{\partial \varphi_j}{\partial x_i}=\nu\int\limits_\Omega \nabla v:\nabla\varphi dx.$$
-Здесь символ <<:>> обозначает покомпонентное матричное произведение, т. е. для $ C=(c_{ij}), D=(d_{ij}), i, j=1,\ldots,m,$ имеем $C:D=\sum\limits_{i,j=1}^{m} c_{ij}d_{ij}$
+Здесь символ <<:>> обозначает покомпонентное матричное произведение, т. е. для $ C=(c_{ij}), D=(d_{ij}), i, j=1,\ldots,m,$ имеем $C:D=\sum\limits_{i,j=1}^{m} c_{ij}d_{ij}.$
 $$\sum_{i=1}^{n}\int\limits_\Omega \frac{\partial p}{\partial x_i}\varphi_i dx
 =-\sum_{i=1}^{n}\int\limits_\Omega p\frac{\partial \varphi_i}{\partial x_i}dx= \int\limits_\Omega p \ div \ \varphi \ dx=0;$$
 
@@ -129,9 +147,7 @@ $$=-\int\limits_\Omega v \ \varphi \ div \ v \ dx-\sum_{i=1}^{n}\int\limits_\Ome
 \clearpage
 
 В силу теоремы вложений Соболева\footnote{ Пусть $p_1\ge p$ и $\ae(W_{p_1}^{m_1}(\Omega))>\ae(W_{p}^{m}(\Omega)),$ то пространство $W_{p}^{m}(\Omega)$ компактно
-вложено в пространоство $W_{p_1}^{m_1}(\Omega)$, где $\ae(W_{p}^{m}(\Omega))=\frac{n}{p}-m.$} 
-
-вложение $W^{1}_{2}(\Omega)\subset L_4(\Omega)$ непрерывно при $n \leqslant 4$.
+вложено в пространоство $W_{p_1}^{m_1}(\Omega)$, где $\ae(W_{p}^{m}(\Omega))=\frac{n}{p}-m.$} вложение $W^{1}_{2}(\Omega)\subset L_4(\Omega)$ непрерывно при $n \leqslant 4$.
 Поэтому, так как $V\subset W^{1}_{2}(\Omega)$, то $v_i(t, x)v(t, x)\in L_2(\Omega)$ и $v_i(t, x)v(t, x)\frac{\partial \varphi }{\partial x_i} \in L_1(\Omega)$
 при каждом фиксированном значении $t$. Следовательно, интеграл $\sum\limits_{i=1}^{n}\int\limits_\Omega v_iv \frac{\partial\varphi}{\partial x_i}dx$ определен.
 
@@ -210,17 +226,18 @@ $\langle \Delta v(t),\varphi \rangle=-\int\limits_\Omega \nabla v:\nabla\varphi 
 
 \begin{proof}
         Покажем, что оператор $\Delta : V\rightarrow V^*$ линейный. 
-        Для этого возьмем $v$ и $u\in V$ и применим к ним оператор Лапласа
+        Для этого возьмем $v$ и $u$, принадлежащая пространству $V$и применим к ним оператор Лапласа
         $$\Delta (\alpha v+\beta u)= \sum_{i,j=1}^{n} \frac{\partial^2}{\partial x_i^2} (\alpha v_i+\beta u_i)=
-        \alpha \sum_{i,j=1}^{n} \frac{\partial^2 v_i}{\partial x_i^2}+\beta \sum_{i,j=1}^{n} \frac{\partial^2 u_i}{\partial x_i^2}.$$
+        \alpha \sum_{i,j=1}^{n} \frac{\partial^2 v_i}{\partial x_i^2}+\beta \sum_{i,j=1}^{n} \frac{\partial^2 u_i}{\partial x_i^2}=\alpha\Delta v+\beta\Delta u.$$
+        
 
         Заметим, что оператор $\Delta : V\rightarrow V^*$ определяет изометрию пространств. Действительно:
         $$\| \Delta v \|_{V^*}=\underset{\varphi\in V}{sup} \frac{|\langle \Delta v,\varphi \rangle|}{\| \varphi\|_V}=\underset{\varphi\in V}{sup} 
         \frac{\bigg|\int\limits_{\Omega}\nabla v:\nabla\varphi dx\bigg|}{\| \varphi\|_V}\le
         \underset{\varphi\in V}{sup} \frac{\|\nabla v\|_{L_2(\Omega)}\|\nabla \varphi\|_{L_2(\Omega)}}{\|\varphi\|_V}\le$$
-        $$\le\underset{\varphi\in V}{sup} \frac{\| v \|_{V} \| \varphi \|_{V}}{\| \varphi \|_{V}}=\| v \|_{V}$$
+        $$\le\underset{\varphi\in V}{sup} \frac{\| v \|_{V} \| \varphi \|_{V}}{\| \varphi \|_{V}}=\| v \|_{V}.$$
         То есть $\| \Delta v \|_{V^*}\le\| v \|_{V}.$ С другой стороны, положим $\varphi=v:$\\
-        $|\langle \Delta v,v \rangle|=|\int\limits_{\Omega}\nabla v:\nabla v dx|=\|v\|_V^2.$\\
+        $$|\langle \Delta v,v \rangle|=|\int\limits_{\Omega}\nabla v:\nabla v dx|=\|v\|_V^2.$$\\
         Применим неравенство Коши-Буняковского
         $$\|v\|_V^2=|\langle \Delta v,v\rangle|\le\|\Delta v\|_{V^*}\| v\|_{V}.$$
         Сократив на $\|v\|_V$, получим $\|\Delta v\|_{V^*}\ge\|v\|_V.$
@@ -250,13 +267,13 @@ $\langle \Delta v(t),\varphi \rangle=-\int\limits_\Omega \nabla v:\nabla\varphi 
         (\int\limits_{\Omega}(v_i-u_i)^2u_j dx)^{1/2}\le$$
         $$\le\sqrt2\sum_{i,j=1}^{n}\int\limits_0^T(\|v_i\|_{L_4(\Omega)}\|v_j-u_j\|_{L_4(\Omega)}
         +\|v_i-u_i\|_{L_4(\Omega)}\|u_j\|_{L_4(\Omega)})dt\le$$
-        $$\le C_2(\|v\|_{L_2(0,T;L_4(\Omega))}+\|u\|_{L_2(0,T;L_4(\Omega))})\|v-u\|_{L_2(0,T;L_4(\Omega))}$$.
-        Отсюда, если $\|v-u\|_{L_2(0,T;L_4(\Omega))}\rightarrow 0$, то $\|K(v)-K(u)\|_{L_1(0,T;L)}\rightarrow 0$. Поэтому отображние $K$ непрерывно.
+        $$\le C_2(\|v\|_{L_2(0,T;L_4(\Omega))}+\|u\|_{L_2(0,T;L_4(\Omega))})\|v-u\|_{L_2(0,T;L_4(\Omega))}.$$
+        Отсюда, если $\|v-u\|_{L_2(0,T;L_4(\Omega))}\rightarrow 0$, то $\|K(v)-K(u)\|_{L_1(0,T;V)}\rightarrow 0$. Поэтому отображние $K$ непрерывно.
         
 \end{proof}
 
 По утверждению леммы $\nu\Delta v \in L_2(0, T; V^\ast), K(v) \in L_1(0, T; V^\ast)$, поэтому $\nu\Delta v(t) + K(v(t)) + f(t) \in L_1(0, T; V^\ast)$.
-Тогда из равенства (\ref{eq:5.8}) и теоремы \footnote{Th Пусть $X$ --- банахово пространство с сопряженным $X^*$ и функции $u,g$  принадлежат пространству
+Тогда из равенства (\ref{eq:5.8}) и \linebreak теоремы \footnote{Теорема Пусть $X$ --- банахово пространство с сопряженным $X^*$ и функции $u,g$  принадлежат пространству
 $L_1(a,b,X).$ Тогда следующие три условия эквивалентны:\\
 (а) функция $u(t)$ почти всюду равна первообразной от $g(t)$ и для п.в. $t\in[a,b]$ $$u(t)=\xi+\int\limits_a^b g(s)ds, \xi\in X;$$\\
 (b) для каждой пробной функции $\eta\in\mathcal{D}(a,b)$ $$\int\limits_a^b u(t)\eta'(t)dt= -\int\limits_a^b g(t)\eta(t)dt;$$\\
@@ -273,9 +290,9 @@ $L_1(a,b,X).$ Тогда следующие три условия эквивал
 Подводя итог рассуждений, отметим, что так как $v^\prime(t) \in L_1(0, T; V^\ast)$, в силу леммы 1.2
 \begin{lemma}
 Для $p_0\ge 1, \ p_1\ge 1$ имеет место вложение\linebreak
-$W_{p_0,p_1}={v\in L_{p_0}(a,b,X_0), \ v_1\in L_{p_0}(a,b,X_0)}\subset C([a,b],X_1)$
+$W_{p_0,p_1}=\{v\in L_{p_0}(a,b,X_0), \ v_1\in L_{p_0}(a,b,X_0)\}\subset C([a,b],X_1)$
 и это вложение непрерывно.
-\end{lemma}
+\end{lemma} 
 поэтому функция $v(t)$ непрерывна на отрезке $[0, T]$ со значениями в $V^\ast$. 
 Кроме того, в виду леммы 1.3,
 \begin{lemma}
@@ -287,7 +304,7 @@ $W_{p_0,p_1}={v\in L_{p_0}(a,b,X_0), \ v_1\in L_{p_0}(a,b,X_0)}\subset C([a,b],X
 Переформулируем понятие слабого решения
 \begin{definition}
     Пусть $n \le 4, \ f \in L_2(0, T; L_2(\Omega))$ и $v \in H$. Слабым решением задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется функция
-    $v \in L_2(0, T; V)\cap L_{\infty}(0,T;H)\subset v\prime\in L_1(0, T; V^\ast)$, удовлетворяющая равенству при почти всех значений $t \in (0, T)$
+    $v \in L_2(0, T; V)\cap L_{\infty}(0,T;H)$ и условию$ v^{\prime}\in L_1(0, T; V^\ast)$, удовлетворяющая при почти всех значений $t \in (0, T)$ равенству 
     \begin{equation}\label{eq:5.11}
         \begin{gathered}
             v^\prime(t) - \nu\Delta v(t) - K(v(t)) = f(t)
@@ -300,19 +317,20 @@ $W_{p_0,p_1}={v\in L_{p_0}(a,b,X_0), \ v_1\in L_{p_0}(a,b,X_0)}\subset C([a,b],X
         \end{gathered}
     \end{equation}
 \end{definition}
-Таким образом, имеет место теорема 1.1
+Для системы уравнений Навье-Стокса (\ref{eq:5.1})-(\ref{eq:5.4}) Ж. Лере в 1934 был получен следующий результат:
 \begin{theorem}
 Пусть $n=2,3$. Для каждой функции $f\in L_2(0,T;V^\ast)$ и $v_0\in H$ начально-краевая задача (\ref{eq:5.1})-(\ref{eq:5.4})
 имеет хотя бы одно слабое решение $v.$
 \end{theorem}
+\clearpage
 
-\subsection {О единственности слабого решения в случае $n = 2$}
+\section {Единственность слабого решения }
 В этом разделе мы рассмотрим вопрос о единственности слабого решения начально-краевой задачи (\ref{eq:5.1})-(\ref{eq:5.4}) для эволюционной
 системы уравнений Навье"=Стокса. Покажем, что в случае $\Omega \subset R^2$ слабое решение начально-краевой задачи единственно.
 Однако для размерности $n > 2$ аналогичное утверждение неверно. Примером, показывающим, что слабое решение задачи не единственно, служит результат
-о бифуркации решений, содержащийся, например, в [22, гл.II, \S 4,п.4.4].
+о бифуркации решений, содержащийся, например, в [1, гл.II, \S 4,п.4.4].
 
-Сформулируем и докажем утверждение о единственности слабого решения в случае $n = 2$, следуя [22, гл.III, \S 3, теорема 3.2].
+Сформулируем и докажем утверждение о единственности слабого решения в случае $n = 2$.
 
 \begin{theorem}
     Пусть $\Omega$ ограниченная область в $R^2$ с достаточно гладкой границей $\partial\Omega$. Тогда слабое решение $v$  решение
@@ -346,8 +364,8 @@ $W_{p_0,p_1}={v\in L_{p_0}(a,b,X_0), \ v_1\in L_{p_0}(a,b,X_0)}\subset C([a,b],X
     -\sum_{i=1}^{2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx,$$
     так как $\sum\limits_{i=1}^{2}\frac{\partial w_i(t, x)}{\partial x_i} = \textrm{div } w(t, x)=0$. Используем интегрирование по частям для вычисления второго из интегралов
     $$\sum_{i=1}^{n=2}\int\limits_\Omega u_i(t,x)w(t, x)\frac{\partial w(t, x)}{\partial x_i}dx=
-    \sum_{i=1}^{n=2}\int\limits_\Omega u_i(t,x)\cdot\frac{1}{2}\cdot\frac{\partial \mid w\mid^2(t, x)}{\partial x_i}dx=$$
-    $$=-\frac{1}{2}\int\limits_\Omega\sum_{i=1}^{n=2}\frac{\partial u_i(t, x)}{\partial x_i}\cdot\mid w\mid^2(t, x)dx=0,$$
+    \sum_{i=1}^{n=2}\int\limits_\Omega u_i(t,x)\cdot\frac{1}{2}\cdot\frac{\partial \mid w(t, x)\mid^2}{\partial x_i}dx=$$
+    $$=-\frac{1}{2}\int\limits_\Omega\sum_{i=1}^{n=2}\frac{\partial u_i(t, x)}{\partial x_i}\cdot\mid w(t, x)\mid^2dx=0,$$
     так как $\sum\limits_{i=1}^{2}\frac{\partial u_i(t, x)}{\partial x_i} = \textrm{div} u(t, x)=0.$
     Отсюда и из равенства (\ref{eq:5.36}) получим
     $$\frac{1}{2}\frac{d}{dt}\int\limits_\Omega w(t, x)w(t, x)dx+\nu\int\limits_{\Omega}\nabla w(t,x):\nabla w(t,x)dx=$$
@@ -356,14 +374,14 @@ $W_{p_0,p_1}={v\in L_{p_0}(a,b,X_0), \ v_1\in L_{p_0}(a,b,X_0)}\subset C([a,b],X
     \begin{equation}\label{eq:5.37}
         \begin{gathered}
             \frac{1}{2}\frac{d}{dt}\| w(t)\|_H^2+\nu\| w(t)\|_V^2\le
-            \bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v_i(t, x)}{\partial x_i}w(t, x)dx\bigg|.
+            \bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx\bigg|.
         \end{gathered}
     \end{equation}
     Оценим правую часть неравенства, используя неравенства Шварца:
-    $$\bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v_i(t, x)}{\partial x_i}w(t, x)dx\bigg|=
-    \bigg|\sum_{i,j=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v_i(t, x)}{\partial x_i}w_j(t, x)dx\bigg|\le$$
+    $$\bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx\bigg|=
+    \bigg|\sum_{i,j=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v_j(t, x)}{\partial x_i}w_j(t, x)dx\bigg|\le$$
     $$\le\left(\sum_{i,j=1}^{n=2}\int\limits_\Omega \mid w_i(t, x)\mid^2|w_j(t, x)\mid^2dx \right)^{1/2}
-    \cdot\left(\sum_{i,j=1}^{n=2}\int\limits_\Omega\bigg|\frac{\partial v_i(t, x)}{\partial x_i}\bigg|^2dx \right)^{1/2}\le$$
+    \cdot\left(\sum_{i,j=1}^{n=2}\int\limits_\Omega\bigg|\frac{\partial v_j(t, x)}{\partial x_i}\bigg|^2dx \right)^{1/2}\le$$
     $$\left(\sum_{i=1}^{n=2}\int\limits_\Omega \mid w_i(t, x)\mid^4dx\right)^{1/4}\left(\sum_{j=1}^{n=2}\int\limits_\Omega \mid w_j(t, x)\mid^4dx\right)^{1/4}\cdot$$
     $$\cdot\left(\sum_{i,j=1}^{n=2}\int\limits_\Omega\bigg|\frac{\partial v_j(t, x)}{\partial x_i} \bigg|^2dx \right)^{1/2}$$
     или
@@ -378,14 +396,22 @@ $W_{p_0,p_1}={v\in L_{p_0}(a,b,X_0), \ v_1\in L_{p_0}(a,b,X_0)}\subset C([a,b],X
     $$\le \nu\| w(t)\|_V^2+\frac{1}{2^{3/2}\nu}\| w(t)\|_{L_2(\Omega)}^2\| v(t)\|_V.$$
     Подставляя полученное соотношение в неравенство (\ref{eq:5.37}), получаем
     $$\frac{1}{2}\frac{d}{dt}\| w(t)\|_H^2\le\frac{1}{2^{3/2}\nu}\| w(t)\|_H^2\| v(t)\|_V.$$
-    Тогда из неравенство Гронуолла"=Беллмана [1, теорема 2б глава IV, с.188] следует
+    Тогда из неравенства Гронуолла"=Беллмана [1, теорема 2б, глава IV, с.188] следует
     $$\| w(t)\|_H^2\le\| w(0)\|_H^2\exp\left(\int_0^t\frac{1}{2^{1/2}\nu}\| v(s)\|_Vds\right).$$
     Поскольку $w(0) = v(0)- u(0) = 0$, то из полученного выше неравенства приходим к выводу,
-    что $w(t)=0$ для всех $t\in[0, T]$. Следовательно, $v=u$ и слабое и полное слабое решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}) единственно.
+    что $w(t)=0$ для всех $t\in[0, T]$. Следовательно, $v=u$ и слабое решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}) единственно.
 \end{proof}
 
 
 \clearpage
+\section*{Список литературы}
 \addcontentsline{toc}{section}{Список литературы}
-\nocite{*}
-\printbibliography{}
+\begin{enumerate} 
+    \item Уравнения Навье-Стокса. Теория и численный анализ. / Р. Темам : Москва, 1987. — с. 409.
+    \item  Аппроксимационно"=топологический переход к исследованию задач гидродинамики. 
+    Система Навье-Стокса. / В.Г. Звягин , В.Т. Дмитриенко  Москва: Едиториал УРСС, 2004. — с. 112.
+    \item  Математические вопросы / О.А. Ладыжская  М.: Наука, 1970. — с. 288.
+    \item Некоторые методы решения нелинейных краевых задач / Ж.-Л. Лионс, М.: Мир, 1972г., — с. 587.
+    \item Essai sur le mouvement d'un fluide visqueux emplissant l'space // \linebreak Leray J., Aeta. 
+    Math 1934 V. 63 p. 193-248.
+\end{enumerate}
