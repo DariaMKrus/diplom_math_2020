@@ -9,7 +9,7 @@ file = diplom.tex
 
 all:
 	# titlepage
-	# pdflatex diplom.tex
+	# pdflatex $(file)
 	# biber diplom
 	pdflatex $(file)
 	pdflatex $(file)
