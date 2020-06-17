@@ -112,7 +112,7 @@
 
 
   \begin{frame}
-    \frametitle{Введем определение сильного решения}
+    \frametitle{Определение сильного решения}
     \begin{center}
       \begin{minipage}[h]{0.97\linewidth}
         \begin{definition}
@@ -127,66 +127,6 @@
           обращаются в равенства в пространстве $L_2(0, T; L_2(\Omega))$;
           \item функция $v$ удовлетворяет начальному условию (\ref{eq:5.3}) и граничному условию (\ref{eq:5.4}).
         \end{enumerate}
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Понятие слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-        Введем понятие слабого решения. Для этого пусть $v$ и $p$ --- сильное решение задач (\ref{eq:5.1})-(\ref{eq:5.4}).
-        Сопоставим функции $v$ отображение $v:[0, T]\rightarrow W^1_2(\Omega)$,
-        определенное по формуле $$[v(t)](x)=v(t, x), t\in[0, T], x\in\Omega.$$
-        Аналогично определим $p:[0, T]\rightarrow L_2(\Omega)$ по формуле $$[p(t)](x)=p(t, x), t\in[0, T], x\in\Omega$$
-        и функцию $f:[0, T]\rightarrow L_2(\Omega)$ по формуле $$[f(t)](x)=f(t, x), t\in[0, T], x\in\Omega.$$
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Понятие слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-        \begin{equation*}
-          \begin{gathered}
-            \frac{\partial v}{\partial t}+\sum_{i=1}^nv_i\frac{\partial v}{\partial x_i}-\nu\Delta v+\nabla p=f;
-          \end{gathered}
-        \end{equation*}
-        $$\int\limits_\Omega \frac{\partial v}{\partial t}\ \varphi dx+\sum_{i=1}^n\int\limits_\Omega v_i\frac{\partial v}{\partial x_i}\ \varphi dx-$$
-        $$-\nu \sum_{i, j=1}^n\int\limits_\Omega\frac{\partial^2 v_j}{\partial x^{2}_i} \varphi_j dx+
-        \sum_{i=1}^n\int\limits_\Omega \frac{\partial p}{\partial x_i}\ \varphi_idx=\int\limits_\Omega f\varphi dx.$$
-        Выполним преобразования слагаемых, связанные с интегрированием по частям
-        $$-\nu\int\limits_\Omega \sum_{i,j=1}^{n}\frac{\partial^2 v_j}{\partial x^{2}_i}\varphi_j dx=
-        \nu\int\limits_\Omega\sum_{i, j=1}^{n}\frac{\partial v_j}{\partial x_i}\frac{\partial \varphi_j}{\partial x_i}=\nu\int\limits_\Omega \nabla v:\nabla\varphi dx.$$
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Понятие слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-        Таким образом, приходим к равенству
-        \begin{equation}\label{eq:5.5}
-          \begin{gathered}
-            \frac{d}{dt}\int\limits_\Omega v \varphi dx-\sum_{i=1}^{n}\int\limits_\Omega v_i v
-            \frac{\partial \varphi }{\partial x_i}dx + v\int\limits_\Omega \nabla v :\nabla\varphi dx
-            =\int\limits_\Omega f\varphi dx.
-          \end{gathered}
-        \end{equation}
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Понятие слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-      В силу теоремы вложений Соболева интеграл $\sum\limits_{i=1}^{n}\int\limits_\Omega v_iv \frac{\partial\varphi}{\partial x_i}dx$ определен.\\
-      Кроме того, это слагаемое определяет линейный непрерывный функционал на $V$. Обозначим этот функционал через $K(v)$:
-      $$\langle K(v),\varphi \rangle = \sum_{i=1}^{n}\int\limits_\Omega v_i v \frac{\partial \varphi}{\partial x_i}dx.$$
-      Подводя итог рассуждениям, приходим к следующему определению слабого решения.
       \end{minipage}
     \end{center}
   \end{frame}
@@ -215,32 +155,9 @@
       \end{minipage}
     \end{center}
   \end{frame}
-  
-  \begin{frame}
-    \frametitle{Понятие слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-      Скалярное произведение $(v(t), \varphi)_{L_2(\Omega)}$ определяет линейный непрерывный функционал на $H$, а следовательно,
-      элемент из $H^\ast$. Учитывая отождествление $H \equiv H^\ast$ и цепочку вложений $V \subset H \subset H^\ast \subset V^\ast$,
-      $\langle v(t),\varphi \rangle = (v(t),\varphi)_{L_2(\Omega)}$
-      Тогда можно считать, что функция $v(t)$ на $[0, T]$ принимает значения в $V^\ast$ и
-      $$\frac{d}{dt}\int\limits_\Omega v \varphi dx=\frac{d}{dt}\langle v(t),\varphi \rangle.$$
-      $$\frac{d}{dt} \langle v(t),\varphi \rangle - \nu\langle \Delta v(t), \varphi \rangle -
-      \langle K(v(t)),\varphi \rangle = \langle f(t),\varphi \rangle,$$
-      где $\Delta: V \rightarrow V^\ast$, обозначает оператор Лапласа, действующий по правилу
-      $\langle \Delta v(t),\varphi \rangle=-\int\limits_\Omega \nabla v:\nabla\varphi dx.$
-      Или можно (\ref{eq:5.6}) переписать в виде:
-        \begin{equation}\label{eq:5.8}
-          \begin{gathered}
-            \frac{d}{dt} \langle v(t),\varphi \rangle = \langle \nu\Delta v(t)+K(v(t))+f(t),\varphi \rangle.
-          \end{gathered}
-        \end{equation}
-      \end{minipage}
-    \end{center}
-  \end{frame}
 
   \begin{frame}
-    \frametitle{Понятие слабого решения}
+    \frametitle{Доказательство линейности и непрерывности оператора $\Delta:L_2 (0,T;V)→L_2 (0,T;V^*)$}
     \begin{center}
       \begin{minipage}[h]{0.97\linewidth}
       \begin{lemma} ~\\
@@ -265,97 +182,11 @@
     \end{center}
   \end{frame}
 
-  \begin{frame}
-    \frametitle{Понятие слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-        1. Покажем, что оператор $\Delta : V\rightarrow V^*$ линейный. 
-        $$\Delta (\alpha v+\beta u)= \sum_{i,j=1}^{n} \frac{\partial^2}{\partial x_i^2} (\alpha v_i+\beta u_i)=
-        \alpha \sum_{i,j=1}^{n} \frac{\partial^2 v_i}{\partial x_i^2}+\beta \sum_{i,j=1}^{n} \frac{\partial^2 u_i}{\partial x_i^2}=\alpha\Delta v+\beta\Delta u.$$
-        Заметим, что оператор $\Delta : V\rightarrow V^*$ определяет изометрию пространств.
-        $$\| \Delta v \|_{V^*}=\underset{\varphi\in V}{sup} \frac{|\langle \Delta v,\varphi \rangle|}{\| \varphi\|_V}=\underset{\varphi\in V}{sup} 
-        \frac{\bigg|\int\limits_{\Omega}\nabla v:\nabla\varphi dx\bigg|}{\| \varphi\|_V}\le$$
-        $$\le\underset{\varphi\in V}{sup} \frac{\|\nabla v\|_{L_2(\Omega)}\|\nabla \varphi\|_{L_2(\Omega)}}{\|\varphi\|_V}
-        \le\underset{\varphi\in V}{sup} \frac{\| v \|_{V} \| \varphi \|_{V}}{\| \varphi \|_{V}}=\| v \|_{V}.$$
-        То есть $\| \Delta v \|_{V^*}\le\| v \|_{V}.$ 
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Понятие слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-        С другой стороны, положим $\varphi=v:$\\
-        $$|\langle \Delta v,v \rangle|=|\int\limits_{\Omega}\nabla v:\nabla v dx|=\|v\|_V^2.$$\\
-        $$\|v\|_V^2=|\langle \Delta v,v\rangle|\le\|\Delta v\|_{V^*}\| v\|_{V}.$$
-        Сократив на $\|v\|_V$, получим $\|\Delta v\|_{V^*}\ge\|v\|_V.$
-        Следовательно получаем $\|\Delta v\|_{V^*}=\|v\|_V.$
-        имеем
-        $\| \Delta v \|_{V^\ast} = \| v(t) \|_V$ для почти всех\linebreak$t \in [0, T]$. Так как $\| v(t) \|_V \in L_2(0, T)$,
-        то $\| \Delta v(t)\|_{V^*} \in L_2(0, T)$. Следовательно, $\Delta v \in L_2(0, T; V^\ast)$ и справедливо
-        равенство (\ref{eq:5.9}). Таким образом, линейный оператор $\Delta$ определяет изометрию пространств $L_2(0, T; V)$ и $L_2(0, T; V^\ast)$.
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Понятие слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-      2. По определению оператора $K$ для любых $v,\varphi\in V$ действует по правилу
-        $$\langle K(v),\varphi \rangle = \sum_{i,j=1}^{n}\int\limits_\Omega v_i v_j \frac{\partial \varphi_j}{\partial x_i}dx.$$
-        Значит для любого $v\in V$ получим
-        $$\bigg|\langle K(v),\varphi \rangle\bigg|\le\bigg|\int\limits_{\Omega}\sum_{i,j=1}^{n}v_i v_j \frac{\partial \varphi_j}{\partial x_i}dx\bigg|\le$$
-        $$\le(\sum_{i,j=1}^{n}\int\limits_{\Omega}\bigg|v_i v_j\bigg|^2 dx)^{1/2}(\sum_{i,j=1}^{n}\int\limits_{\Omega}\bigg|\frac{\partial \varphi_j}{\partial x_i}\bigg|^2 dx)^{1/2}\le$$
-        $$\le(\sum_{i=1}^{n}\int\limits_{\Omega}\bigg|v_i\bigg|^4 dx)^{1/4}(\sum_{j=1}^{n}\int\limits_{\Omega}\bigg|v_j\bigg|^4 dx)^{1/4}
-        (\sum_{i,j=1}^{n}\int\limits_{\Omega}\bigg|\frac{\partial \varphi_j}{\partial x_i}\bigg|^2 dx)^{1/2}\le
-        \|v\|^2_{L_4(\Omega)}\|\varphi\|_V.$$
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Понятие слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-      По теореме вложения Соболева вложение $V\in L_4(\Omega)^n$ непрерывно для $n\le 4$, поэтому, $\|v\|_{L_4(\Omega)^n}\le C_3\|v\|_V$ и, следовательно,
-        $\|K(v)\|_{V^*}\le C_3^2\|v\|^2_V.$ Отсюда для $v\in L_2(0,T;V)$ имеем $K(v)\in L_1(0,T;V^*)$ и 
-        $$\|K(v)_{L_1(0,T;V^*)}\|\le\int\limits_0^T\|K(v(t))\|_{V^*} dt\le C_3^2\int\limits_0^T\|v(t)\|_V^2 dt=C_3^2\|v(t)\|_{L_2(0,T;V)}^2.$$
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Понятие слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-        Докажем непрерывность оператора $K$. Для любых функций\linebreak
-        $v,u\in L_2(0,T;V)$ справедлива оценка
-        $$\int\limits_0^T\|K(v)-K(u)\|_{V^*} dt\le\int\limits_0^T(\sum_{i,j=1}^{n}\int\limits_\Omega (v_iv_j-u_iu_j)^2dx)^{1/2} dt\le$$
-        $$\le\int\limits_0^T(\sum_{i,j=1}^{n}\int\limits_\Omega (v_i(v_j-u_j)+(v_i-u_i)u_j)^2dx)^{1/2}dt\le$$
-        $$\le\sqrt2\sum_{i,j=1}^{n}\int\limits_0^T (\int\limits_{\Omega}v^2_i(v_j-u_j)^2dx)^{1/2}+
-        (\int\limits_{\Omega}(v_i-u_i)^2u_j dx)^{1/2}\le$$
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-
-  \begin{frame}
-    \frametitle{Понятие слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-        $$\le\sqrt2\sum_{i,j=1}^{n}\int\limits_0^T(\|v_i\|_{L_4(\Omega)}\|v_j-u_j\|_{L_4(\Omega)}
-        +\|v_i-u_i\|_{L_4(\Omega)}\|u_j\|_{L_4(\Omega)})dt\le$$
-        $$\le C_2(\|v\|_{L_2(0,T;L_4(\Omega))}+\|u\|_{L_2(0,T;L_4(\Omega))})\|v-u\|_{L_2(0,T;L_4(\Omega))}.$$
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
     \begin{frame}
-    \frametitle{Понятие слабого решения}
+    \frametitle{Вывод из леммы}
     \begin{center}
       \begin{minipage}[h]{0.97\linewidth}
+      По утверждению леммы $\nu\Delta v \in L_2(0, T; V^\ast), K(v) \in L_1(0, T; V^\ast)$, поэтому $\nu\Delta v(t) + K(v(t)) + f(t) \in L_1(0, T; V^\ast)$.
       \begin{enumerate}
       \item что функция $v(t)$ имеет суммируемую производную $v^\prime(t);$
       \item в силу равенства $\frac{d}{dt}\langle \phi, u(t) \rangle = \langle \phi, g(t) \rangle;$
@@ -368,7 +199,7 @@
   \end{frame}
 
     \begin{frame}
-    \frametitle{Понятие слабого решения}
+    \frametitle{Принадлежность $v^{\prime} (t)$к пространству $ L_1 (0,T;V^*)$}
     \begin{center}
       \begin{minipage}[h]{0.97\linewidth}
         \begin{lemma}
@@ -424,121 +255,7 @@
     \end{center}
   \end{frame}
 
-    \begin{frame}
-    \frametitle{Единственность слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-        Рассмотрим разность полученных равенств. 
-    Для разности $w = v - u$ получим равенство
-    $$w^\prime - \nu\Delta w(t) - K(v(t)) + K(u(t)) = 0$$
-    Применим функционалы, стоящие в равенстве, к функции $w(t)$
-    \begin{equation}\label{eq:5.36}
-        \begin{gathered}
-            \frac{1}{2}\frac{d}{dt}\int\limits_\Omega w(t, x)w(t, x)dt+\nu\int\limits_{\Omega} \nabla w(t,x):\nabla w(t,x)dx= \\
-            =\sum_{i=1}^{2}\int\limits_\Omega v_i(t,x) v(t, x)\frac{\partial w(t, x)}{\partial x_i}dx-\sum_{i=1}^{2}\int\limits_\Omega u_i(t,x)u(t, x)\frac{\partial w(t, x)}{\partial x_i}dx.
-        \end{gathered}
-    \end{equation}
-      \end{minipage}
-    \end{center}
-  \end{frame}
 
-    \begin{frame}
-    \frametitle{Единственность слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-        Оценим правую часть полученного равенства.
-        $$\sum_{i=1}^{2}\int\limits_\Omega v_i(t,x) v(t, x)\frac{\partial w(t, x)}{\partial x_i}dx-
-        \sum_{i=1}^{2}\int\limits_\Omega u_i(t,x)u(t, x)\frac{\partial w(t, x)}{\partial x_i}dx=$$
-        $$\sum_{i=1}^{2}\bigg[\int\limits_\Omega w_i(t,x)v(t,x)\frac{\partial w(t, x)}{\partial x_i}
-        +\int\limits_\Omega w(t,x)u_i(t,x)\frac{\partial w(t, x)}{\partial x_i}\bigg]dx.$$
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-    \begin{frame}
-    \frametitle{Единственность слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-      Используем интегрирование по частям для вычисления первого интеграла
-      $$\sum_{i=1}^{2}\int\limits_\Omega w_i(t, x)v(t, x)\frac{\partial w(t, x)}{\partial x_i}dx=
-      -\sum_{i=1}^{2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx,$$
-      так как $\sum\limits_{i=1}^{2}\frac{\partial w_i(t, x)}{\partial x_i} = \textrm{div } w(t, x)=0$. Используем интегрирование по частям для вычисления второго из интегралов
-      $$\sum_{i=1}^{n=2}\int\limits_\Omega u_i(t,x)w(t, x)\frac{\partial w(t, x)}{\partial x_i}dx=
-      \sum_{i=1}^{n=2}\int\limits_\Omega u_i(t,x)\cdot\frac{1}{2}\cdot\frac{\partial \mid w(t, x)\mid^2}{\partial x_i}dx=$$
-      $$=-\frac{1}{2}\int\limits_\Omega\sum_{i=1}^{n=2}\frac{\partial u_i(t, x)}{\partial x_i}\cdot\mid w(t, x)\mid^2dx=0,$$
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-    \begin{frame}
-    \frametitle{Единственность слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-      так как $\sum\limits_{i=1}^{2}\frac{\partial u_i(t, x)}{\partial x_i} = \textrm{div} u(t, x)=0.$
-    Отсюда и из равенства (\ref{eq:5.36}) получим
-    $$\frac{1}{2}\frac{d}{dt}\int\limits_\Omega w(t, x)w(t, x)dx+\nu\int\limits_{\Omega}\nabla w(t,x):\nabla w(t,x)dx=$$
-    $$=-\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx$$
-    или
-    \begin{equation}\label{eq:5.37}
-        \begin{gathered}
-            \frac{1}{2}\frac{d}{dt}\| w(t)\|_H^2+\nu\| w(t)\|_V^2\le
-            \bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx\bigg|.
-        \end{gathered}
-    \end{equation}
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-    \begin{frame}
-    \frametitle{Единственность слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-      Оценим правую часть неравенства, используя неравенства Шварца:
-      $$\bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx\bigg|=
-      \bigg|\sum_{i,j=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v_j(t, x)}{\partial x_i}w_j(t, x)dx\bigg|\le$$
-      $$\le\left(\sum_{i=1}^{n=2}\int\limits_\Omega \mid w_i(t, x)\mid^4dx\right)^{1/4}\left(\sum_{j=1}^{n=2}\int\limits_\Omega \mid w_j(t, x)\mid^4dx\right)^{1/4}\cdot$$
-      $$\cdot\left(\sum_{i,j=1}^{n=2}\int\limits_\Omega\bigg|\frac{\partial v_j(t, x)}{\partial x_i} \bigg|^2dx \right)^{1/2}$$
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Единственность слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-      Учитывая, суммирование по повторяющимся индексам, получаем
-      $$\bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx\bigg|\le\| w(t)\|_{L_4(\Omega)}^2\| v(t)\|_V.$$
-      Применим неравенство О.А. Ладыженской и далее неравенство Коши \linebreak
-      $a\cdot b=\varepsilon a^2+\frac{b^2}{4\varepsilon}c \ \varepsilon=\frac{\nu}{2^{1/2}}$, получим
-      $$\bigg|\sum_{i=1}^{n=2}\int\limits_\Omega w_i(t, x)\frac{\partial v(t, x)}{\partial x_i}w(t, x)dx\bigg|\le$$
-      $$\le 2^{1/2}\| w(t)\|_{L_2(\Omega)}\| w(t)\|_V\| v(t)\|_V\le$$
-      $$\le \nu\| w(t)\|_V^2+\frac{1}{2^{3/2}\nu}\| w(t)\|_{L_2(\Omega)}^2\| v(t)\|_V.$$
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Единственность слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-      Подставляя полученное соотношение в неравенство (\ref{eq:5.37}), получаем
-      $$\frac{1}{2}\frac{d}{dt}\| w(t)\|_H^2\le\frac{1}{2^{3/2}\nu}\| w(t)\|_H^2\| v(t)\|_V.$$
-      Тогда из неравенства Гронуолла"=Беллмана [1, теорема 2б, глава IV, с.188] следует
-      $$\| w(t)\|_H^2\le\| w(0)\|_H^2\exp\left(\int_0^t\frac{1}{2^{1/2}\nu}\| v(s)\|_Vds\right).$$
-      Поскольку $w(0) = v(0)- u(0) = 0$, то из полученного выше неравенства приходим к выводу,
-      что $w(t)=0$ для всех $t\in[0, T]$. Следовательно, $v=u$ и слабое решение задачи (\ref{eq:5.1})-(\ref{eq:5.4}) единственно.
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Единственность слабого решения}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-
-      \end{minipage}
-    \end{center}
-  \end{frame}
   % \begin{frame}
   %     \frametitle{Постановка задачи}
   %     \begin{center}
