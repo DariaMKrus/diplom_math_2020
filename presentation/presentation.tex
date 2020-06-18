@@ -23,6 +23,7 @@
 \newtheorem{ru_lemma}{Лемма}
 \renewenvironment{lemma}{\begin{ru_lemma}}{\end{ru_lemma}}
 
+
 \begin{document}
 
   \begin{frame} % титульный лист 
@@ -71,47 +72,6 @@
 
 
   \begin{frame}
-    \frametitle{Введение необходимых функциональных пространств}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-        $L_p(\Omega)$ --- множество измеримых функций, суммируемых с $p$-ой степенью, где $1\le p< \infty$,
-        и нормой $\|v\|_{L_p(\Omega)}=(\int\limits_\Omega |v(x)|^pdx)^{1/p}$.
-
-        Пространство $L_{\infty}(\Omega)$ состоит из измеримых существенно ограниченных функций $v:\Omega\rightarrow R^n$. 
-        Функция $v:\Omega\rightarrow R^n$ называется существенной ограниченной,
-        если существует число $C_1<\infty$, что $|v(x)|\le C_1$ при почти всех $x\in\Omega$.
-        Норма в $L_{\infty}(\Omega)$ задается
-        $\|v\|_{L_{\infty}(\Omega)}=ess \ \underset{x\in\Omega}{sup} |v(x)|$.
-
-        $W_p^m(\Omega)$ --- где $m\geqslant 1, \ p\geqslant 1$, пространство Соболева, состоящее из
-        функции, которые со своими обобщенными частными производными до порядка
-        $m$ включительно принадлежат пространству $L_p(\Omega)$.\\
-        Норма в $W_p^m(\Omega)$ задается
-        $\|v\|_{W_p^m(\Omega)}=\left(\sum\limits_{|\alpha|\leqslant m} \int\limits_\Omega |D^{\alpha}v(x)|^pdx\right)^{1/p}$.
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-
-  \begin{frame}
-    \frametitle{Введение необходимых функциональных пространств}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-        $L_p(a,b;X)$ --- где $1\le p< \infty$ пространство суммируемых с
-        $p$-ой степенью функций на $[a, b]$ со значениями в
-        банаховом пространстве $X$. Норма пространства $L_p(a, b;X)$ задается 
-        $\|v\|_{L_p(a, b;X)}=(\int\limits_0^T\|v(s)\|_X^p ds)^{1/p}.$
-
-        Через $L_{\infty}(a,b;X)$ будем обозначать множество всех измеримых существенно ограниченных функций
-        $v:[a,b]\rightarrow X$.
-        Множество $L_{\infty}(a,b;X)$ является банаховым пространством относительно нормы
-        $\|v\|_{L_{\infty}(a,b;X)}=ess \ \underset{x\in\Omega}{sup} \|v(s)\|_X$.
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-
-  \begin{frame}
     \frametitle{Определение сильного решения}
     \begin{center}
       \begin{minipage}[h]{0.97\linewidth}
@@ -130,6 +90,7 @@
       \end{minipage}
     \end{center}
   \end{frame}
+
 
   \begin{frame}
     \frametitle{Определение слабого решения}
@@ -155,6 +116,7 @@
       \end{minipage}
     \end{center}
   \end{frame}
+
 
   \begin{frame}
     \frametitle{Доказательство линейности и непрерывности оператора $\Delta:L_2 (0,T;V)→L_2 (0,T;V^*)$}
@@ -182,31 +144,10 @@
     \end{center}
   \end{frame}
 
-    \begin{frame}
-    \frametitle{Вывод из леммы}
+\begin{frame}
+    \frametitle{Слабая непрерывность $v$}
     \begin{center}
       \begin{minipage}[h]{0.97\linewidth}
-      По утверждению леммы $\nu\Delta v \in L_2(0, T; V^\ast), K(v) \in L_1(0, T; V^\ast)$, поэтому $\nu\Delta v(t) + K(v(t)) + f(t) \in L_1(0, T; V^\ast)$.
-      \begin{enumerate}
-      \item что функция $v(t)$ имеет суммируемую производную $v^\prime(t);$
-      \item в силу равенства $\frac{d}{dt}\langle \phi, u(t) \rangle = \langle \phi, g(t) \rangle;$
-      $$\frac{d}{dt} \langle v(t), \varphi \rangle = \langle v'(t), \varphi \rangle;$$
-      \item равенство $\frac{d}{dt}\langle v(t), \varphi \rangle=\langle \Delta v(t)+K(v(t))+f(t),\varphi\rangle$ можно записать в виде
-      $$v^\prime(t)=\nu\Delta v(t)+K(v(t))+f(t).$$
-      \end{enumerate}
-      \end{minipage}
-    \end{center}
-  \end{frame}
-
-    \begin{frame}
-    \frametitle{Принадлежность $v^{\prime} (t)$к пространству $ L_1 (0,T;V^*)$}
-    \begin{center}
-      \begin{minipage}[h]{0.97\linewidth}
-        \begin{lemma}
-          Для $p_0\ge 1, \ p_1\ge 1$ имеет место вложение\linebreak
-          $W_{p_0,p_1}=\{v\in L_{p_0}(a,b,X_0), \ v_1\in L_{p_0}(a,b,X_0)\}\subset C([a,b],X_1)$
-          и это вложение непрерывно.
-        \end{lemma}
         \begin{lemma}
           Пусть $X$ и $Y$ --- банаховы пространства, такие, что $X$ --- рефлективно и вложение $X\subset Y$ непрерывно.
           Если функция $v\in L_{\infty}(a,b;X)$ слабо непрерывна как функция со значениями в $Y$,то и слабо непрерывна и как функция со значениями в $X$.
@@ -215,33 +156,35 @@
     \end{center}
   \end{frame}
 
-    \begin{frame}
+  \begin{frame}
     \frametitle{Определение слабого решения}
     \begin{center}
       \begin{minipage}[h]{0.97\linewidth}
         \begin{definition}
-    Пусть $n \le 4, \ f \in L_2(0, T; L_2(\Omega))$ и $v \in H$. Слабым решением задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется функция
-    $v \in L_2(0, T; V)\cap L_{\infty}(0,T;H)$ и условию$ v^{\prime}\in L_1(0, T; V^\ast)$, удовлетворяющая при почти всех значений $t \in (0, T)$ равенству 
-    \begin{equation}\label{eq:5.11}
-        \begin{gathered}
-            v^\prime(t) - \nu\Delta v(t) - K(v(t)) = f(t)
-        \end{gathered}
-    \end{equation}
-      и начальному условию
-    \begin{equation}\label{eq:5.12}
-        \begin{gathered}
-            v(0) = v_0.
-        \end{gathered}
-    \end{equation}
-\end{definition}
-Для системы уравнений Навье"=Стокса (\ref{eq:5.1})-(\ref{eq:5.4}) Ж. Лере в 1934 был получен следующий результат:
-\begin{theorem}
-Пусть $n=2,3$. Для каждой функции $f\in L_2(0,T;V^\ast)$ и $v_0\in H$ начально-краевая задача (\ref{eq:5.1})-(\ref{eq:5.4})
-имеет хотя бы одно слабое решение $v.$
-\end{theorem}
+          Пусть $n \le 4, \ f \in L_2(0, T; L_2(\Omega))$ и $v \in H$. Слабым решением задачи (\ref{eq:5.1})-(\ref{eq:5.4}) называется функция
+          $v \in L_2(0, T; V)\cap L_{\infty}(0,T;H)$ и условию$ v^{\prime}\in L_1(0, T; V^\ast)$,
+          удовлетворяющая при почти всех значений $t \in (0, T)$ равенству 
+          \begin{equation}\label{eq:5.11}
+              \begin{gathered}
+                v^\prime(t) - \nu\Delta v(t) - K(v(t)) = f(t)
+              \end{gathered}
+          \end{equation}
+          и начальному условию
+          \begin{equation}\label{eq:5.12}
+              \begin{gathered}
+                v(0) = v_0.
+              \end{gathered}
+          \end{equation}
+        \end{definition}
+        Для системы уравнений Навье"=Стокса (\ref{eq:5.1})-(\ref{eq:5.4}) Ж. Лере в 1934 был получен следующий результат:
+        \begin{theorem}
+          Пусть $n=2,3$. Для каждой функции $f\in L_2(0,T;V^\ast)$ и $v_0\in H$ начально-краевая задача (\ref{eq:5.1})-(\ref{eq:5.4})
+          имеет хотя бы одно слабое решение $v.$
+        \end{theorem}
       \end{minipage}
     \end{center}
   \end{frame}
+
 
     \begin{frame}
     \frametitle{Единственность слабого решения}
@@ -254,204 +197,6 @@
       \end{minipage}
     \end{center}
   \end{frame}
-
-
-  % \begin{frame}
-  %     \frametitle{Постановка задачи}
-  %     \begin{center}
-  %         \begin{minipage}[h]{0.97\linewidth}
-  %             Для решения такой задачи необходимо на основе теории вибрационных машин и теоремы об оптимальности импульса Максвелла-Фейера
-  %             разработать ПО для автоматизированного расчета характеристик импульсного погружателя
-  %             с возможностью ввода начальных данных и наглядного вывода результатов\footnotemark[1]\footnotemark[2].
-  %         \end{minipage}
-  %     \end{center}
-  %     \footnotetext[1]{\label{foot-1} Блехман И. И. Вибрационная механика. --- М. : Физико-математическая литература, 1994.}
-  %     \footnotetext[2]{\label{foot-2} Костин Д. В. Бифуркация резонансных колебаний и оптимизация тригонометрического импульса по коэффициенту несимметрии // Математический сборник. --- М., 2016.}
-  % \end{frame}
-
-
-  % \begin{frame}
-  %     \frametitle{Конструкция импульсного погружателя}
-  %     \begin{center}
-  %         \begin{minipage}[h]{0.97\linewidth}
-  %             \begin{minipage}[h]{0.55\linewidth}
-  %                 Работа погружателя основана на двух основных принципах:
-  %                 \begin{enumerate} 
-  %                     \item На эффекте резкого снижения сопротивлению погружения свайного элемента при сообщении последнему вибрации;
-  %                     \item На действии полигармонического импульса, создаваемого центробежными силами системы дебалансов.
-  %                 \end{enumerate}
-  %                 При вращении валов (1) с дебалансами (2) на их ось крепления действует центробежная сила и погружатель получает вибрирующее движение,
-  %                 которое через наголовник (3) сообщается свайному элементу (4).
-  %             \end{minipage}
-  %             % \hfill
-  %             % \begin{minipage}[h]{0.36\linewidth}
-  %             %     \begin{figure}[h]
-  %             %         \centering
-  %             %         \includegraphics[width=1\linewidth]{../img/scheme_porg_2.png}
-  %             %         \caption{Схема импульсного погружателя.}
-  %             %     \end{figure}
-  %             % \end{minipage}
-  %         \end{minipage}
-  %     \end{center}
-  % \end{frame}
-
-
-  % \begin{frame}
-  %     \frametitle{Конструкция дебаланса}
-  %     \begin{center}
-  %         \begin{minipage}[h]{0.97\linewidth}
-  %             \begin{minipage}[h]{0.6\linewidth}
-  %                 Пусть дан  дебаланс с радиусом $r$, радиус вала которого равен $R$,
-  %                 $\omega$ --- угловая скорость и $l$ --- расстояние от центра масс до оси вращения дебаланса, а его масса будет равна $m$.
-  %                 Центробежная сила:
-  %                 \begin{equation}
-  %                     \begin{gathered}
-  %                         F_{\textrm{центр.}} = m \cdot \omega^2 \cdot l \\
-  %                         \textrm{где } l = \frac{4 r}{3 \pi}
-  %                     \end{gathered}
-  %                 \end{equation}
-  %                 \\
-  %                 Гармонические колебания:
-  %                 \begin{equation}
-  %                     \begin{gathered}
-  %                         x(t) = \lambda \cos (\omega t) \\
-  %                         \textrm{где } \lambda = m \cdot \omega^2 \cdot l
-  %                     \end{gathered}
-  %                 \end{equation}
-  %             \end{minipage}
-  %             % \hfill
-  %             % \begin{minipage}[h]{0.36\linewidth}
-  %             %     \begin{figure}[h]
-  %             %         \centering
-  %             %         \includegraphics[width=1\linewidth]{../img/debalance.png}
-  %             %         \caption{Схема дебаланса.}
-  %             %     \end{figure}
-  %             % \end{minipage}
-  %         \end{minipage}
-  %     \end{center}
-  % \end{frame}
-
-
-  % \begin{frame}
-  %     \frametitle{Конструкция пары дебалансов}
-  %     \begin{center}
-  %         \begin{minipage}[h]{0.97\linewidth}
-  %             Для компенсации горизонтальных сил в конструкции погружателя используются парные дебалансы.\\
-  %             Гармонические колебания пары дебалансов:
-  %             \begin{equation}
-  %                 \begin{gathered}
-  %                     x(t) = 2 \lambda \cos (\omega t), \textrm{где } \lambda = m \cdot \omega^2 \cdot l
-  %                 \end{gathered}
-  %             \end{equation}
-  %             % \begin{figure}[h]
-  %             %     \centering
-  %             %     \includegraphics[width=0.52\linewidth]{../img/double_debalance.png}
-  %             %     \caption{Схема пары дебалансов.}
-  %             % \end{figure}
-  %         \end{minipage}
-  %     \end{center}
-  % \end{frame}
-
-
-  % \begin{frame}
-  %     \frametitle{Гармонические колебания дебалансов}
-  %     \begin{center}
-  %         \begin{minipage}[h]{0.97\linewidth}
-  %             При использовании нескольких пар дебалансов, вышестоящий уровень дебалансов должен иметь угловую скорость в два раза выше, чем прошлый.\\
-  %             \newline
-  %             \begin{minipage}[h]{0.44\linewidth}
-  %                 % \begin{figure}[h]
-  %                 %     \centering
-  %                 %     $x(t) = \lambda_1 \cos (\omega t)$
-  %                 %     \includegraphics[width=1\linewidth]{../grap/impulse_1.pdf}
-  %                 %     \caption{Гармонические колебания для одной пары дебалансов.}
-  %                 % \end{figure}
-  %             \end{minipage}
-  %             \hfill
-  %             \begin{minipage}[h]{0.44\linewidth}
-  %                 % \begin{figure}[h]
-  %                 %     \centering
-  %                 %     $x(t) = \lambda_1 \cos (\omega t) + \lambda_2 \cos (2\omega t)$
-  %                 %     \includegraphics[width=1\linewidth]{../grap/impulse_2.pdf}
-  %                 %     \caption{Гармонические колебания для двух пар дебалансов.}
-  %                 % \end{figure}
-  %             \end{minipage}
-  %         \end{minipage}
-  %     \end{center}
-  % \end{frame}
-
-  % \begin{frame}
-  %     \frametitle{Гармонические нескольких пар дебалансов}
-  %     \begin{center}
-  %         \begin{minipage}[h]{0.97\linewidth}
-  %             Гармоническое колебания для $n$ дебалансов, где $k$ --- порядковый номер пары дебалансов, будет иметь вид:
-  %             \begin{equation}\label{eq:harmonic_sum}
-  %                 \begin{gathered}
-  %                     F = \sum\limits_{k = 1}^n 2 \lambda_k \cdot \cos (k \omega t), \lambda = m \cdot \omega^2 \cdot l
-  %                 \end{gathered}
-  %             \end{equation}
-  %             Использование нескольких пар дебалансов разных характеристик позволяет увеличить импульс,
-  %             направленный на погружение свайного элемента и уменьшить импульс, направленный в противоположную сторону.
-  %         \end{minipage}
-  %     \end{center}
-  % \end{frame}
-
-
-  % \begin{frame}
-  %     \frametitle{Задача оптимизации}
-  %     \begin{center}
-  %         \begin{minipage}[h]{0.97\linewidth}
-  %             Пусть $f_{\max}(t)$ --- максимальное значение импульса силы за время $t$, $f_{\min}(t)$ --- минимальное значение импульса за время $t$. Тогда:
-  %             \begin{equation}
-  %                 \begin{gathered}
-  %                     K = \left| \frac{f_{\max}(t)}{f_{\min}(t)} \right| \rightarrow \max
-  %                 \end{gathered}
-  %             \end{equation}
-  %             \begin{block}{Теорема\footnotemark[3]}\label{teorema}
-  %                 Многочлен (\ref{eq:harmonic_sum}) является оптимальным т. и т. т. , когда он с точностью до постоянного множителя имеет вид суммы Фейера:
-  %                 \begin{equation}\label{eq:feer}
-  %                     \begin{gathered}
-  %                         f_n(t) = \sum\limits_{k = 1}^n (n + 1 - k) \cos(kt)\\
-  %                         \max \limits_{\lambda} K_n(\lambda) = n
-  %                     \end{gathered}
-  %                 \end{equation}
-  %             \end{block}
-  %         \end{minipage}
-  %     \end{center}
-  %     \footnotetext[3]{\label{foot-3} Костин Д. В. Бифуркация резонансных колебаний и оптимизация тригонометрического импульса по коэффициенту несимметрии
-  %     // Математический сборник. --- М., 2016. — С. 90—109.}
-  % \end{frame}
-
-  % \begin{frame}
-  %     \frametitle{Задача оптимизации}
-  %     \begin{center}
-  %         \begin{minipage}[h]{0.97\linewidth}
-  %             Исходя из теоремы выше, следует, что:
-  %             \begin{equation}
-  %                 \begin{gathered}
-  %                     \lambda_k = \frac{n - k + 1}{n} \cdot \lambda_1,\\
-  %                     \textrm{где } \lambda_1 = m_1 \cdot \omega_{1}^{2} \cdot l_1
-  %                 \end{gathered}
-  %             \end{equation}
-  %             Это позволяет найти коэффициент $\lambda_k$ для $k$-й пары дебалансов, когда общее количество дебалансов погружателя --- $n$.
-  %         \end{minipage}
-  %     \end{center}
-  % \end{frame}
-
-  % \begin{frame}
-  %     \frametitle{Программная реализация}
-  %     \begin{center}
-  %         \begin{minipage}[h]{0.97\linewidth}
-  %             При помощи применения теоремы об оптимальности модели полигармонического импульса и на основе теории вибрационных машин
-  %             на языке Python была разработана программа для автоматического расчета характеристик дебалансов погружателя.
-  %             % \begin{figure}[h]
-  %             %     \centering
-  %             %     \includegraphics[width=0.62\linewidth]{../img/xolm_2.png}
-  %             %     \caption{Скриншот программы.}
-  %             % \end{figure}
-  %         \end{minipage}
-  %     \end{center}
-  % \end{frame}
 
 
   \begin{frame}
